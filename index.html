@@ -1,241 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Dukiee Portfolio</title>
-
-<link rel="stylesheet" href="style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dukiee Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-
-
-
 <body>
 
-
-
-<header class="hero">
-
-<div class="hero-inner">
-
-<p class="eyebrow">Portfolio</p>
-
-<h1>Dukiee</h1>
-
-<p class="subtitle">Graphic Designer</p>
-
-<p class="intro">
-Video Editor, Graphic Designer
-</p>
-
-</div>
-
-</header>
-
-
-
-<main class="container">
-
-
-
-<section class="section">
-
-<div class="section-head">
-
-<h2>Selected Works</h2>
-
-</div>
-
-
-
-<div class="grid">
-
-
-
-<div class="card" onclick="openModal('work1.jpg.png')">
-
-<img src="work1.jpg.png">
-
-<div class="card-info">
-
-<h3>CFG</h3>
-
-<p>Aisle Fin</p>
-
-</div>
-
-</div>
-
-
-
-<div class="card" onclick="openModal('work2.jpg.png')">
-
-<img src="work2.jpg.png">
-
-<div class="card-info">
-
-<h3>CFG</h3>
-
-<p>Sampling Stand</p>
-
-</div>
-
-</div>
-
-
-
-<div class="card" onclick="openModal('work3.jpg.png')">
-
-<img src="work3.jpg.png">
-
-<div class="card-info">
-
-<h3>CFG</h3>
-
-<p>Wobbler</p>
-
-</div>
-
-</div>
-
-
-
-<div class="card" onclick="openModal('work4.jpg.png')">
-
-<img src="work4.jpg.png">
-
-<div class="card-info">
-
-<h3>CFG</h3>
-
-<p>Table Display</p>
-
-</div>
-
-</div>
-
-
-
-<div class="card" onclick="openModal('work5.jpg.png')">
-
-<img src="work5.jpg.png">
-
-<div class="card-info">
-
-<h3>CFG</h3>
-
-<p>Shelf Visual</p>
-
-</div>
-
-</div>
-
-
-
-<div class="card" onclick="openModal('work6.jpg.png')">
-
-<img src="work6.jpg.png">
-
-<div class="card-info">
-
-<h3>CFG</h3>
-
-<p>Banner</p>
-
-</div>
-
-</div>
-
-
-
-</div>
-
-</section>
-
-
-
-<section class="contact section">
-
-<div class="section-head">
-
-<h2>Contact</h2>
-
-</div>
-
-
-
-<div class="contact-links">
-
-<a href="mailto:dukdulguun888@gmail.com" target="_blank">
-dukdulguun888@gmail.com
-</a>
-
-
-
-<a href="https://www.instagram.com/__dukiiee/" target="_blank">
-instagram.com/__dukiiee
-</a>
-
-
-
-<a href="tel:+97695959727">
-+976 95959727
-</a>
-
-
-
-</div>
-
-</section>
-
-
-
-</main>
-
-
-
-<footer class="footer">
-
-<p>© 2026 Dukiee Portfolio</p>
-
-</footer>
-
-
-
-<div id="modal" class="modal" onclick="closeModal()">
-
-<img id="modalImg">
-
-</div>
-
-
-
-<script>
-
-function openModal(src){
-
-document.getElementById("modal").style.display="flex";
-
-document.getElementById("modalImg").src=src;
-
-}
-
-
-
-function closeModal(){
-
-document.getElementById("modal").style.display="none";
-
-}
-
-</script>
-
-
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">Portfolio</p>
+      <h1>Dukiee</h1>
+      <p class="subtitle">Graphic Designer</p>
+      <p class="intro">
+        Video Editor, Graphic Designer. 
+      </p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Selected Works</h2>
+      </div>
+
+      <div class="grid">
+
+        <div class="card" onclick="openModal('work1.jpg.png')">
+          <img src="work1.jpg.png" alt="CFG Aisle Fin">
+          <div class="card-info">
+            <h3>CFG</h3>
+            <p>Aisle Fin</p>
+          </div>
+        </div>
+
+        <div class="card" onclick="openModal('work2.jpg.png')">
+          <img src="work2.jpg.png" alt="CFG Sampling Stand">
+          <div class="card-info">
+            <h3>CFG</h3>
+            <p>Sampling Stand</p>
+          </div>
+        </div>
+
+        <div class="card" onclick="openModal('work3.jpg.png')">
+          <img src="work3.jpg.png" alt="CFG Wobbler">
+          <div class="card-info">
+            <h3>CFG</h3>
+            <p>Wobbler</p>
+          </div>
+        </div>
+
+        <div class="card" onclick="openModal('work4.jpg.png')">
+          <img src="work4.jpg.png" alt="CFG Table Display">
+          <div class="card-info">
+            <h3>CFG</h3>
+            <p>Table Display</p>
+          </div>
+        </div>
+
+        <div class="card" onclick="openModal('work5.jpg.png')">
+          <img src="work5.jpg.png" alt="CFG Shelf Visual">
+          <div class="card-info">
+            <h3>CFG</h3>
+            <p>Shelf Visual</p>
+          </div>
+        </div>
+
+        <div class="card" onclick="openModal('work6.jpg.png')">
+          <img src="work6.jpg.png" alt="CFG Banner">
+          <div class="card-info">
+            <h3>CFG</h3>
+            <p>Banner</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="contact section">
+      <div class="section-head">
+        <h2>Contact</h2>
+      </div>
+
+      <div class="contact-links">
+        <a href="mailto:dukdulguun888@gmail.com" target="_blank">dukdulguun888@gmail.com</a>
+        <a href="https://www.instagram.com/__dukiiee/" target="_blank">instagram.com/__dukiiee</a>
+        <a href="tel:+97695959727">+976 95959727</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Dukiee Portfolio</p>
+  </footer>
+
+  <div id="modal" class="modal" onclick="closeModal()">
+    <img id="modalImg" src="" alt="Preview">
+  </div>
+
+  <script>
+    function openModal(src) {
+      const modal = document.getElementById("modal");
+      const modalImg = document.getElementById("modalImg");
+      modal.style.display = "flex";
+      modalImg.src = src;
+    }
+
+    function closeModal() {
+      document.getElementById("modal").style.display = "none";
+    }
+  </script>
 
 </body>
 </html>
