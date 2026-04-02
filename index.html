@@ -1,77 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Portfolio</title>
-
-<link rel="stylesheet" href="style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-</head>
-
-<body>
-
-<header>
-
-<h1>Dukiee</h1>
-
-<p>Graphic Designer</p>
-
-</header>
-
-
-
-<section class="about">
-
-<h2>About</h2>
-
-<p>
-Branding, poster design, merch visuals,
-social media design.
-</p>
-
-</section>
-
-
-
-
 <section class="works">
 
 <h2>Portfolio</h2>
 
-
 <div class="grid">
 
-<div class="item">
+<div class="item" onclick="openModal('work1.jpg.png')">
 <img src="work1.jpg.png">
 <div class="overlay">Project 1</div>
 </div>
 
-<div class="item">
+<div class="item" onclick="openModal('work2.jpg.png')">
 <img src="work2.jpg.png">
 <div class="overlay">Project 2</div>
 </div>
 
-<div class="item">
+<div class="item" onclick="openModal('work3.jpg.png')">
 <img src="work3.jpg.png">
 <div class="overlay">Project 3</div>
 </div>
 
-<div class="item">
+<div class="item" onclick="openModal('work4.jpg.png')">
 <img src="work4.jpg.png">
 <div class="overlay">Project 4</div>
 </div>
 
-<div class="item">
+<div class="item" onclick="openModal('work5.jpg.png')">
 <img src="work5.jpg.png">
 <div class="overlay">Project 5</div>
 </div>
 
-<div class="item">
+<div class="item" onclick="openModal('work6.jpg.png')">
 <img src="work6.jpg.png">
 <div class="overlay">Project 6</div>
 </div>
@@ -82,26 +40,29 @@ social media design.
 
 
 
+<div id="modal" class="modal" onclick="closeModal()">
 
-<section class="contact">
+<img id="modalImg">
 
-<h2>Contact</h2>
-
-<p>email@email.com</p>
-
-<p>@instagram</p>
-
-</section>
+</div>
 
 
 
-<footer>
+<script>
 
-© 2026 Portfolio
+function openModal(src){
 
-</footer>
+document.getElementById("modal").style.display="flex";
+
+document.getElementById("modalImg").src=src;
+
+}
 
 
+function closeModal(){
 
-</body>
-</html>
+document.getElementById("modal").style.display="none";
+
+}
+
+</script>
