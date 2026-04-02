@@ -1,105 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CFG Project</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CFG Project</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
+
+
 <body>
 
-  <header class="hero">
-    <div class="hero-inner">
-      <p class="eyebrow">Project Group</p>
-      <h1>CFG</h1>
-      <p class="subtitle">Campaign POSM Series</p>
-      <p class="intro">
-        Aisle fin, sampling stand, wobbler, table display, shelf visual, and banner applications.
-      </p>
-    </div>
-  </header>
 
-  <main class="container">
-    <section class="section">
-      <div class="section-head">
-        <h2>Project Items</h2>
-      </div>
 
-      <div class="grid">
+<header class="hero">
 
-        <div class="card" onclick="openModal('work1.jpg.png')">
-          <img src="work1.jpg.png" alt="CFG Aisle Fin">
-          <div class="card-info">
-            <h3>CFG</h3>
-            <p>Aisle Fin</p>
-          </div>
-        </div>
+<div class="hero-inner">
 
-        <div class="card" onclick="openModal('work2.jpg.png')">
-          <img src="work2.jpg.png" alt="CFG Sampling Stand">
-          <div class="card-info">
-            <h3>CFG</h3>
-            <p>Sampling Stand</p>
-          </div>
-        </div>
+<p class="eyebrow">Project Group</p>
 
-        <div class="card" onclick="openModal('work3.jpg.png')">
-          <img src="work3.jpg.png" alt="CFG Wobbler">
-          <div class="card-info">
-            <h3>CFG</h3>
-            <p>Wobbler</p>
-          </div>
-        </div>
+<h1>CFG</h1>
 
-        <div class="card" onclick="openModal('work4.jpg.png')">
-          <img src="work4.jpg.png" alt="CFG Table Display">
-          <div class="card-info">
-            <h3>CFG</h3>
-            <p>Table Display</p>
-          </div>
-        </div>
+<p class="subtitle">Campaign POSM Series</p>
 
-        <div class="card" onclick="openModal('work5.jpg.png')">
-          <img src="work5.jpg.png" alt="CFG Shelf Visual">
-          <div class="card-info">
-            <h3>CFG</h3>
-            <p>Shelf Visual</p>
-          </div>
-        </div>
+<p class="intro">
 
-        <div class="card" onclick="openModal('work6.jpg.png')">
-          <img src="work6.jpg.png" alt="CFG Banner">
-          <div class="card-info">
-            <h3>CFG</h3>
-            <p>Banner</p>
-          </div>
-        </div>
+Aisle fin, sampling stand, wobbler, table display, shelf visual,
+banner, poster stand and poster applications.
 
-      </div>
+</p>
 
-      <div class="back-wrap">
-        <a href="index.html" class="back-link">← Back to portfolio</a>
-      </div>
-    </section>
-  </main>
+</div>
 
-  <div id="modal" class="modal" onclick="closeModal()">
-    <img id="modalImg" src="" alt="Preview">
-  </div>
+</header>
 
-  <script>
-    function openModal(src) {
-      const modal = document.getElementById("modal");
-      const modalImg = document.getElementById("modalImg");
-      modal.style.display = "flex";
-      modalImg.src = src;
-    }
 
-    function closeModal() {
-      document.getElementById("modal").style.display = "none";
-    }
-  </script>
+
+<main class="container">
+
+
+
+<section class="section">
+
+<div class="section-head">
+
+<h2>Project Items</h2>
+
+</div>
+
+
+
+<div class="grid">
+
+
+
+<div class="card" onclick="openModal('work1.jpg.png')">
+
+<img src="work1.jpg.png">
+
+<div class="card-info">
+
+<h3>CFG</h3>
+
+<p>Aisle Fin</p>
+
+</div>
+
+</div>
+
+
+
+<div class="card" onclick="openModal('work2.jpg.png')">
+
+<img src="work2.jpg.png">
+
+<div class="card-info">
+
+<h3>CFG</h3>
+
+<p>Sampling Stand</p>
+
+</div>
+
+</div>
+
+
+
+<div class="card" onclick="openModal('work3.jpg.png')">
+
+<img src="work3.jpg.png">
+
+<div class="card-info">
+
+<h3>CFG</h3>
+
+<p>Wobbler</p>
+
+</div>
+
+</div>
+
+
+
+<div class="card" onclick="openModal('work4.jpg.png')">
+
+<img src="work4.jpg.png">
+
+<div class="card-info">
+
+<h3>CFG</h3>
+
+<p>Table Display</p>
+
+</div>
+
+</div>
+
+
+
+<div class="card" onclick="openModal('work5.jpg.png')">
+
+<img src="work5.jpg.png">
+
+<div class="card-info">
+
+<h3>CFG</h3>
+
+<p>Shelf Visual</p>
+
+</div>
+
+</div>
+
+
+
+<div class="card" onclick="openModal('work6.jpg.png')">
+
+<img src="work6.jpg.png">
+
+<div class="card-info">
+
+<h3>CFG</h3>
+
+<p>Banner</p>
+
+</div>
+
+</div>
+
+
+
+<div class="card" onclick="openModal('work7.jpg.png')">
+
+<img src="work7.jpg.png">
+
+<div class="card-info">
+
+<h3>CFG</h3>
+
+<p>Poster Stand</p>
+
+</div>
+
+</div>
+
+
+
+<div class="card" onclick="openModal('work8.jpg.png')">
+
+<img src="work8.jpg.png">
+
+<div class="card-info">
+
+<h3>CFG</h3>
+
+<p>Poster</p>
+
+</div>
+
+</div>
+
+
+
+<div class="card" onclick="openModal('work9.jpg.png')">
+
+<img src="work9.jpg.png">
+
+<div class="card-info">
+
+<h3>CFG</h3>
+
+<p>Poster</p>
+
+</div>
+
+</div>
+
+
+
+</div>
+
+
+
+<div class="back-wrap">
+
+<a href="index.html" class="back-link">
+
+← Back to portfolio
+
+</a>
+
+</div>
+
+
+
+</section>
+
+
+
+</main>
+
+
+
+<div id="modal" class="modal" onclick="closeModal()">
+
+<img id="modalImg">
+
+</div>
+
+
+
+<script>
+
+function openModal(src){
+
+document.getElementById("modal").style.display="flex";
+
+document.getElementById("modalImg").src=src;
+
+}
+
+
+
+function closeModal(){
+
+document.getElementById("modal").style.display="none";
+
+}
+
+</script>
+
+
 
 </body>
 </html>
