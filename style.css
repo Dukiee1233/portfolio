@@ -1,137 +1,24 @@
-body{
+.modal{
 
-font-family: Inter;
-margin:0;
-background:#0b0b0c;
-color:white;
-
-}
-
-
-
-header{
-
-text-align:center;
-padding:100px 20px;
-
-}
-
-
-
-h1{
-
-font-size:56px;
-margin:0;
-
-}
-
-
-
-h2{
-
-font-size:28px;
-margin-bottom:20px;
-
-}
-
-
-
-.about{
-
-text-align:center;
-padding:40px 20px;
-max-width:600px;
-margin:auto;
-opacity:0.8;
-
-}
-
-
-
-.works{
-
-padding:60px 20px;
-
-}
-
-
-
-.grid{
-
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:20px;
-max-width:1200px;
-margin:auto;
-
-}
-
-
-
-.item{
-
-position:relative;
-overflow:hidden;
-border-radius:14px;
-
-}
-
-
-
-.item img{
-
+display:none;
+position:fixed;
+top:0;
+left:0;
 width:100%;
-display:block;
-transition:0.4s;
+height:100%;
+background:rgba(0,0,0,0.9);
+justify-content:center;
+align-items:center;
+z-index:1000;
 
 }
 
 
 
-.item:hover img{
+.modal img{
 
-transform:scale(1.07);
-
-}
-
-
-
-.overlay{
-
-position:absolute;
-bottom:0;
-background:linear-gradient(transparent,black);
-width:100%;
-padding:20px;
-opacity:0;
-transition:0.3s;
-font-weight:600;
-
-}
-
-
-
-.item:hover .overlay{
-
-opacity:1;
-
-}
-
-
-
-.contact{
-
-text-align:center;
-padding:80px 20px;
-
-}
-
-
-
-footer{
-
-text-align:center;
-padding:40px;
-opacity:0.3;
+max-width:90%;
+max-height:90%;
+border-radius:12px;
 
 }
