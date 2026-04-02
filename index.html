@@ -49,20 +49,14 @@
 
 
 <script>
-
 function openModal(src){
-
-document.getElementById("modal").style.display="flex";
-
-document.getElementById("modalImg").src=src;
-
+  const modal = document.getElementById("modal");
+  const modalImg = document.getElementById("modalImg");
+  modal.style.display = "flex";
+  modalImg.src = src;
 }
-
 
 function closeModal(){
-
-document.getElementById("modal").style.display="none";
-
+  document.getElementById("modal").style.display = "none";
 }
-
 </script>
