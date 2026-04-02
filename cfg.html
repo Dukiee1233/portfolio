@@ -1,129 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>CFG Project</title>
-
-<link rel="stylesheet" href="style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CFG Project</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-
-
 <body>
 
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">Project Group</p>
+      <h1>CFG</h1>
+      <p class="subtitle">Campaign POSM Series</p>
+      <p class="intro">
+        Aisle fin, sampling stand, wobbler, table display, shelf visual, and banner applications.
+      </p>
+    </div>
+  </header>
 
-<header class="hero">
+  <main class="container">
+    <section class="section">
+      <div class="section-head">
+        <h2>Project Items</h2>
+      </div>
 
-<h1>CFG</h1>
+      <div class="grid">
 
-<p>Campaign POSM Series</p>
+        <div class="card" onclick="openModal('work1.jpg.png')">
+          <img src="work1.jpg.png" alt="CFG Aisle Fin">
+          <div class="card-info">
+            <h3>CFG</h3>
+            <p>Aisle Fin</p>
+          </div>
+        </div>
 
-</header>
+        <div class="card" onclick="openModal('work2.jpg.png')">
+          <img src="work2.jpg.png" alt="CFG Sampling Stand">
+          <div class="card-info">
+            <h3>CFG</h3>
+            <p>Sampling Stand</p>
+          </div>
+        </div>
 
+        <div class="card" onclick="openModal('work3.jpg.png')">
+          <img src="work3.jpg.png" alt="CFG Wobbler">
+          <div class="card-info">
+            <h3>CFG</h3>
+            <p>Wobbler</p>
+          </div>
+        </div>
 
+        <div class="card" onclick="openModal('work4.jpg.png')">
+          <img src="work4.jpg.png" alt="CFG Table Display">
+          <div class="card-info">
+            <h3>CFG</h3>
+            <p>Table Display</p>
+          </div>
+        </div>
 
-<section class="grid">
+        <div class="card" onclick="openModal('work5.jpg.png')">
+          <img src="work5.jpg.png" alt="CFG Shelf Visual">
+          <div class="card-info">
+            <h3>CFG</h3>
+            <p>Shelf Visual</p>
+          </div>
+        </div>
 
+        <div class="card" onclick="openModal('work6.jpg.png')">
+          <img src="work6.jpg.png" alt="CFG Banner">
+          <div class="card-info">
+            <h3>CFG</h3>
+            <p>Banner</p>
+          </div>
+        </div>
 
+      </div>
 
-<div class="card">
+      <div class="back-wrap">
+        <a href="index.html" class="back-link">← Back to portfolio</a>
+      </div>
+    </section>
+  </main>
 
-<img src="work1.jpg.png">
+  <div id="modal" class="modal" onclick="closeModal()">
+    <img id="modalImg" src="" alt="Preview">
+  </div>
 
-<div class="card-info">
+  <script>
+    function openModal(src) {
+      const modal = document.getElementById("modal");
+      const modalImg = document.getElementById("modalImg");
+      modal.style.display = "flex";
+      modalImg.src = src;
+    }
 
-<h3>Aisle Fin</h3>
-
-</div>
-
-</div>
-
-
-
-<div class="card">
-
-<img src="work2.jpg.png">
-
-<div class="card-info">
-
-<h3>Sampling Stand</h3>
-
-</div>
-
-</div>
-
-
-
-<div class="card">
-
-<img src="work3.jpg.png">
-
-<div class="card-info">
-
-<h3>Wobbler</h3>
-
-</div>
-
-</div>
-
-
-
-<div class="card">
-
-<img src="work4.jpg.png">
-
-<div class="card-info">
-
-<h3>Table Display</h3>
-
-</div>
-
-</div>
-
-
-
-<div class="card">
-
-<img src="work5.jpg.png">
-
-<div class="card-info">
-
-<h3>Shelf Visual</h3>
-
-</div>
-
-</div>
-
-
-
-<div class="card">
-
-<img src="work6.jpg.png">
-
-<div class="card-info">
-
-<h3>Banner</h3>
-
-</div>
-
-</div>
-
-
-
-</section>
-
-
-
-<a href="index.html" style="display:block;text-align:center;margin:40px;">
-← back
-</a>
-
-
+    function closeModal() {
+      document.getElementById("modal").style.display = "none";
+    }
+  </script>
 
 </body>
 </html>
