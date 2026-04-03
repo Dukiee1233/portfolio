@@ -1,56 +1,105 @@
-<div class="grid">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chinggis Beer Project</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
 
-  <div class="card" onclick="openModal('CB work1.jpg.jpg')">
-    <img src="CB work1.jpg.jpg">
-    <div class="card-info">
-      <h3>Chinggis Beer</h3>
-      <p>CB work-1 Poster</p>
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">Project Group</p>
+      <h1>Chinggis Beer</h1>
+      <p class="subtitle">Campaign Visual Series</p>
+      <p class="intro">
+        Poster, shelf design, tray design, and gift voucher series.
+      </p>
     </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <div class="section-head">
+        <h2>Project Items</h2>
+      </div>
+
+      <div class="grid">
+
+        <div class="card" onclick="openModal('CB work1.jpg.jpg')">
+          <img src="CB work1.jpg.jpg" alt="Chinggis Beer Poster">
+          <div class="card-info">
+            <h3>Chinggis Beer</h3>
+            <p>CB work-1 Poster</p>
+          </div>
+        </div>
+
+        <div class="card" onclick="openModal('CB work2.jpg.png')">
+          <img src="CB work2.jpg.png" alt="Chinggis Beer Shelf design">
+          <div class="card-info">
+            <h3>Chinggis Beer</h3>
+            <p>CB work-2 Shelf design</p>
+          </div>
+        </div>
+
+        <div class="card" onclick="openModal('CB work3.jpg.png')">
+          <img src="CB work3.jpg.png" alt="Chinggis Beer Tray Design">
+          <div class="card-info">
+            <h3>Chinggis Beer</h3>
+            <p>CB work-3 Tray Design</p>
+          </div>
+        </div>
+
+        <div class="card" onclick="openModal('CB work4.jpg.jpg')">
+          <img src="CB work4.jpg.jpg" alt="Chinggis Beer Gift voucher">
+          <div class="card-info">
+            <h3>Chinggis Beer</h3>
+            <p>CB work-4 Gift voucher</p>
+          </div>
+        </div>
+
+        <div class="card" onclick="openModal('CB work5.jpg.jpg')">
+          <img src="CB work5.jpg.jpg" alt="Chinggis Beer Gift voucher">
+          <div class="card-info">
+            <h3>Chinggis Beer</h3>
+            <p>CB work-5 Gift voucher</p>
+          </div>
+        </div>
+
+        <div class="card" onclick="openModal('CB work6.jpg.jpg')">
+          <img src="CB work6.jpg.jpg" alt="Chinggis Beer Gift voucher">
+          <div class="card-info">
+            <h3>Chinggis Beer</h3>
+            <p>CB work-6 Gift voucher</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="back-wrap">
+        <a href="index.html" class="back-link">← Back to portfolio</a>
+      </div>
+    </section>
+  </main>
+
+  <div id="modal" class="modal" onclick="closeModal()">
+    <img id="modalImg" src="" alt="Preview">
   </div>
 
+  <script>
+    function openModal(src) {
+      const modal = document.getElementById("modal");
+      const modalImg = document.getElementById("modalImg");
+      modal.style.display = "flex";
+      modalImg.src = src;
+    }
 
-  <div class="card" onclick="openModal('CB work2.jpg.png')">
-    <img src="CB work2.jpg.png">
-    <div class="card-info">
-      <h3>Chinggis Beer</h3>
-      <p>CB work-2 Shelf design</p>
-    </div>
-  </div>
+    function closeModal() {
+      document.getElementById("modal").style.display = "none";
+    }
+  </script>
 
-
-  <div class="card" onclick="openModal('CB work3.jpg.png')">
-    <img src="CB work3.jpg.png">
-    <div class="card-info">
-      <h3>Chinggis Beer</h3>
-      <p>CB work-3 Tray Design</p>
-    </div>
-  </div>
-
-
-  <div class="card" onclick="openModal('CB work4.jpg.jpg')">
-    <img src="CB work4.jpg.jpg">
-    <div class="card-info">
-      <h3>Chinggis Beer</h3>
-      <p>CB work-4 Gift voucher</p>
-    </div>
-  </div>
-
-
-  <div class="card" onclick="openModal('CB work5.jpg.jpg')">
-    <img src="CB work5.jpg.jpg">
-    <div class="card-info">
-      <h3>Chinggis Beer</h3>
-      <p>CB work-5 Gift voucher</p>
-    </div>
-  </div>
-
-
-  <div class="card" onclick="openModal('CB work6.jpg.jpg')">
-    <img src="CB work6.jpg.jpg">
-    <div class="card-info">
-      <h3>Chinggis Beer</h3>
-      <p>CB work-6 Gift voucher</p>
-    </div>
-  </div>
-
-</div>
+</body>
+</html>
