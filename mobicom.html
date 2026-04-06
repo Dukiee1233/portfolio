@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mobicom Project</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+
+
+<header class="hero">
+
+<div class="hero-inner">
+
+<p class="eyebrow">Project Group</p>
+
+<h1>Mobicom</h1>
+
+<p class="subtitle">Campaign Design</p>
+
+<p class="intro">
+
+Social media design and campaign visual series.
+
+</p>
+
+</div>
+
+</header>
+
+
+
+<main class="container">
+
+<section class="section">
+
+<div class="section-head">
+
+<h2>Project Items</h2>
+
+</div>
+
+
+
+<div class="grid">
+
+
+
+<div class="card" onclick="openModal('mb1.jpg')">
+<img src="mb1.jpg">
+<div class="card-info">
+<h3>Mobicom</h3>
+<p>Design 1</p>
+</div>
+</div>
+
+
+<div class="card" onclick="openModal('mb2.jpg')">
+<img src="mb2.jpg">
+<div class="card-info">
+<h3>Mobicom</h3>
+<p>Design 2</p>
+</div>
+</div>
+
+
+<div class="card" onclick="openModal('mb3.jpg')">
+<img src="mb3.jpg">
+<div class="card-info">
+<h3>Mobicom</h3>
+<p>Design 3</p>
+</div>
+</div>
+
+
+<div class="card" onclick="openModal('mb4.jpg')">
+<img src="mb4.jpg">
+<div class="card-info">
+<h3>Mobicom</h3>
+<p>Design 4</p>
+</div>
+</div>
+
+
+<div class="card" onclick="openModal('mb5.jpg')">
+<img src="mb5.jpg">
+<div class="card-info">
+<h3>Mobicom</h3>
+<p>Design 5</p>
+</div>
+</div>
+
+
+<div class="card" onclick="openModal('mb6.jpg')">
+<img src="mb6.jpg">
+<div class="card-info">
+<h3>Mobicom</h3>
+<p>Design 6</p>
+</div>
+</div>
+
+
+<div class="card" onclick="openModal('mb7.jpg')">
+<img src="mb7.jpg">
+<div class="card-info">
+<h3>Mobicom</h3>
+<p>Design 7</p>
+</div>
+</div>
+
+
+<div class="card" onclick="openModal('mb8.jpg')">
+<img src="mb8.jpg">
+<div class="card-info">
+<h3>Mobicom</h3>
+<p>Design 8</p>
+</div>
+</div>
+
+
+
+</div>
+
+
+
+<div class="back-wrap">
+
+<a href="index.html" class="back-link">
+
+← Back to portfolio
+
+</a>
+
+</div>
+
+
+
+</section>
+
+</main>
+
+
+
+<div id="modal" class="modal" onclick="closeModal()">
+
+<img id="modalImg">
+
+</div>
+
+
+
+<script>
+
+function openModal(src){
+
+document.getElementById("modal").style.display="flex";
+
+document.getElementById("modalImg").src=src;
+
+}
+
+function closeModal(){
+
+document.getElementById("modal").style.display="none";
+
+}
+
+</script>
+
+
+
+</body>
+</html>
