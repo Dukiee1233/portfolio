@@ -1,36 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Mobicom Project</title>
+<title>Mobicom</title>
 
 <link rel="stylesheet" href="style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 </head>
 
 
-<body>
 
+<body>
 
 
 <header class="hero">
 
 <div class="hero-inner">
 
-<p class="eyebrow">Project Group</p>
-
 <h1>Mobicom</h1>
 
-<p class="subtitle">Campaign Design</p>
+<p class="subtitle">
 
-<p class="intro">
-
-Social media design and campaign visual series.
+Campaign Design
 
 </p>
 
@@ -40,90 +35,79 @@ Social media design and campaign visual series.
 
 
 
-<main class="container">
-
-<section class="section">
-
-<div class="section-head">
-
-<h2>Project Items</h2>
-
-</div>
-
-
+<div class="container">
 
 <div class="grid">
 
 
 
-<div class="card" onclick="openModal('mb1.jpg')">
+<div class="card">
 <img src="mb1.jpg">
 <div class="card-info">
-<h3>Mobicom</h3>
-<p>Design 1</p>
+Design 1
 </div>
 </div>
 
 
-<div class="card" onclick="openModal('mb2.jpg')">
+
+<div class="card">
 <img src="mb2.jpg">
 <div class="card-info">
-<h3>Mobicom</h3>
-<p>Design 2</p>
+Design 2
 </div>
 </div>
 
 
-<div class="card" onclick="openModal('mb3.jpg')">
+
+<div class="card">
 <img src="mb3.jpg">
 <div class="card-info">
-<h3>Mobicom</h3>
-<p>Design 3</p>
+Design 3
 </div>
 </div>
 
 
-<div class="card" onclick="openModal('mb4.jpg')">
+
+<div class="card">
 <img src="mb4.jpg">
 <div class="card-info">
-<h3>Mobicom</h3>
-<p>Design 4</p>
+Design 4
 </div>
 </div>
 
 
-<div class="card" onclick="openModal('mb5.jpg')">
+
+<div class="card">
 <img src="mb5.jpg">
 <div class="card-info">
-<h3>Mobicom</h3>
-<p>Design 5</p>
+Design 5
 </div>
 </div>
 
 
-<div class="card" onclick="openModal('mb6.jpg')">
+
+<div class="card">
 <img src="mb6.jpg">
 <div class="card-info">
-<h3>Mobicom</h3>
-<p>Design 6</p>
+Design 6
 </div>
 </div>
 
 
-<div class="card" onclick="openModal('mb7.jpg')">
+
+<div class="card">
 <img src="mb7.jpg">
 <div class="card-info">
-<h3>Mobicom</h3>
-<p>Design 7</p>
+Design 7
 </div>
 </div>
 
 
-<div class="card" onclick="openModal('mb8.jpg')">
+
+<div class="card">
 <img src="mb8.jpg">
 <div class="card-info">
-<h3>Mobicom</h3>
-<p>Design 8</p>
+Design 8
 </div>
 </div>
 
@@ -133,49 +117,15 @@ Social media design and campaign visual series.
 
 
 
-<div class="back-wrap">
+<a href="index.html">
 
-<a href="index.html" class="back-link">
-
-← Back to portfolio
+Back
 
 </a>
 
-</div>
 
-
-
-</section>
-
-</main>
-
-
-
-<div id="modal" class="modal" onclick="closeModal()">
-
-<img id="modalImg">
 
 </div>
-
-
-
-<script>
-
-function openModal(src){
-
-document.getElementById("modal").style.display="flex";
-
-document.getElementById("modalImg").src=src;
-
-}
-
-function closeModal(){
-
-document.getElementById("modal").style.display="none";
-
-}
-
-</script>
 
 
 
