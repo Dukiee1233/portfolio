@@ -1,292 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IG Reel</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .video-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:24px;
+      margin-top:36px;
+    }
 
-<title>IG Reel</title>
+    .video-card{
+      background:#0d0f12;
+      border:1px solid rgba(255,255,255,0.07);
+      border-radius:24px;
+      overflow:hidden;
+      transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease;
+    }
 
-<link rel="stylesheet" href="style.css">
+    .video-card:hover{
+      transform:translateY(-6px);
+      border-color:rgba(255,255,255,0.14);
+      box-shadow:0 18px 50px rgba(0,0,0,0.32);
+    }
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    .video-stage{
+      position:relative;
+      width:100%;
+      aspect-ratio:9/16;
+      background:#111;
+      overflow:hidden;
+    }
 
-<style>
+    .video-cover{
+      position:absolute;
+      inset:0;
+      cursor:pointer;
+    }
 
-.video-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:24px;
-margin-top:40px;
-}
+    .video-cover img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      transition:transform .35s ease;
+    }
 
-.video-card{
-background:#0d0f12;
-border:1px solid rgba(255,255,255,0.08);
-border-radius:22px;
-overflow:hidden;
-}
+    .video-card:hover .video-cover img{
+      transform:scale(1.04);
+    }
 
-.video-stage{
-position:relative;
-aspect-ratio:9/16;
-background:#111;
-}
+    .play-badge{
+      position:absolute;
+      inset:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(to top, rgba(0,0,0,.22), rgba(0,0,0,.08));
+    }
 
-.video-cover{
-position:absolute;
-inset:0;
-cursor:pointer;
-}
+    .play-circle{
+      width:78px;
+      height:78px;
+      border-radius:50%;
+      background:rgba(255,255,255,.14);
+      backdrop-filter:blur(6px);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border:1px solid rgba(255,255,255,.2);
+      transition:transform .25s ease;
+    }
 
-.video-cover img{
-width:100%;
-height:100%;
-object-fit:cover;
-}
+    .video-cover:hover .play-circle{
+      transform:scale(1.08);
+    }
 
-.play-btn{
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-width:70px;
-height:70px;
-border-radius:50%;
-background:rgba(255,255,255,.15);
-display:flex;
-align-items:center;
-justify-content:center;
-}
+    .play-triangle{
+      width:0;
+      height:0;
+      border-left:22px solid white;
+      border-top:14px solid transparent;
+      border-bottom:14px solid transparent;
+      margin-left:5px;
+    }
 
-.play-btn:after{
-content:"";
-border-left:18px solid white;
-border-top:12px solid transparent;
-border-bottom:12px solid transparent;
-margin-left:4px;
-}
+    .inline-frame{
+      width:100%;
+      height:100%;
+      border:none;
+      display:none;
+      background:#000;
+    }
 
-iframe{
-width:100%;
-height:100%;
-border:none;
-display:none;
-}
+    .video-info{
+      padding:16px 16px 18px;
+    }
 
-.video-info{
-padding:16px;
-}
+    .video-info h3{
+      margin:0;
+      font-size:18px;
+      font-weight:700;
+      letter-spacing:-0.02em;
+    }
 
-.video-info h3{
-margin:0;
-font-size:18px;
-}
+    .video-info p{
+      margin:8px 0 0;
+      font-size:14px;
+      color:rgba(255,255,255,0.58);
+      line-height:1.5;
+    }
 
-.video-info p{
-margin-top:6px;
-color:#888;
-font-size:14px;
-}
+    @media (max-width: 1024px){
+      .video-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+    }
 
-@media(max-width:900px){
-.video-grid{
-grid-template-columns:repeat(2,1fr);
-}
-}
-
-@media(max-width:600px){
-.video-grid{
-grid-template-columns:1fr;
-}
-}
-
-</style>
-
+    @media (max-width: 640px){
+      .video-grid{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<header class="hero">
-<div class="hero-inner">
-
-<p class="eyebrow">Video</p>
-<h1>IG Reel</h1>
-
-<p class="subtitle">
-Instagram reel motion works
-</p>
-
-</div>
-</header>
-
-
-
-<main class="container">
-
-<section class="section">
-
-<div class="video-grid">
-
-
-
-<!-- reel 1 -->
-
-<div class="video-card">
-
-<div class="video-stage">
-
-<div class="video-cover"
-onclick="playVideo('frame1','cover1','https://www.instagram.com/reel/DPfpz0sFDvs/embed')"
-id="cover1">
-
-<img src="video1-cover.jpg">
-
-<div class="play-btn"></div>
-
-</div>
-
-<iframe id="frame1"></iframe>
-
-</div>
-
-<div class="video-info">
-
-<h3>IG Reel 01</h3>
-<p>Motion Visual</p>
-
-</div>
-
-</div>
-
-
-
-<!-- reel 2 -->
-
-<div class="video-card">
-
-<div class="video-stage">
-
-<div class="video-cover"
-onclick="playVideo('frame2','cover2','https://www.instagram.com/reel/DP2s2bnkueh/embed')"
-id="cover2">
-
-<img src="video1-cover.jpg">
-
-<div class="play-btn"></div>
-
-</div>
-
-<iframe id="frame2"></iframe>
-
-</div>
-
-<div class="video-info">
-
-<h3>IG Reel 02</h3>
-<p>Smart Education</p>
-
-</div>
-
-</div>
-
-
-
-<!-- reel 3 -->
-
-<div class="video-card">
-
-<div class="video-stage">
-
-<div class="video-cover"
-onclick="playVideo('frame3','cover3','https://www.instagram.com/reel/DPLDtrxEgX_/embed')"
-id="cover3">
-
-<img src="video1-cover.jpg">
-
-<div class="play-btn"></div>
-
-</div>
-
-<iframe id="frame3"></iframe>
-
-</div>
-
-<div class="video-info">
-
-<h3>IG Reel 03</h3>
-<p>Tech Week</p>
-
-</div>
-
-</div>
-
-
-
-<!-- reel 4 -->
-
-<div class="video-card">
-
-<div class="video-stage">
-
-<div class="video-cover"
-onclick="playVideo('frame4','cover4','https://www.instagram.com/reel/DOdOYDWEvlo/embed')"
-id="cover4">
-
-<img src="video1-cover.jpg">
-
-<div class="play-btn"></div>
-
-</div>
-
-<iframe id="frame4"></iframe>
-
-</div>
-
-<div class="video-info">
-
-<h3>IG Reel 04</h3>
-<p>Social Campaign</p>
-
-</div>
-
-</div>
-
-
-
-</div>
-
-
-
-<div class="back-wrap">
-
-<a href="video.html" class="back-link">
-← Back to Video
-</a>
-
-</div>
-
-
-
-</section>
-
-</main>
-
-
-
-<script>
-
-function playVideo(frameId,coverId,url){
-
-document.getElementById(frameId).src=url
-document.getElementById(frameId).style.display="block"
-
-document.getElementById(coverId).style.display="none"
-
-}
-
-</script>
-
-
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">Video</p>
+      <h1>IG Reel</h1>
+      <p class="subtitle">Instagram reel motion works</p>
+      <p class="intro">
+        Inline Instagram reel previews inside the page.
+      </p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <div class="section-head">
+        <h2>IG Reel Projects</h2>
+      </div>
+
+      <div class="video-grid">
+
+        <div class="video-card">
+          <div class="video-stage">
+            <div class="video-cover" id="cover1" onclick="playVideo('frame1','cover1','https://www.instagram.com/reel/DPfpz0sFDvs/embed')">
+              <img src="video1-cover.jpg" alt="IG Reel 01">
+              <div class="play-badge">
+                <div class="play-circle"><div class="play-triangle"></div></div>
+              </div>
+            </div>
+            <iframe id="frame1" class="inline-frame" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <h3>Mobicom 1</h3>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="video-stage">
+            <div class="video-cover" id="cover2" onclick="playVideo('frame2','cover2','https://www.instagram.com/reel/DP2s2bnkueh/embed')">
+              <img src="video1-cover.jpg" alt="IG Reel 02">
+              <div class="play-badge">
+                <div class="play-circle"><div class="play-triangle"></div></div>
+              </div>
+            </div>
+            <iframe id="frame2" class="inline-frame" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <h3>Mobicom 2</h3>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="video-stage">
+            <div class="video-cover" id="cover3" onclick="playVideo('frame3','cover3','https://www.instagram.com/reel/DPLDtrxEgX_/embed')">
+              <img src="video1-cover.jpg" alt="IG Reel 03">
+              <div class="play-badge">
+                <div class="play-circle"><div class="play-triangle"></div></div>
+              </div>
+            </div>
+            <iframe id="frame3" class="inline-frame" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <h3>Mobicom 3</h3>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="video-stage">
+            <div class="video-cover" id="cover4" onclick="playVideo('frame4','cover4','https://www.instagram.com/reel/DOdOYDWEvlo/embed')">
+              <img src="video1-cover.jpg" alt="IG Reel 04">
+              <div class="play-badge">
+                <div class="play-circle"><div class="play-triangle"></div></div>
+              </div>
+            </div>
+            <iframe id="frame4" class="inline-frame" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <h3>Mobicom 4</h3>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="back-wrap">
+        <a href="video.html" class="back-link">← Back to Video</a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function playVideo(frameId, coverId, url){
+      document.getElementById(frameId).src = url;
+      document.getElementById(frameId).style.display = "block";
+      document.getElementById(coverId).style.display = "none";
+    }
+  </script>
 
 </body>
 </html>
