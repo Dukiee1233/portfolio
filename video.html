@@ -6,121 +6,142 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Video Works</title>
+<title>Video</title>
 
 <link rel="stylesheet" href="style.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:80px 20px;
+}
+
+.video-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:40px;
+margin-top:60px;
+}
+
+.video-card{
+border-radius:18px;
+overflow:hidden;
+background:#111;
+border:1px solid #222;
+padding:20px;
+transition:.3s;
+}
+
+.video-card:hover{
+transform:translateY(-6px);
+border:1px solid #333;
+}
+
+iframe{
+width:100%;
+height:520px;
+border:none;
+border-radius:12px;
+background:black;
+}
+
+h1{
+font-size:48px;
+margin-bottom:10px;
+}
+
+p{
+color:#888;
+}
+
+</style>
 
 </head>
+
 
 
 <body>
 
 
-<header class="hero">
 
-<div class="hero-inner">
-
-<p class="eyebrow">Category</p>
+<div class="container">
 
 <h1>Video</h1>
 
-<p class="subtitle">Motion / Reel / Animation</p>
-
-<p class="intro">
-
-Social animation, promo video, reel design.
-
-</p>
-
-</div>
-
-</header>
+<p>Reel / Motion / Animation</p>
 
 
 
-<main class="container">
-
-<section class="section">
-
-<div class="section-head">
-
-<h2>Video Projects</h2>
-
-</div>
+<div class="video-grid">
 
 
 
-<div class="grid">
+<!-- reel 1 -->
 
-
-
-<!-- youtube -->
-
-<div class="card">
+<div class="video-card">
 
 <iframe
-
-src="https://www.youtube.com/embed/VIDEO_ID?autoplay=0&mute=1"
-
+src="https://www.instagram.com/reel/DPfpz0sFDvs/embed"
 allowfullscreen>
-
 </iframe>
 
-<div class="card-info">
-
-<h3>Promo Animation</h3>
-
-<p>YouTube</p>
-
-</div>
+<p>Instagram Reel</p>
 
 </div>
 
 
 
-<!-- instagram reel -->
+<!-- reel 2 -->
 
-<div class="card">
+<div class="video-card">
 
 <iframe
+src="https://www.instagram.com/reel/DP2s2bnkueh/embed"
+allowfullscreen>
+</iframe>
 
-src="https://www.instagram.com/reel/REEL_ID/embed"
-
-></iframe>
-
-<div class="card-info">
-
-<h3>Reel Design</h3>
-
-<p>Instagram</p>
-
-</div>
+<p>Instagram Reel</p>
 
 </div>
 
 
 
+<!-- reel 3 -->
+
+<div class="video-card">
+
+<iframe
+src="https://www.instagram.com/reel/DPLDtrxEgX_/embed"
+allowfullscreen>
+</iframe>
+
+<p>Instagram Reel</p>
+
 </div>
 
 
 
-<div class="back-wrap">
+<!-- reel 4 -->
 
-<a href="index.html" class="back-link">
+<div class="video-card">
 
-← Back to portfolio
+<iframe
+src="https://www.instagram.com/reel/DOdOYDWEvlo/embed"
+allowfullscreen>
+</iframe>
 
-</a>
+<p>Instagram Reel</p>
 
 </div>
 
 
 
-</section>
+</div>
 
-</main>
+</div>
+
 
 
 </body>
