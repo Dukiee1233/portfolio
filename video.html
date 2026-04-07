@@ -14,17 +14,13 @@
       margin-top:36px;
     }
 
-    .video-link{
-      text-decoration:none;
-      color:inherit;
-    }
-
     .video-card{
       background:#0d0f12;
       border:1px solid rgba(255,255,255,0.07);
       border-radius:24px;
       overflow:hidden;
       transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease;
+      cursor:pointer;
     }
 
     .video-card:hover{
@@ -58,7 +54,7 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      background:linear-gradient(to top, rgba(0,0,0,.25), rgba(0,0,0,.1));
+      background:linear-gradient(to top, rgba(0,0,0,.2), rgba(0,0,0,.08));
     }
 
     .play-circle{
@@ -117,6 +113,55 @@
       transform:translateX(-2px);
     }
 
+    .video-modal{
+      display:none;
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.86);
+      z-index:2000;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+    }
+
+    .video-modal.active{
+      display:flex;
+    }
+
+    .video-modal-box{
+      position:relative;
+      width:min(420px, 92vw);
+      background:#0d0f12;
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:24px;
+      padding:14px;
+      box-shadow:0 24px 80px rgba(0,0,0,0.42);
+    }
+
+    .video-close{
+      position:absolute;
+      top:-14px;
+      right:-14px;
+      width:42px;
+      height:42px;
+      border:none;
+      border-radius:50%;
+      background:#fff;
+      color:#111;
+      font-size:24px;
+      line-height:1;
+      cursor:pointer;
+      box-shadow:0 10px 30px rgba(0,0,0,0.25);
+    }
+
+    .video-frame{
+      width:100%;
+      aspect-ratio:9/16;
+      border:none;
+      border-radius:18px;
+      background:#000;
+    }
+
     @media (max-width: 1024px){
       .video-grid{
         grid-template-columns:repeat(2,minmax(0,1fr));
@@ -151,73 +196,65 @@
 
       <div class="video-grid">
 
-        <a href="https://www.instagram.com/reels/DPfpz0sFDvs/" target="_blank" class="video-link">
-          <div class="video-card">
-            <div class="video-thumb">
-              <img src="video1-cover.jpg" alt="Instagram Reel 1">
-              <div class="play-badge">
-                <div class="play-circle">
-                  <div class="play-triangle"></div>
-                </div>
+        <div class="video-card" onclick="openVideo('https://www.instagram.com/reel/DPfpz0sFDvs/embed')">
+          <div class="video-thumb">
+            <img src="video1-cover.jpg" alt="Instagram Reel 1">
+            <div class="play-badge">
+              <div class="play-circle">
+                <div class="play-triangle"></div>
               </div>
             </div>
-            <div class="video-info">
-              <h3>Instagram Reel 01</h3>
-              <p>Motion / Event Visual</p>
-            </div>
           </div>
-        </a>
+          <div class="video-info">
+            <h3>Instagram Reel 01</h3>
+            <p>Motion / Event Visual</p>
+          </div>
+        </div>
 
-        <a href="https://www.instagram.com/reels/DP2s2bnkueh/" target="_blank" class="video-link">
-          <div class="video-card">
-            <div class="video-thumb">
-              <img src="video2-cover.jpg" alt="Instagram Reel 2">
-              <div class="play-badge">
-                <div class="play-circle">
-                  <div class="play-triangle"></div>
-                </div>
+        <div class="video-card" onclick="openVideo('https://www.instagram.com/reel/DP2s2bnkueh/embed')">
+          <div class="video-thumb">
+            <img src="video2-cover.jpg" alt="Instagram Reel 2">
+            <div class="play-badge">
+              <div class="play-circle">
+                <div class="play-triangle"></div>
               </div>
             </div>
-            <div class="video-info">
-              <h3>Instagram Reel 02</h3>
-              <p>Motion / Smart Education</p>
-            </div>
           </div>
-        </a>
+          <div class="video-info">
+            <h3>Instagram Reel 02</h3>
+            <p>Motion / Smart Education</p>
+          </div>
+        </div>
 
-        <a href="https://www.instagram.com/reels/DPLDtrxEgX_/" target="_blank" class="video-link">
-          <div class="video-card">
-            <div class="video-thumb">
-              <img src="video3-cover.jpg" alt="Instagram Reel 3">
-              <div class="play-badge">
-                <div class="play-circle">
-                  <div class="play-triangle"></div>
-                </div>
+        <div class="video-card" onclick="openVideo('https://www.instagram.com/reel/DPLDtrxEgX_/embed')">
+          <div class="video-thumb">
+            <img src="video3-cover.jpg" alt="Instagram Reel 3">
+            <div class="play-badge">
+              <div class="play-circle">
+                <div class="play-triangle"></div>
               </div>
             </div>
-            <div class="video-info">
-              <h3>Instagram Reel 03</h3>
-              <p>Motion / Tech Week</p>
-            </div>
           </div>
-        </a>
+          <div class="video-info">
+            <h3>Instagram Reel 03</h3>
+            <p>Motion / Tech Week</p>
+          </div>
+        </div>
 
-        <a href="https://www.instagram.com/reels/DOdOYDWEvlo/" target="_blank" class="video-link">
-          <div class="video-card">
-            <div class="video-thumb">
-              <img src="video4-cover.jpg" alt="Instagram Reel 4">
-              <div class="play-badge">
-                <div class="play-circle">
-                  <div class="play-triangle"></div>
-                </div>
+        <div class="video-card" onclick="openVideo('https://www.instagram.com/reel/DOdOYDWEvlo/embed')">
+          <div class="video-thumb">
+            <img src="video4-cover.jpg" alt="Instagram Reel 4">
+            <div class="play-badge">
+              <div class="play-circle">
+                <div class="play-triangle"></div>
               </div>
             </div>
-            <div class="video-info">
-              <h3>Instagram Reel 04</h3>
-              <p>Motion / Social Campaign</p>
-            </div>
           </div>
-        </a>
+          <div class="video-info">
+            <h3>Instagram Reel 04</h3>
+            <p>Motion / Social Campaign</p>
+          </div>
+        </div>
 
       </div>
 
@@ -226,6 +263,38 @@
       </div>
     </section>
   </main>
+
+  <div id="videoModal" class="video-modal" onclick="closeVideo(event)">
+    <div class="video-modal-box" onclick="event.stopPropagation()">
+      <button class="video-close" onclick="closeVideo()">×</button>
+      <iframe id="videoFrame" class="video-frame" src="" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <script>
+    function openVideo(url){
+      const modal = document.getElementById('videoModal');
+      const frame = document.getElementById('videoFrame');
+      frame.src = url;
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeVideo(event){
+      if (event && event.target && event.target.closest('.video-modal-box')) return;
+      const modal = document.getElementById('videoModal');
+      const frame = document.getElementById('videoFrame');
+      frame.src = '';
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape'){
+        closeVideo();
+      }
+    });
+  </script>
 
 </body>
 </html>
