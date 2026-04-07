@@ -20,7 +20,6 @@
       border-radius:24px;
       overflow:hidden;
       transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease;
-      cursor:pointer;
     }
 
     .video-card:hover{
@@ -29,15 +28,21 @@
       box-shadow:0 18px 50px rgba(0,0,0,0.32);
     }
 
-    .video-thumb{
+    .video-stage{
       position:relative;
       width:100%;
       aspect-ratio:9/16;
-      overflow:hidden;
       background:#111;
+      overflow:hidden;
     }
 
-    .video-thumb img{
+    .video-cover{
+      position:absolute;
+      inset:0;
+      cursor:pointer;
+    }
+
+    .video-cover img{
       width:100%;
       height:100%;
       object-fit:cover;
@@ -45,7 +50,7 @@
       transition:transform .35s ease;
     }
 
-    .video-card:hover .video-thumb img{
+    .video-card:hover .video-cover img{
       transform:scale(1.04);
     }
 
@@ -68,6 +73,11 @@
       align-items:center;
       justify-content:center;
       border:1px solid rgba(255,255,255,.2);
+      transition:transform .25s ease;
+    }
+
+    .video-cover:hover .play-circle{
+      transform:scale(1.08);
     }
 
     .play-triangle{
@@ -77,6 +87,14 @@
       border-top:14px solid transparent;
       border-bottom:14px solid transparent;
       margin-left:5px;
+    }
+
+    .inline-frame{
+      width:100%;
+      height:100%;
+      border:none;
+      display:none;
+      background:#000;
     }
 
     .video-info{
@@ -114,55 +132,6 @@
       transform:translateX(-2px);
     }
 
-    .video-modal{
-      display:none;
-      position:fixed;
-      inset:0;
-      background:rgba(0,0,0,0.86);
-      z-index:2000;
-      align-items:center;
-      justify-content:center;
-      padding:24px;
-    }
-
-    .video-modal.active{
-      display:flex;
-    }
-
-    .video-modal-box{
-      position:relative;
-      width:min(420px, 92vw);
-      background:#0d0f12;
-      border:1px solid rgba(255,255,255,0.08);
-      border-radius:24px;
-      padding:14px;
-      box-shadow:0 24px 80px rgba(0,0,0,0.42);
-    }
-
-    .video-close{
-      position:absolute;
-      top:-14px;
-      right:-14px;
-      width:42px;
-      height:42px;
-      border:none;
-      border-radius:50%;
-      background:#fff;
-      color:#111;
-      font-size:24px;
-      line-height:1;
-      cursor:pointer;
-      box-shadow:0 10px 30px rgba(0,0,0,0.25);
-    }
-
-    .video-frame{
-      width:100%;
-      aspect-ratio:9/16;
-      border:none;
-      border-radius:18px;
-      background:#000;
-    }
-
     @media (max-width: 1024px){
       .video-grid{
         grid-template-columns:repeat(2,minmax(0,1fr));
@@ -184,7 +153,7 @@
       <h1>Video</h1>
       <p class="subtitle">Reel / Motion / Animation</p>
       <p class="intro">
-        Instagram reel works and motion-based visual content.
+        Instagram reel works
       </p>
     </div>
   </header>
@@ -197,63 +166,75 @@
 
       <div class="video-grid">
 
-        <div class="video-card" onclick="openVideo('https://www.instagram.com/reel/DPfpz0sFDvs/embed')">
-          <div class="video-thumb">
-            <img src="video1-cover.jpg" alt="Instagram Reel 1">
-            <div class="play-badge">
-              <div class="play-circle">
-                <div class="play-triangle"></div>
+        <div class="video-card">
+          <div class="video-stage">
+            <div class="video-cover" onclick="playInline('frame1','cover1','https://www.instagram.com/reel/DPfpz0sFDvs/embed')"
+                 id="cover1">
+              <img src="video1-cover.jpg" alt="Instagram Reel 1">
+              <div class="play-badge">
+                <div class="play-circle">
+                  <div class="play-triangle"></div>
+                </div>
               </div>
             </div>
+            <iframe id="frame1" class="inline-frame" allowfullscreen></iframe>
           </div>
           <div class="video-info">
-            <h3>Instagram Reel 01</h3>
-            <p>Motion / Event Visual</p>
+            <h3>Mobicom reel 01</h3>
           </div>
         </div>
 
-        <div class="video-card" onclick="openVideo('https://www.instagram.com/reel/DP2s2bnkueh/embed')">
-          <div class="video-thumb">
-            <img src="video1-cover.jpg" alt="Instagram Reel 2">
-            <div class="play-badge">
-              <div class="play-circle">
-                <div class="play-triangle"></div>
+        <div class="video-card">
+          <div class="video-stage">
+            <div class="video-cover" onclick="playInline('frame2','cover2','https://www.instagram.com/reel/DP2s2bnkueh/embed')"
+                 id="cover2">
+              <img src="video1-cover.jpg" alt="Instagram Reel 2">
+              <div class="play-badge">
+                <div class="play-circle">
+                  <div class="play-triangle"></div>
+                </div>
               </div>
             </div>
+            <iframe id="frame2" class="inline-frame" allowfullscreen></iframe>
           </div>
           <div class="video-info">
-            <h3>Instagram Reel 02</h3>
-            <p>Motion / Smart Education</p>
+            <h3>Mobicom reel 02</h3>
           </div>
         </div>
 
-        <div class="video-card" onclick="openVideo('https://www.instagram.com/reel/DPLDtrxEgX_/embed')">
-          <div class="video-thumb">
-            <img src="video1-cover.jpg" alt="Instagram Reel 3">
-            <div class="play-badge">
-              <div class="play-circle">
-                <div class="play-triangle"></div>
+        <div class="video-card">
+          <div class="video-stage">
+            <div class="video-cover" onclick="playInline('frame3','cover3','https://www.instagram.com/reel/DPLDtrxEgX_/embed')"
+                 id="cover3">
+              <img src="video1-cover.jpg" alt="Instagram Reel 03">
+              <div class="play-badge">
+                <div class="play-circle">
+                  <div class="play-triangle"></div>
+                </div>
               </div>
             </div>
+            <iframe id="frame3" class="inline-frame" allowfullscreen></iframe>
           </div>
           <div class="video-info">
-            <h3>Instagram Reel 03</h3>
-            <p>Motion / Tech Week</p>
+            <h3>Mobicom reel 03</h3>
           </div>
         </div>
 
-        <div class="video-card" onclick="openVideo('https://www.instagram.com/reel/DOdOYDWEvlo/embed')">
-          <div class="video-thumb">
-            <img src="video1-cover.jpg" alt="Instagram Reel 4">
-            <div class="play-badge">
-              <div class="play-circle">
-                <div class="play-triangle"></div>
+        <div class="video-card">
+          <div class="video-stage">
+            <div class="video-cover" onclick="playInline('frame4','cover4','https://www.instagram.com/reel/DOdOYDWEvlo/embed')"
+                 id="cover4">
+              <img src="video1-cover.jpg" alt="Instagram Reel 04">
+              <div class="play-badge">
+                <div class="play-circle">
+                  <div class="play-triangle"></div>
+                </div>
               </div>
             </div>
+            <iframe id="frame4" class="inline-frame" allowfullscreen></iframe>
           </div>
           <div class="video-info">
-            <h3>Instagram Reel 04</h3>
-            <p>Motion / Social Campaign</p>
+            <h3>Mobicom reel 04</h3>
           </div>
         </div>
 
@@ -265,36 +246,15 @@
     </section>
   </main>
 
-  <div id="videoModal" class="video-modal" onclick="closeVideo(event)">
-    <div class="video-modal-box" onclick="event.stopPropagation()">
-      <button class="video-close" onclick="closeVideo()">×</button>
-      <iframe id="videoFrame" class="video-frame" src="" allowfullscreen></iframe>
-    </div>
-  </div>
-
   <script>
-    function openVideo(url){
-      const modal = document.getElementById('videoModal');
-      const frame = document.getElementById('videoFrame');
+    function playInline(frameId, coverId, url){
+      const frame = document.getElementById(frameId);
+      const cover = document.getElementById(coverId);
+
       frame.src = url;
-      modal.classList.add('active');
-      document.body.style.overflow = 'hidden';
+      frame.style.display = 'block';
+      cover.style.display = 'none';
     }
-
-    function closeVideo(event){
-      if (event && event.target && event.target.closest('.video-modal-box')) return;
-      const modal = document.getElementById('videoModal');
-      const frame = document.getElementById('videoFrame');
-      frame.src = '';
-      modal.classList.remove('active');
-      document.body.style.overflow = '';
-    }
-
-    document.addEventListener('keydown', function(e){
-      if(e.key === 'Escape'){
-        closeVideo();
-      }
-    });
   </script>
 
 </body>
