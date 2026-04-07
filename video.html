@@ -6,154 +6,14 @@
   <title>Video</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    .video-grid{
-      display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
-      gap:24px;
-      margin-top:36px;
-    }
-
-    .video-card{
-      background:#0d0f12;
-      border:1px solid rgba(255,255,255,0.07);
-      border-radius:24px;
-      overflow:hidden;
-      transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease;
-    }
-
-    .video-card:hover{
-      transform:translateY(-6px);
-      border-color:rgba(255,255,255,0.14);
-      box-shadow:0 18px 50px rgba(0,0,0,0.32);
-    }
-
-    .video-stage{
-      position:relative;
-      width:100%;
-      aspect-ratio:9/16;
-      background:#111;
-      overflow:hidden;
-    }
-
-    .video-cover{
-      position:absolute;
-      inset:0;
-      cursor:pointer;
-    }
-
-    .video-cover img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-      transition:transform .35s ease;
-    }
-
-    .video-card:hover .video-cover img{
-      transform:scale(1.04);
-    }
-
-    .play-badge{
-      position:absolute;
-      inset:0;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background:linear-gradient(to top, rgba(0,0,0,.22), rgba(0,0,0,.08));
-    }
-
-    .play-circle{
-      width:78px;
-      height:78px;
-      border-radius:50%;
-      background:rgba(255,255,255,.14);
-      backdrop-filter:blur(6px);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      border:1px solid rgba(255,255,255,.2);
-      transition:transform .25s ease;
-    }
-
-    .video-cover:hover .play-circle{
-      transform:scale(1.08);
-    }
-
-    .play-triangle{
-      width:0;
-      height:0;
-      border-left:22px solid white;
-      border-top:14px solid transparent;
-      border-bottom:14px solid transparent;
-      margin-left:5px;
-    }
-
-    .inline-frame{
-      width:100%;
-      height:100%;
-      border:none;
-      display:none;
-      background:#000;
-    }
-
-    .video-info{
-      padding:16px 16px 18px;
-    }
-
-    .video-info h3{
-      margin:0;
-      font-size:18px;
-      font-weight:700;
-      letter-spacing:-0.02em;
-    }
-
-    .video-info p{
-      margin:8px 0 0;
-      font-size:14px;
-      color:rgba(255,255,255,0.58);
-      line-height:1.5;
-    }
-
-    .back-wrap{
-      margin-top:28px;
-    }
-
-    .back-link{
-      display:inline-block;
-      text-decoration:none;
-      color:#fff;
-      opacity:.8;
-      transition:.25s ease;
-    }
-
-    .back-link:hover{
-      opacity:1;
-      transform:translateX(-2px);
-    }
-
-    @media (max-width: 1024px){
-      .video-grid{
-        grid-template-columns:repeat(2,minmax(0,1fr));
-      }
-    }
-
-    @media (max-width: 640px){
-      .video-grid{
-        grid-template-columns:1fr;
-      }
-    }
-  </style>
 </head>
 <body>
 
   <header class="hero">
     <div class="hero-inner">
-      <p class="eyebrow">Category</p>
+      <p class="eyebrow">Project Group</p>
       <h1>Video</h1>
-      <p class="subtitle">Reel / Motion / Animation</p>
       <p class="intro">
-        Instagram reel works
       </p>
     </div>
   </header>
@@ -161,83 +21,19 @@
   <main class="container">
     <section class="section">
       <div class="section-head">
-        <h2>Video Projects</h2>
+        <h2>Selected Video Projects</h2>
       </div>
 
-      <div class="video-grid">
-
-        <div class="video-card">
-          <div class="video-stage">
-            <div class="video-cover" onclick="playInline('frame1','cover1','https://www.instagram.com/reel/DPfpz0sFDvs/embed')"
-                 id="cover1">
-              <img src="video1-cover.jpg" alt="Instagram Reel 1">
-              <div class="play-badge">
-                <div class="play-circle">
-                  <div class="play-triangle"></div>
-                </div>
-              </div>
-            </div>
-            <iframe id="frame1" class="inline-frame" allowfullscreen></iframe>
+      <div class="project-grid">
+        <a href="igreel.html" class="project-card">
+          <div class="project-thumb">
+            <img src="video1-cover.jpg" alt="IG Reel">
           </div>
-          <div class="video-info">
-            <h3>Mobicom reel 01</h3>
+          <div class="project-info">
+            <h3>IG Reel</h3>
+            <p>Instagram Reel Series</p>
           </div>
-        </div>
-
-        <div class="video-card">
-          <div class="video-stage">
-            <div class="video-cover" onclick="playInline('frame2','cover2','https://www.instagram.com/reel/DP2s2bnkueh/embed')"
-                 id="cover2">
-              <img src="video1-cover.jpg" alt="Instagram Reel 2">
-              <div class="play-badge">
-                <div class="play-circle">
-                  <div class="play-triangle"></div>
-                </div>
-              </div>
-            </div>
-            <iframe id="frame2" class="inline-frame" allowfullscreen></iframe>
-          </div>
-          <div class="video-info">
-            <h3>Mobicom reel 02</h3>
-          </div>
-        </div>
-
-        <div class="video-card">
-          <div class="video-stage">
-            <div class="video-cover" onclick="playInline('frame3','cover3','https://www.instagram.com/reel/DPLDtrxEgX_/embed')"
-                 id="cover3">
-              <img src="video1-cover.jpg" alt="Instagram Reel 03">
-              <div class="play-badge">
-                <div class="play-circle">
-                  <div class="play-triangle"></div>
-                </div>
-              </div>
-            </div>
-            <iframe id="frame3" class="inline-frame" allowfullscreen></iframe>
-          </div>
-          <div class="video-info">
-            <h3>Mobicom reel 03</h3>
-          </div>
-        </div>
-
-        <div class="video-card">
-          <div class="video-stage">
-            <div class="video-cover" onclick="playInline('frame4','cover4','https://www.instagram.com/reel/DOdOYDWEvlo/embed')"
-                 id="cover4">
-              <img src="video1-cover.jpg" alt="Instagram Reel 04">
-              <div class="play-badge">
-                <div class="play-circle">
-                  <div class="play-triangle"></div>
-                </div>
-              </div>
-            </div>
-            <iframe id="frame4" class="inline-frame" allowfullscreen></iframe>
-          </div>
-          <div class="video-info">
-            <h3>Mobicom reel 04</h3>
-          </div>
-        </div>
-
+        </a>
       </div>
 
       <div class="back-wrap">
@@ -245,17 +41,6 @@
       </div>
     </section>
   </main>
-
-  <script>
-    function playInline(frameId, coverId, url){
-      const frame = document.getElementById(frameId);
-      const cover = document.getElementById(coverId);
-
-      frame.src = url;
-      frame.style.display = 'block';
-      cover.style.display = 'none';
-    }
-  </script>
 
 </body>
 </html>
