@@ -1,73 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>YouTube Playlist</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YouTube Playlist</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .yt-hero-card{
+      max-width:1200px;
+      margin:0 auto;
+      background:#0d0f12;
+      border:1px solid rgba(255,255,255,0.07);
+      border-radius:28px;
+      overflow:hidden;
+    }
 
-<link rel="stylesheet" href="style.css">
+    .yt-cover{
+      width:100%;
+      height:560px;
+      object-fit:cover;
+      display:block;
+      background:#111;
+    }
 
-<style>
+    .yt-content{
+      padding:28px 28px 32px;
+    }
 
-.yt-wrap{
-max-width:1100px;
-margin:auto;
-}
+    .yt-content h2{
+      margin:0;
+      font-size:32px;
+      font-weight:800;
+      letter-spacing:-0.03em;
+    }
 
-.yt-frame{
-width:100%;
-aspect-ratio:16/9;
-border:none;
-border-radius:20px;
-background:black;
-box-shadow:0 20px 60px rgba(0,0,0,0.5);
-}
+    .yt-content p{
+      margin:14px 0 0;
+      max-width:760px;
+      font-size:16px;
+      line-height:1.75;
+      color:rgba(255,255,255,0.62);
+    }
 
-</style>
+    .yt-actions{
+      margin-top:24px;
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+    }
 
+    .yt-button{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:14px 22px;
+      border-radius:16px;
+      text-decoration:none;
+      background:#ffffff;
+      color:#111;
+      font-weight:700;
+      transition:transform .25s ease, opacity .25s ease;
+    }
+
+    .yt-button:hover{
+      transform:translateY(-2px);
+      opacity:.92;
+    }
+
+    @media (max-width: 768px){
+      .yt-cover{
+        height:360px;
+      }
+
+      .yt-content{
+        padding:22px 22px 26px;
+      }
+
+      .yt-content h2{
+        font-size:26px;
+      }
+    }
+
+    @media (max-width: 640px){
+      .yt-cover{
+        height:260px;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<header class="hero">
-<div class="hero-inner">
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">Video</p>
+      <h1>YouTube Playlist</h1>
+      <p class="subtitle">Editing / Motion / Visual Works</p>
+      <p class="intro">
+        A selected playlist of edited video works and visual motion content.
+      </p>
+    </div>
+  </header>
 
-<p class="eyebrow">Video</p>
+  <main class="container">
+    <section class="section">
 
-<h1>YouTube</h1>
+      <div class="yt-hero-card">
+        <img src="youtube-cover.jpg" alt="YouTube Playlist Cover" class="yt-cover">
 
-<p class="subtitle">
-Motion / Editing / Visual
-</p>
+        <div class="yt-content">
+          <h2>Selected Video Playlist</h2>
+          <p>
+            This playlist includes my edited video works, motion visuals, and creative video content published on YouTube.
+          </p>
 
-<p class="intro">
-Selected video works playlist
-</p>
+          <div class="yt-actions">
+            <a
+              href="https://www.youtube.com/playlist?list=PLF1ZFusRHmEkUq1vrz4Sao_ZT9QomHK5f"
+              target="_blank"
+              class="yt-button"
+            >
+              Open Playlist on YouTube
+            </a>
+          </div>
+        </div>
+      </div>
 
-</div>
-</header>
+      <div class="back-wrap">
+        <a href="video.html" class="back-link">← Back to Video</a>
+      </div>
 
-
-<main class="container">
-
-<div class="yt-wrap">
-
-<iframe
-class="yt-frame"
-src="https://www.youtube.com/embed/videoseries?list=PLF1ZFusRHmEkUq1vrz4Sao_ZT9QomHK5f"
-allowfullscreen>
-</iframe>
-
-</div>
-
-
-<div class="back-wrap">
-<a href="video.html" class="back-link">
-← Back to Video
-</a>
-</div>
-
-</main>
+    </section>
+  </main>
 
 </body>
 </html>
