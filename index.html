@@ -17,6 +17,7 @@ body{
   font-family:Inter, sans-serif;
   background:#05070a;
   color:#fff;
+  overflow-x:hidden;
 }
 
 .container{
@@ -26,10 +27,37 @@ body{
 }
 
 .hero{
+  position:relative;
   margin-bottom:44px;
+  padding:12px 0 8px;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  top:-80px;
+  left:-60px;
+  width:340px;
+  height:340px;
+  background:radial-gradient(circle, rgba(79,120,255,.22) 0%, rgba(79,120,255,0) 70%);
+  pointer-events:none;
+  filter:blur(10px);
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  top:-40px;
+  left:180px;
+  width:280px;
+  height:280px;
+  background:radial-gradient(circle, rgba(130,56,255,.15) 0%, rgba(130,56,255,0) 72%);
+  pointer-events:none;
+  filter:blur(12px);
 }
 
 .hero-label{
+  position:relative;
   margin:0 0 14px 0;
   font-size:11px;
   letter-spacing:.24em;
@@ -38,14 +66,16 @@ body{
 }
 
 .hero h1{
+  position:relative;
   margin:0;
-  font-size:clamp(48px,8vw,92px);
+  font-size:clamp(52px,8vw,98px);
   line-height:.92;
   font-weight:900;
-  letter-spacing:-.05em;
+  letter-spacing:-.06em;
 }
 
 .hero-subtitle{
+  position:relative;
   margin:18px 0 0 0;
   font-size:18px;
   font-weight:600;
@@ -53,6 +83,7 @@ body{
 }
 
 .hero-desc{
+  position:relative;
   margin:14px 0 0 0;
   max-width:620px;
   font-size:15px;
@@ -89,10 +120,19 @@ body{
   box-shadow:0 18px 40px rgba(0,0,0,.32);
 }
 
+.card.featured{
+  grid-column:span 2;
+}
+
 .thumb{
+  position:relative;
   aspect-ratio:4/3;
   background:#10151b;
   overflow:hidden;
+}
+
+.card.featured .thumb{
+  aspect-ratio:16/10;
 }
 
 .thumb img{
@@ -107,6 +147,31 @@ body{
   transform:scale(1.04);
 }
 
+.video-badge{
+  position:absolute;
+  inset:auto 18px 18px auto;
+  width:62px;
+  height:62px;
+  border-radius:50%;
+  background:rgba(255,255,255,.16);
+  border:1px solid rgba(255,255,255,.24);
+  backdrop-filter:blur(8px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 8px 24px rgba(0,0,0,.25);
+}
+
+.video-badge::before{
+  content:"";
+  width:0;
+  height:0;
+  border-left:18px solid #fff;
+  border-top:11px solid transparent;
+  border-bottom:11px solid transparent;
+  margin-left:4px;
+}
+
 .info{
   padding:18px 18px 20px;
 }
@@ -116,6 +181,10 @@ body{
   font-size:18px;
   font-weight:800;
   letter-spacing:-.03em;
+}
+
+.card.featured .info h3{
+  font-size:24px;
 }
 
 .info p{
@@ -128,12 +197,9 @@ body{
   margin-top:56px;
   padding:30px;
   border-radius:28px;
-  background:
-    linear-gradient(180deg, rgba(18,24,32,.96) 0%, rgba(10,14,20,.96) 100%);
+  background:linear-gradient(180deg, rgba(18,24,32,.96) 0%, rgba(10,14,20,.96) 100%);
   border:1px solid rgba(255,255,255,.09);
-  box-shadow:
-    0 20px 60px rgba(0,0,0,.28),
-    inset 0 1px 0 rgba(255,255,255,.03);
+  box-shadow:0 20px 60px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.03);
 }
 
 .contact-top{
@@ -196,6 +262,10 @@ body{
     grid-template-columns:repeat(2,1fr);
   }
 
+  .card.featured{
+    grid-column:span 2;
+  }
+
   .contact-grid{
     grid-template-columns:1fr;
   }
@@ -204,6 +274,10 @@ body{
 @media(max-width:600px){
   .grid{
     grid-template-columns:1fr;
+  }
+
+  .card.featured{
+    grid-column:span 1;
   }
 
   .container{
@@ -235,7 +309,6 @@ body{
     <h1>Dukiee</h1>
     <p class="hero-subtitle">Video Editor, Graphic Designer</p>
     <p class="hero-desc">
-      Branding, campaign visuals, social media design, motion content and curated video projects.
     </p>
   </section>
 
@@ -243,7 +316,7 @@ body{
 
   <div class="grid">
 
-    <a href="cfg.html" class="card">
+    <a href="cfg.html" class="card featured">
       <div class="thumb">
         <img src="work1.jpg.png" alt="CFG">
       </div>
@@ -276,6 +349,7 @@ body{
     <a href="video.html" class="card">
       <div class="thumb">
         <img src="video-cover.jpg.jpg" alt="Video">
+        <div class="video-badge"></div>
       </div>
       <div class="info">
         <h3>Video</h3>
