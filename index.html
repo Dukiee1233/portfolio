@@ -32,48 +32,67 @@ color:inherit;
 .container{
 width:1100px;
 margin:auto;
-padding:40px 0;
+padding:40px 0 80px;
 }
 
-/* ---------- animated background ---------- */
+/* ---------- gradient animated BG ---------- */
 
-.bg-blur{
+.bg1{
 position:fixed;
-width:600px;
-height:600px;
+width:700px;
+height:700px;
 background:radial-gradient(circle,#ff3c3c,#4d2bff);
-filter:blur(160px);
+filter:blur(170px);
 opacity:.35;
-top:40%;
-left:55%;
+top:50%;
+left:65%;
 transform:translate(-50%,-50%);
-z-index:-1;
-animation:moveBg 12s ease-in-out infinite alternate;
+z-index:-2;
+animation:bgMove1 14s ease-in-out infinite alternate;
 }
 
-@keyframes moveBg{
-0%{ transform:translate(-50%,-50%) scale(1); }
-100%{ transform:translate(-40%,-60%) scale(1.2); }
+.bg2{
+position:fixed;
+width:500px;
+height:500px;
+background:radial-gradient(circle,#1e90ff,#ff0080);
+filter:blur(140px);
+opacity:.25;
+top:20%;
+left:20%;
+z-index:-2;
+animation:bgMove2 18s ease-in-out infinite alternate;
 }
 
-/* ---------- header ---------- */
+@keyframes bgMove1{
+0%{ transform:translate(-50%,-50%) scale(1);}
+100%{ transform:translate(-40%,-60%) scale(1.25);}
+}
+
+@keyframes bgMove2{
+0%{ transform:translate(0,0) scale(1);}
+100%{ transform:translate(60px,80px) scale(1.15);}
+}
+
+/* ---------- hero ---------- */
 
 .hero{
 margin-bottom:40px;
 }
 
 .hero h1{
-font-size:56px;
+font-size:64px;
 font-weight:800;
 margin:0;
-background:linear-gradient(90deg,#fff,#aaa);
+
+background:linear-gradient(90deg,#ffffff,#9aa4b2);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
 
 .hero p{
-color:#aaa;
-margin-top:10px;
+margin-top:8px;
+color:#9aa4b2;
 }
 
 /* ---------- grid ---------- */
@@ -84,7 +103,7 @@ grid-template-columns:repeat(3,1fr);
 gap:28px;
 }
 
-/* ---------- card ---------- */
+/* ---------- cards ---------- */
 
 .card{
 background:#0b1118;
@@ -102,7 +121,7 @@ border:1px solid rgba(255,255,255,.15);
 
 .card img{
 width:100%;
-height:220px;
+height:230px;
 object-fit:cover;
 display:block;
 }
@@ -117,24 +136,29 @@ font-size:18px;
 }
 
 .card p{
-margin:6px 0 0;
+margin-top:6px;
 font-size:13px;
-color:#888;
+color:#8a94a6;
 }
 
-/* ---------- video icon ---------- */
+/* ---------- play icon ---------- */
 
 .play-icon{
 position:absolute;
 bottom:18px;
 right:18px;
+
 width:42px;
 height:42px;
+
 border-radius:50%;
+
 background:rgba(255,255,255,.08);
+
 display:flex;
 align-items:center;
 justify-content:center;
+
 backdrop-filter:blur(10px);
 }
 
@@ -148,10 +172,17 @@ margin-left:3px;
 
 .contact{
 margin-top:70px;
-padding:30px;
-border-radius:18px;
-background:linear-gradient(180deg,#0b1118,#070b10);
-border:1px solid rgba(255,255,255,.05);
+padding:35px;
+
+border-radius:20px;
+
+background:linear-gradient(180deg,#0b1118,#06090f);
+
+border:1px solid rgba(255,255,255,.06);
+
+box-shadow:
+0 0 0 1px rgba(255,255,255,.03),
+0 20px 60px rgba(0,0,0,.6);
 }
 
 .contact h2{
@@ -162,25 +193,42 @@ margin-bottom:20px;
 .contact-grid{
 display:grid;
 grid-template-columns:repeat(3,1fr);
-gap:18px;
+gap:20px;
 }
 
 .contact-box{
+
 background:#0b1118;
-padding:16px;
+
+padding:18px;
+
 border-radius:12px;
+
 border:1px solid rgba(255,255,255,.05);
+
+transition:.25s;
+}
+
+.contact-box:hover{
+border:1px solid rgba(255,255,255,.15);
 }
 
 .contact-box span{
+
 font-size:12px;
-color:#777;
+
+color:#667085;
+
 display:block;
-margin-bottom:5px;
+
+margin-bottom:6px;
 }
 
 .contact-box strong{
+
 font-size:14px;
+
+color:#fff;
 }
 
 /* ---------- responsive ---------- */
@@ -188,7 +236,7 @@ font-size:14px;
 @media(max-width:900px){
 
 .container{
-width:90%;
+width:92%;
 }
 
 .grid{
@@ -200,7 +248,7 @@ grid-template-columns:1fr;
 }
 
 .hero h1{
-font-size:36px;
+font-size:38px;
 }
 
 }
@@ -210,13 +258,16 @@ font-size:36px;
 </head>
 
 
+
 <body>
 
-<div class="bg-blur"></div>
+<div class="bg1"></div>
+<div class="bg2"></div>
+
+
 
 <div class="container">
 
-<!-- hero -->
 <div class="hero">
 
 <h1>Dukiee</h1>
@@ -225,10 +276,10 @@ font-size:36px;
 </div>
 
 
-<!-- projects -->
+
 <div class="grid">
 
-<a class="card" href="#">
+<a class="card">
 
 <img src="cfg.jpg">
 
@@ -241,7 +292,7 @@ font-size:36px;
 
 
 
-<a class="card" href="#">
+<a class="card">
 
 <img src="chinggis.jpg">
 
@@ -254,7 +305,7 @@ font-size:36px;
 
 
 
-<a class="card" href="#">
+<a class="card">
 
 <img src="mobicom.jpg">
 
@@ -281,11 +332,11 @@ font-size:36px;
 </a>
 
 
+
 </div>
 
 
 
-<!-- contact -->
 <div class="contact">
 
 <h2>Let's work together</h2>
@@ -293,21 +344,34 @@ font-size:36px;
 <div class="contact-grid">
 
 <div class="contact-box">
+
 <span>Email</span>
+
 <strong>dukduulguun888@gmail.com</strong>
+
 </div>
 
 
+
 <div class="contact-box">
+
 <span>Instagram</span>
+
 <strong>instagram.com/__dukiee</strong>
+
 </div>
+
 
 
 <div class="contact-box">
+
 <span>Phone</span>
+
 <strong>+976 95959727</strong>
+
 </div>
+
+
 
 </div>
 
