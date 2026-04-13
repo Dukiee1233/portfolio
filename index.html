@@ -31,6 +31,18 @@
       background:var(--bg);
       color:var(--text);
       overflow-x:hidden;
+      animation:pageFade .9s cubic-bezier(.22,.61,.36,1);
+    }
+
+    @keyframes pageFade{
+      from{
+        opacity:0;
+        transform:translateY(12px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
     }
 
     .bg{
@@ -46,7 +58,7 @@
       height:720px;
       border-radius:50%;
       filter:blur(170px);
-      opacity:.34;
+      opacity:.32;
       mix-blend-mode:screen;
       animation:float 18s ease-in-out infinite alternate;
     }
@@ -68,7 +80,7 @@
       background:#7c3aed;
       top:38%;
       left:56%;
-      opacity:.18;
+      opacity:.16;
       animation-duration:28s;
     }
 
@@ -92,7 +104,7 @@
     .grain{
       position:fixed;
       inset:0;
-      opacity:.045;
+      opacity:.04;
       z-index:-3;
       pointer-events:none;
       background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.8' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
@@ -103,7 +115,7 @@
       width:360px;
       height:360px;
       border-radius:50%;
-      background:radial-gradient(circle, rgba(110,145,255,.16), rgba(110,145,255,0) 70%);
+      background:radial-gradient(circle, rgba(110,145,255,.14), rgba(110,145,255,0) 70%);
       pointer-events:none;
       z-index:-2;
       transform:translate(-9999px,-9999px);
@@ -119,7 +131,6 @@
 
     .hero{
       margin-bottom:44px;
-      position:relative;
     }
 
     .hero-label{
@@ -176,17 +187,18 @@
       border-radius:22px;
       overflow:hidden;
       transition:
-        transform .28s ease,
-        border-color .28s ease,
-        box-shadow .28s ease,
-        background .28s ease;
+        transform .5s cubic-bezier(.22,.61,.36,1),
+        border-color .35s ease,
+        box-shadow .45s ease,
+        background .35s ease;
       box-shadow:0 8px 22px rgba(0,0,0,.16);
+      will-change:transform;
     }
 
     .card:hover{
-      transform:translateY(-6px);
+      transform:translateY(-8px);
       border-color:var(--line-hover);
-      box-shadow:0 20px 46px rgba(0,0,0,.34);
+      box-shadow:0 24px 52px rgba(0,0,0,.34);
     }
 
     .card::after{
@@ -198,7 +210,7 @@
       height:100%;
       background:linear-gradient(120deg, transparent, rgba(255,255,255,.14), transparent);
       transform:skewX(-18deg);
-      transition:left .8s ease;
+      transition:left .9s cubic-bezier(.22,.61,.36,1);
       pointer-events:none;
     }
 
@@ -218,11 +230,12 @@
       height:100%;
       object-fit:cover;
       display:block;
-      transition:transform .4s ease;
+      transition:transform .7s cubic-bezier(.22,.61,.36,1);
+      transform:scale(1.001);
     }
 
     .card:hover .thumb img{
-      transform:scale(1.04);
+      transform:scale(1.06);
     }
 
     .info{
@@ -256,6 +269,16 @@
       border:1px solid rgba(255,255,255,.22);
       backdrop-filter:blur(8px);
       box-shadow:0 8px 18px rgba(0,0,0,.22);
+      transition:
+        transform .35s cubic-bezier(.22,.61,.36,1),
+        background .25s ease,
+        border-color .25s ease;
+    }
+
+    .card:hover .play{
+      transform:scale(1.08);
+      background:rgba(255,255,255,.16);
+      border-color:rgba(255,255,255,.3);
     }
 
     .play::after{
@@ -306,13 +329,13 @@
       border-radius:16px;
       padding:18px;
       transition:
-        transform .22s ease,
+        transform .28s cubic-bezier(.22,.61,.36,1),
         border-color .22s ease,
         background .22s ease;
     }
 
     .box:hover{
-      transform:translateY(-3px);
+      transform:translateY(-4px);
       border-color:rgba(255,255,255,.13);
       background:rgba(255,255,255,.045);
     }
@@ -331,6 +354,19 @@
       font-size:15px;
       font-weight:600;
       word-break:break-word;
+    }
+
+    .reveal{
+      opacity:0;
+      transform:translateY(30px);
+      transition:
+        opacity .9s cubic-bezier(.22,.61,.36,1),
+        transform .9s cubic-bezier(.22,.61,.36,1);
+    }
+
+    .reveal.active{
+      opacity:1;
+      transform:translateY(0);
     }
 
     @media (max-width: 980px){
@@ -387,19 +423,19 @@
 
   <div class="container">
 
-    <section class="hero">
+    <section class="hero reveal">
       <p class="hero-label">Portfolio</p>
       <h1>Dukiee</h1>
-      <p class="hero-subtitle">Video Editor, Graphic Designer</p>
+      <p class="hero-subtitle">Video Editor & Graphic Designer</p>
       <p class="hero-desc">
       </p>
     </section>
 
-    <h2 class="section-title">Selected Projects</h2>
+    <h2 class="section-title reveal">Selected Projects</h2>
 
     <div class="grid">
 
-      <a href="cfg.html" class="card">
+      <a href="cfg.html" class="card reveal">
         <div class="thumb">
           <img src="work1.jpg.png" alt="CFG">
         </div>
@@ -409,7 +445,7 @@
         </div>
       </a>
 
-      <a href="chinggis.html" class="card">
+      <a href="chinggis.html" class="card reveal">
         <div class="thumb">
           <img src="CB work1.jpg.jpg" alt="Chinggis Beer">
         </div>
@@ -419,7 +455,7 @@
         </div>
       </a>
 
-      <a href="mobicom.html" class="card">
+      <a href="mobicom.html" class="card reveal">
         <div class="thumb">
           <img src="mb1.jpg.jpeg" alt="Mobicom">
         </div>
@@ -429,7 +465,7 @@
         </div>
       </a>
 
-      <a href="video.html" class="card">
+      <a href="video.html" class="card reveal">
         <div class="thumb">
           <img src="video-cover.jpg.jpg" alt="Video">
           <div class="play"></div>
@@ -442,7 +478,7 @@
 
     </div>
 
-    <section class="contact">
+    <section class="contact reveal">
       <p class="contact-label">Contact</p>
       <h2>Let’s work together</h2>
 
@@ -472,6 +508,20 @@
     document.addEventListener("mousemove", (e) => {
       glow.style.transform = `translate(${e.clientX - 180}px, ${e.clientY - 180}px)`;
     });
+
+    const reveals = document.querySelectorAll(".reveal");
+
+    const revealOnScroll = () => {
+      reveals.forEach((el) => {
+        const top = el.getBoundingClientRect().top;
+        if (top < window.innerHeight - 60) {
+          el.classList.add("active");
+        }
+      });
+    };
+
+    revealOnScroll();
+    window.addEventListener("scroll", revealOnScroll);
   </script>
 
 </body>
