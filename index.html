@@ -120,19 +120,11 @@ body{
   box-shadow:0 18px 40px rgba(0,0,0,.32);
 }
 
-.card.featured{
-  grid-column:span 2;
-}
-
 .thumb{
   position:relative;
   aspect-ratio:4/3;
   background:#10151b;
   overflow:hidden;
-}
-
-.card.featured .thumb{
-  aspect-ratio:16/10;
 }
 
 .thumb img{
@@ -181,10 +173,6 @@ body{
   font-size:18px;
   font-weight:800;
   letter-spacing:-.03em;
-}
-
-.card.featured .info h3{
-  font-size:24px;
 }
 
 .info p{
@@ -262,10 +250,6 @@ body{
     grid-template-columns:repeat(2,1fr);
   }
 
-  .card.featured{
-    grid-column:span 2;
-  }
-
   .contact-grid{
     grid-template-columns:1fr;
   }
@@ -274,10 +258,6 @@ body{
 @media(max-width:600px){
   .grid{
     grid-template-columns:1fr;
-  }
-
-  .card.featured{
-    grid-column:span 1;
   }
 
   .container{
@@ -316,7 +296,7 @@ body{
 
   <div class="grid">
 
-    <a href="cfg.html" class="card featured">
+    <a href="cfg.html" class="card">
       <div class="thumb">
         <img src="work1.jpg.png" alt="CFG">
       </div>
