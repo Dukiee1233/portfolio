@@ -1,250 +1,319 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Video Projects</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    *{
-      box-sizing:border-box;
-    }
+<title>Video Projects</title>
 
-    body{
-      margin:0;
-      font-family:Inter,sans-serif;
-      background:#05070a;
-      color:white;
-      overflow-x:hidden;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    .bg{
-      position:fixed;
-      inset:0;
-      z-index:-5;
-      overflow:hidden;
-    }
+<style>
 
-    .light{
-      position:absolute;
-      width:700px;
-      height:700px;
-      border-radius:50%;
-      filter:blur(160px);
-      opacity:.35;
-      mix-blend-mode:screen;
-      animation:float 18s ease-in-out infinite alternate;
-    }
+*{
+box-sizing:border-box;
+}
 
-    .light1{
-      background:#4f7cff;
-      top:-120px;
-      left:-80px;
-    }
+body{
+margin:0;
+font-family:Inter,sans-serif;
+background:#05070a;
+color:white;
+overflow-x:hidden;
+}
 
-    .light2{
-      background:#ff3c82;
-      bottom:-160px;
-      right:-120px;
-      animation-duration:22s;
-    }
+/* background lights */
 
-    .light3{
-      background:#7c3aed;
-      top:40%;
-      left:55%;
-      animation-duration:26s;
-      opacity:.25;
-    }
+.bg{
+position:fixed;
+inset:0;
+z-index:-5;
+overflow:hidden;
+}
 
-    @keyframes float{
-      0%{
-        transform:translate(0,0) scale(1);
-      }
-      100%{
-        transform:translate(60px,-40px) scale(1.2);
-      }
-    }
+.light{
+position:absolute;
+width:700px;
+height:700px;
+border-radius:50%;
+filter:blur(160px);
+opacity:.35;
+mix-blend-mode:screen;
+animation:float 18s ease-in-out infinite alternate;
+}
 
-    .vignette{
-      position:fixed;
-      inset:0;
-      background:radial-gradient(circle at center, transparent 40%, rgba(0,0,0,.7) 100%);
-      z-index:-4;
-    }
+.light1{
+background:#4f7cff;
+top:-120px;
+left:-80px;
+}
 
-    .cursor-glow{
-      position:fixed;
-      width:360px;
-      height:360px;
-      border-radius:50%;
-      background:radial-gradient(circle, rgba(100,140,255,.18), rgba(100,140,255,0) 70%);
-      pointer-events:none;
-      z-index:-2;
-      mix-blend-mode:screen;
-      transition:transform .07s linear;
-    }
+.light2{
+background:#ff3c82;
+bottom:-160px;
+right:-120px;
+animation-duration:22s;
+}
 
-    .container{
-      width:1100px;
-      margin:auto;
-      padding:60px 0 80px;
-    }
+.light3{
+background:#7c3aed;
+top:40%;
+left:55%;
+animation-duration:26s;
+opacity:.25;
+}
 
-    h1{
-      font-size:44px;
-      margin:0 0 30px;
-      letter-spacing:-.02em;
-    }
+@keyframes float{
+0%{transform:translate(0,0) scale(1);}
+100%{transform:translate(60px,-40px) scale(1.2);}
+}
 
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:28px;
-    }
+.vignette{
+position:fixed;
+inset:0;
+background:radial-gradient(circle at center, transparent 40%, rgba(0,0,0,.7) 100%);
+z-index:-4;
+}
 
-    .project-card{
-      background:#0b1118;
-      border-radius:22px;
-      overflow:hidden;
-      border:1px solid rgba(255,255,255,.05);
-      transition:.25s;
-      text-decoration:none;
-      color:white;
-      position:relative;
-    }
+/* cursor glow */
 
-    .project-card:hover{
-      transform:translateY(-6px);
-      border:1px solid rgba(255,255,255,.15);
-      box-shadow:0 20px 45px rgba(0,0,0,.35);
-    }
+.cursor-glow{
+position:fixed;
+width:360px;
+height:360px;
+border-radius:50%;
+background:radial-gradient(circle, rgba(100,140,255,.18), rgba(100,140,255,0) 70%);
+pointer-events:none;
+z-index:-2;
+mix-blend-mode:screen;
+transition:transform .07s linear;
+}
 
-    .project-thumb{
-      height:320px;
-      overflow:hidden;
-      background:#111;
-    }
+/* layout */
 
-    .project-thumb img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      transition:.35s;
-      display:block;
-    }
+.container{
+width:1100px;
+margin:auto;
+padding:60px 0 80px;
+}
 
-    .project-card:hover img{
-      transform:scale(1.05);
-    }
+h1{
+font-size:44px;
+margin:0 0 30px;
+letter-spacing:-.02em;
+}
 
-    .project-info{
-      padding:22px;
-    }
+/* cards */
 
-    .project-info h3{
-      margin:0;
-      font-size:22px;
-    }
+.grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:28px;
+}
 
-    .project-info p{
-      margin-top:8px;
-      opacity:.6;
-      font-size:14px;
-    }
+.project-card{
+background:#0b1118;
+border-radius:22px;
+overflow:hidden;
+border:1px solid rgba(255,255,255,.05);
+transition:.25s;
+text-decoration:none;
+color:white;
+position:relative;
+}
 
-    .back-wrap{
-      margin-top:28px;
-    }
+.project-card:hover{
+transform:translateY(-6px);
+border:1px solid rgba(255,255,255,.15);
+box-shadow:0 20px 45px rgba(0,0,0,.35);
+}
 
-    .back-link{
-      display:inline-block;
-      text-decoration:none;
-      color:#fff;
-      font-size:15px;
-      opacity:.8;
-      padding:12px 18px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.08);
-      background:rgba(255,255,255,.03);
-      transition:.25s ease;
-    }
+/* thumbnail */
 
-    .back-link:hover{
-      opacity:1;
-      transform:translateY(-2px);
-      border-color:rgba(255,255,255,.16);
-      background:rgba(255,255,255,.05);
-    }
+.project-thumb{
+height:320px;
+overflow:hidden;
+background:#111;
+}
 
-    @media(max-width:900px){
-      .container{
-        width:90%;
-      }
+.project-thumb img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:.35s;
+display:block;
+}
 
-      .grid{
-        grid-template-columns:1fr;
-      }
-    }
-  </style>
+.project-card:hover img{
+transform:scale(1.05);
+}
+
+/* text */
+
+.project-info{
+padding:22px;
+}
+
+.project-info h3{
+margin:0;
+font-size:22px;
+}
+
+.project-info p{
+margin-top:8px;
+opacity:.6;
+font-size:14px;
+}
+
+/* back button */
+
+.back-wrap{
+margin-top:28px;
+}
+
+.back-link{
+display:inline-block;
+text-decoration:none;
+color:#fff;
+font-size:15px;
+opacity:.8;
+padding:12px 18px;
+border-radius:14px;
+border:1px solid rgba(255,255,255,.08);
+background:rgba(255,255,255,.03);
+transition:.25s ease;
+}
+
+.back-link:hover{
+opacity:1;
+transform:translateY(-2px);
+border-color:rgba(255,255,255,.16);
+background:rgba(255,255,255,.05);
+}
+
+/* responsive */
+
+@media(max-width:900px){
+
+.container{
+width:90%;
+}
+
+.grid{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
 </head>
+
 
 <body>
 
-  <div class="bg">
-    <div class="light light1"></div>
-    <div class="light light2"></div>
-    <div class="light light3"></div>
-  </div>
 
-  <div class="vignette"></div>
-  <div class="cursor-glow"></div>
+<div class="bg">
 
-  <div class="container">
-    <h1>Selected Video Projects</h1>
+<div class="light light1"></div>
+<div class="light light2"></div>
+<div class="light light3"></div>
 
-    <div class="grid">
+</div>
 
-      <a href="igreel.html" class="project-card">
-        <div class="project-thumb">
-          <img src="video-cover.jpg.jpg" alt="IG Reel">
-        </div>
-        <div class="project-info">
-          <h3>IG Reel</h3>
-          <p>Instagram Video Works</p>
-        </div>
-      </a>
 
-      <a
-        href="https://www.youtube.com/playlist?list=PLF1ZFusRHmEkUq1vrz4Sao_ZT9QomHK5f"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="project-card"
-      >
-        <div class="project-thumb">
-          <img src="techger-cover.jpg" alt="TechGer">
-        </div>
-        <div class="project-info">
-          <h3>TechGer | Технологийн мэдээ</h3>
-          <p>YouTube Playlist</p>
-        </div>
-      </a>
+<div class="vignette"></div>
 
-    </div>
+<div class="cursor-glow"></div>
 
-    <div class="back-wrap">
-      <a href="index.html" class="back-link">← Back to portfolio</a>
-    </div>
-  </div>
 
-  <script>
-    const glow = document.querySelector(".cursor-glow");
+<div class="container">
 
-    document.addEventListener("mousemove",(e)=>{
-      glow.style.transform = `translate(${e.clientX-180}px,${e.clientY-180}px)`;
-    });
-  </script>
+<h1>Selected Video Projects</h1>
+
+
+<div class="grid">
+
+
+<!-- IG REEL -->
+
+<a href="igreel.html" class="project-card">
+
+<div class="project-thumb">
+
+<img src="video-cover.jpg" alt="IG Reel">
+
+</div>
+
+<div class="project-info">
+
+<h3>IG Reel</h3>
+
+<p>Instagram Video Works</p>
+
+</div>
+
+</a>
+
+
+
+<!-- TECHGER PLAYLIST -->
+
+<a
+href="https://www.youtube.com/playlist?list=PLF1ZFusRHmEkUq1vrz4Sao_ZT9QomHK5f"
+target="_blank"
+class="project-card"
+>
+
+<div class="project-thumb">
+
+<img src="techger-cover.jpg" alt="TechGer">
+
+</div>
+
+<div class="project-info">
+
+<h3>TechGer | Технологийн мэдээ</h3>
+
+<p>YouTube Playlist</p>
+
+</div>
+
+</a>
+
+
+</div>
+
+
+
+<div class="back-wrap">
+
+<a href="index.html" class="back-link">
+
+← Back to portfolio
+
+</a>
+
+</div>
+
+
+</div>
+
+
+
+<script>
+
+const glow=document.querySelector(".cursor-glow");
+
+document.addEventListener("mousemove",(e)=>{
+
+glow.style.transform=
+`translate(${e.clientX-180}px,${e.clientY-180}px)`;
+
+});
+
+</script>
+
 
 </body>
 </html>
