@@ -1,369 +1,791 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Dukiee Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
+
 *{
-  box-sizing:border-box;
+box-sizing:border-box;
 }
 
 body{
-  margin:0;
-  font-family:Inter, sans-serif;
-  background:#05070a;
-  color:#fff;
-  overflow-x:hidden;
+margin:0;
+font-family:Inter, sans-serif;
+background:#05070a;
+color:white;
+overflow-x:hidden;
 }
+
+
+
+
+/* mouse glow */
+
+.cursor-glow{
+
+position:fixed;
+
+width:420px;
+
+height:420px;
+
+background:radial-gradient(circle, rgba(90,140,255,.18), transparent 70%);
+
+pointer-events:none;
+
+z-index:-1;
+
+transition:transform .15s linear;
+
+}
+
+
+
+
+/* background glow */
+
+.bg-glow{
+
+position:fixed;
+
+inset:0;
+
+overflow:hidden;
+
+z-index:-2;
+
+}
+
+
+
+.bg-glow span{
+
+position:absolute;
+
+width:520px;
+
+height:520px;
+
+border-radius:50%;
+
+filter:blur(120px);
+
+opacity:.25;
+
+animation:floatGlow 18s ease-in-out infinite alternate;
+
+}
+
+
+
+.bg1{
+
+background:#3b5bff;
+
+top:-120px;
+
+left:-120px;
+
+}
+
+
+
+.bg2{
+
+background:#7c3aed;
+
+bottom:-160px;
+
+right:-120px;
+
+animation-delay:3s;
+
+}
+
+
+
+.bg3{
+
+background:#ff3b6b;
+
+top:40%;
+
+left:50%;
+
+transform:translate(-50%,-50%);
+
+opacity:.18;
+
+animation-delay:6s;
+
+}
+
+
+
+@keyframes floatGlow{
+
+0%{
+
+transform:translate(0,0) scale(1);
+
+}
+
+
+
+100%{
+
+transform:translate(60px,-40px) scale(1.08);
+
+}
+
+}
+
+
+
 
 .container{
-  max-width:1200px;
-  margin:auto;
-  padding:56px 20px 72px;
+
+max-width:1200px;
+
+margin:auto;
+
+padding:56px 20px 72px;
+
 }
 
-.hero{
-  position:relative;
-  margin-bottom:44px;
-  padding:12px 0 8px;
-}
 
-.hero::before{
-  content:"";
-  position:absolute;
-  top:-80px;
-  left:-60px;
-  width:340px;
-  height:340px;
-  background:radial-gradient(circle, rgba(79,120,255,.22) 0%, rgba(79,120,255,0) 70%);
-  pointer-events:none;
-  filter:blur(10px);
-}
 
-.hero::after{
-  content:"";
-  position:absolute;
-  top:-40px;
-  left:180px;
-  width:280px;
-  height:280px;
-  background:radial-gradient(circle, rgba(130,56,255,.15) 0%, rgba(130,56,255,0) 72%);
-  pointer-events:none;
-  filter:blur(12px);
-}
 
 .hero-label{
-  position:relative;
-  margin:0 0 14px 0;
-  font-size:11px;
-  letter-spacing:.24em;
-  text-transform:uppercase;
-  color:rgba(255,255,255,.42);
+
+font-size:11px;
+
+letter-spacing:.24em;
+
+text-transform:uppercase;
+
+opacity:.45;
+
+margin-bottom:14px;
+
 }
 
-.hero h1{
-  position:relative;
-  margin:0;
-  font-size:clamp(52px,8vw,98px);
-  line-height:.92;
-  font-weight:900;
-  letter-spacing:-.06em;
+
+
+h1{
+
+margin:0;
+
+font-size:clamp(52px,8vw,98px);
+
+font-weight:900;
+
+letter-spacing:-.05em;
+
 }
 
-.hero-subtitle{
-  position:relative;
-  margin:18px 0 0 0;
-  font-size:18px;
-  font-weight:600;
-  color:#f1f1f1;
+
+
+.subtitle{
+
+margin-top:18px;
+
+font-weight:600;
+
+font-size:18px;
+
 }
 
-.hero-desc{
-  position:relative;
-  margin:14px 0 0 0;
-  max-width:620px;
-  font-size:15px;
-  line-height:1.8;
-  color:rgba(255,255,255,.58);
+
+
+.desc{
+
+margin-top:12px;
+
+max-width:600px;
+
+opacity:.6;
+
+line-height:1.7;
+
 }
+
+
+
 
 .section-title{
-  margin:0 0 22px 0;
-  font-size:22px;
-  font-weight:700;
-  letter-spacing:-.02em;
+
+margin-top:48px;
+
+margin-bottom:20px;
+
+font-size:22px;
+
 }
+
+
+
 
 .grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:24px;
+
 }
+
+
+
 
 .card{
-  text-decoration:none;
-  color:#fff;
-  background:linear-gradient(180deg,#0d1218 0%, #0a0f14 100%);
-  border:1px solid rgba(255,255,255,.07);
-  border-radius:22px;
-  overflow:hidden;
-  transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;
+
+position:relative;
+
+text-decoration:none;
+
+color:white;
+
+border-radius:20px;
+
+overflow:hidden;
+
+background:linear-gradient(180deg,#0d1218,#0a0f14);
+
+border:1px solid rgba(255,255,255,.07);
+
+transition:.25s;
+
 }
+
+
 
 .card:hover{
-  transform:translateY(-6px);
-  border-color:rgba(255,255,255,.15);
-  box-shadow:0 18px 40px rgba(0,0,0,.32);
+
+transform:translateY(-6px);
+
+border:1px solid rgba(255,255,255,.15);
+
+box-shadow:0 20px 50px rgba(0,0,0,.35);
+
 }
+
+
+
 
 .thumb{
-  position:relative;
-  aspect-ratio:4/3;
-  background:#10151b;
-  overflow:hidden;
+
+aspect-ratio:4/3;
+
+overflow:hidden;
+
+background:#111;
+
 }
+
+
 
 .thumb img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-  transition:transform .35s ease;
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+transition:.35s;
+
 }
 
-.card:hover .thumb img{
-  transform:scale(1.04);
+
+
+.card:hover img{
+
+transform:scale(1.05);
+
 }
 
-.video-badge{
-  position:absolute;
-  inset:auto 18px 18px auto;
-  width:62px;
-  height:62px;
-  border-radius:50%;
-  background:rgba(255,255,255,.16);
-  border:1px solid rgba(255,255,255,.24);
-  backdrop-filter:blur(8px);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  box-shadow:0 8px 24px rgba(0,0,0,.25);
+
+
+
+/* light sweep */
+
+.card::after{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:-60%;
+
+width:40%;
+
+height:100%;
+
+background:linear-gradient(120deg, transparent, rgba(255,255,255,.18), transparent);
+
+transform:skewX(-20deg);
+
+transition:.6s;
+
 }
 
-.video-badge::before{
-  content:"";
-  width:0;
-  height:0;
-  border-left:18px solid #fff;
-  border-top:11px solid transparent;
-  border-bottom:11px solid transparent;
-  margin-left:4px;
+
+
+.card:hover::after{
+
+left:120%;
+
 }
+
+
+
 
 .info{
-  padding:18px 18px 20px;
+
+padding:18px;
+
 }
+
+
 
 .info h3{
-  margin:0;
-  font-size:18px;
-  font-weight:800;
-  letter-spacing:-.03em;
+
+margin:0;
+
+font-size:18px;
+
+font-weight:800;
+
 }
+
+
 
 .info p{
-  margin:8px 0 0 0;
-  color:rgba(255,255,255,.58);
-  font-size:13px;
+
+margin-top:6px;
+
+font-size:13px;
+
+opacity:.6;
+
 }
+
+
+
+
+/* play icon */
+
+.video-badge{
+
+position:absolute;
+
+bottom:16px;
+
+right:16px;
+
+width:56px;
+
+height:56px;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.15);
+
+border:1px solid rgba(255,255,255,.3);
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+backdrop-filter:blur(6px);
+
+}
+
+
+
+.video-badge::before{
+
+content:"";
+
+border-left:16px solid white;
+
+border-top:10px solid transparent;
+
+border-bottom:10px solid transparent;
+
+margin-left:4px;
+
+}
+
+
+
 
 .contact{
-  margin-top:56px;
-  padding:30px;
-  border-radius:28px;
-  background:linear-gradient(180deg, rgba(18,24,32,.96) 0%, rgba(10,14,20,.96) 100%);
-  border:1px solid rgba(255,255,255,.09);
-  box-shadow:0 20px 60px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.03);
+
+margin-top:60px;
+
+padding:32px;
+
+border-radius:26px;
+
+background:linear-gradient(180deg,#0e141b,#0a0f14);
+
+border:1px solid rgba(255,255,255,.08);
+
 }
 
-.contact-top{
-  margin-bottom:22px;
-}
 
-.contact-label{
-  margin:0 0 10px 0;
-  font-size:11px;
-  letter-spacing:.22em;
-  text-transform:uppercase;
-  color:rgba(255,255,255,.42);
-}
-
-.contact h2{
-  margin:0;
-  font-size:34px;
-  font-weight:800;
-  letter-spacing:-.04em;
-}
 
 .contact-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
+
+margin-top:20px;
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:16px;
+
 }
+
+
 
 .box{
-  background:rgba(255,255,255,.03);
-  border:1px solid rgba(255,255,255,.06);
-  padding:18px;
-  border-radius:16px;
-  transition:transform .2s ease,border-color .2s ease,background .2s ease;
+
+background:rgba(255,255,255,.03);
+
+border:1px solid rgba(255,255,255,.06);
+
+padding:16px;
+
+border-radius:14px;
+
+transition:.2s;
+
 }
+
+
 
 .box:hover{
-  transform:translateY(-3px);
-  border-color:rgba(255,255,255,.12);
-  background:rgba(255,255,255,.045);
+
+transform:translateY(-3px);
+
+border:1px solid rgba(255,255,255,.15);
+
 }
+
+
 
 .box p{
-  opacity:.52;
-  margin:0 0 10px 0;
-  font-size:12px;
-  text-transform:uppercase;
-  letter-spacing:.08em;
+
+margin:0 0 6px;
+
+font-size:12px;
+
+opacity:.5;
+
 }
+
+
 
 .box a{
-  color:#fff;
-  text-decoration:none;
-  font-size:15px;
-  font-weight:600;
-  word-break:break-word;
+
+color:white;
+
+text-decoration:none;
+
+font-size:14px;
+
 }
+
+
+
 
 @media(max-width:900px){
-  .grid{
-    grid-template-columns:repeat(2,1fr);
-  }
 
-  .contact-grid{
-    grid-template-columns:1fr;
-  }
+.grid{
+
+grid-template-columns:repeat(2,1fr);
+
 }
+
+
+
+.contact-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+
 
 @media(max-width:600px){
-  .grid{
-    grid-template-columns:1fr;
-  }
 
-  .container{
-    padding:36px 16px 48px;
-  }
+.grid{
 
-  .hero-subtitle{
-    font-size:16px;
-  }
+grid-template-columns:1fr;
 
-  .contact{
-    padding:22px;
-    border-radius:22px;
-  }
-
-  .contact h2{
-    font-size:28px;
-  }
 }
+
+}
+
 </style>
+
 </head>
+
+
 
 <body>
 
-<div class="container">
 
-  <section class="hero">
-    <p class="hero-label">Portfolio</p>
-    <h1>Dukiee</h1>
-    <p class="hero-subtitle">Video Editor, Graphic Designer</p>
-    <p class="hero-desc">
-    </p>
-  </section>
 
-  <h2 class="section-title">Selected Projects</h2>
+<div class="cursor-glow"></div>
 
-  <div class="grid">
 
-    <a href="cfg.html" class="card">
-      <div class="thumb">
-        <img src="work1.jpg.png" alt="CFG">
-      </div>
-      <div class="info">
-        <h3>CFG</h3>
-        <p>POSM Campaign Series</p>
-      </div>
-    </a>
 
-    <a href="chinggis.html" class="card">
-      <div class="thumb">
-        <img src="CB work1.jpg.jpg" alt="Chinggis Beer">
-      </div>
-      <div class="info">
-        <h3>Chinggis Beer</h3>
-        <p>Campaign Design Series</p>
-      </div>
-    </a>
+<div class="bg-glow">
 
-    <a href="mobicom.html" class="card">
-      <div class="thumb">
-        <img src="mb1.jpg.jpeg" alt="Mobicom">
-      </div>
-      <div class="info">
-        <h3>Mobicom</h3>
-        <p>Social Campaign Series</p>
-      </div>
-    </a>
+<span class="bg1"></span>
 
-    <a href="video.html" class="card">
-      <div class="thumb">
-        <img src="video-cover.jpg.jpg" alt="Video">
-        <div class="video-badge"></div>
-      </div>
-      <div class="info">
-        <h3>Video</h3>
-        <p>Reel / Motion</p>
-      </div>
-    </a>
+<span class="bg2"></span>
 
-  </div>
-
-  <section class="contact">
-    <div class="contact-top">
-      <p class="contact-label">Contact</p>
-      <h2>Let’s work together</h2>
-    </div>
-
-    <div class="contact-grid">
-      <div class="box">
-        <p>Email</p>
-        <a href="mailto:dukdulguun888@gmail.com">dukdulguun888@gmail.com</a>
-      </div>
-
-      <div class="box">
-        <p>Instagram</p>
-        <a href="https://instagram.com/__dukiiee" target="_blank">instagram.com/__dukiiee</a>
-      </div>
-
-      <div class="box">
-        <p>Phone</p>
-        <a href="tel:+97695959727">+976 95959727</a>
-      </div>
-    </div>
-  </section>
+<span class="bg3"></span>
 
 </div>
+
+
+
+
+<div class="container">
+
+
+
+
+<div class="hero-label">
+PORTFOLIO
+</div>
+
+
+
+<h1>
+Dukiee
+</h1>
+
+
+
+<div class="subtitle">
+Video Editor, Graphic Designer
+</div>
+
+
+
+<div class="desc">
+</div>
+
+
+
+
+<h2 class="section-title">
+Selected Projects
+</h2>
+
+
+
+
+<div class="grid">
+
+
+
+
+<a href="cfg.html" class="card">
+
+<div class="thumb">
+
+<img src="work1.jpg.png">
+
+</div>
+
+<div class="info">
+
+<h3>CFG</h3>
+
+<p>POSM Campaign Series</p>
+
+</div>
+
+</a>
+
+
+
+
+<a href="chinggis.html" class="card">
+
+<div class="thumb">
+
+<img src="CB work1.jpg.jpg">
+
+</div>
+
+<div class="info">
+
+<h3>Chinggis Beer</h3>
+
+<p>Campaign Design Series</p>
+
+</div>
+
+</a>
+
+
+
+
+<a href="mobicom.html" class="card">
+
+<div class="thumb">
+
+<img src="mb1.jpg.jpeg">
+
+</div>
+
+<div class="info">
+
+<h3>Mobicom</h3>
+
+<p>Social Campaign Series</p>
+
+</div>
+
+</a>
+
+
+
+
+<a href="video.html" class="card">
+
+<div class="thumb">
+
+<img src="video-cover.jpg.jpg">
+
+<div class="video-badge"></div>
+
+</div>
+
+<div class="info">
+
+<h3>Video</h3>
+
+<p>Reel / Motion</p>
+
+</div>
+
+</a>
+
+
+
+
+</div>
+
+
+
+
+<div class="contact">
+
+<h2>
+Let’s work together
+</h2>
+
+
+
+
+<div class="contact-grid">
+
+<div class="box">
+
+<p>Email</p>
+
+<a href="mailto:dukdulguun888@gmail.com">
+
+dukdulguun888@gmail.com
+
+</a>
+
+</div>
+
+
+
+
+<div class="box">
+
+<p>Instagram</p>
+
+<a href="https://instagram.com/__dukiiee" target="_blank">
+
+instagram.com/__dukiiee
+
+</a>
+
+</div>
+
+
+
+
+<div class="box">
+
+<p>Phone</p>
+
+<a href="tel:+97695959727">
+
++976 95959727
+
+</a>
+
+</div>
+
+
+
+
+</div>
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+<script>
+
+const glow = document.querySelector(".cursor-glow");
+
+document.addEventListener("mousemove", e => {
+
+glow.style.transform =
+`translate(${e.clientX - 200}px, ${e.clientY - 200}px)`;
+
+});
+
+</script>
+
+
+
 
 </body>
 </html>
