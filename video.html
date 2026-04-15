@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +23,8 @@ color:white;
 overflow-x:hidden;
 }
 
-/* background lights */
+
+/* animated background */
 
 .bg{
 position:fixed;
@@ -64,9 +66,17 @@ opacity:.25;
 }
 
 @keyframes float{
-0%{transform:translate(0,0) scale(1);}
-100%{transform:translate(60px,-40px) scale(1.2);}
+
+0%{
+transform:translate(0,0) scale(1);
 }
+
+100%{
+transform:translate(60px,-40px) scale(1.2);
+}
+
+}
+
 
 .vignette{
 position:fixed;
@@ -75,138 +85,235 @@ background:radial-gradient(circle at center, transparent 40%, rgba(0,0,0,.7) 100
 z-index:-4;
 }
 
+
 /* cursor glow */
 
 .cursor-glow{
+
 position:fixed;
 width:360px;
 height:360px;
 border-radius:50%;
-background:radial-gradient(circle, rgba(100,140,255,.18), rgba(100,140,255,0) 70%);
+
+background:
+radial-gradient(circle,
+rgba(100,140,255,.18),
+rgba(100,140,255,0) 70%
+);
+
 pointer-events:none;
 z-index:-2;
+
 mix-blend-mode:screen;
+
 transition:transform .07s linear;
+
 }
+
 
 /* layout */
 
 .container{
+
 width:1100px;
 max-width:calc(100% - 40px);
+
 margin:auto;
+
 padding:60px 0 80px;
+
 }
 
 h1{
+
 font-size:44px;
+
 margin:0 0 30px;
+
 letter-spacing:-.02em;
+
 }
 
-/* cards */
+
+/* grid */
 
 .grid{
+
 display:grid;
+
 grid-template-columns:repeat(2,1fr);
+
 gap:28px;
+
 }
 
+
+/* card */
+
 .project-card{
+
 background:#0b1118;
+
 border-radius:22px;
+
 overflow:hidden;
+
 border:1px solid rgba(255,255,255,.05);
+
 transition:.25s;
+
 text-decoration:none;
+
 color:white;
+
 position:relative;
+
 display:block;
+
 }
 
 .project-card:hover{
+
 transform:translateY(-6px);
+
 border:1px solid rgba(255,255,255,.15);
+
 box-shadow:0 20px 45px rgba(0,0,0,.35);
+
 }
+
 
 /* thumbnail */
 
 .project-thumb{
+
 height:320px;
+
 overflow:hidden;
+
 background:#111;
+
 }
 
 .project-thumb img{
+
 width:100%;
+
 height:100%;
+
 object-fit:cover;
+
 transition:.35s;
+
 display:block;
+
 }
 
 .project-card:hover img{
+
 transform:scale(1.05);
+
 }
+
 
 /* text */
 
 .project-info{
+
 padding:22px;
+
 }
 
 .project-info h3{
+
 margin:0;
+
 font-size:22px;
+
 }
 
 .project-info p{
+
 margin-top:8px;
+
 opacity:.6;
+
 font-size:14px;
+
 }
+
 
 /* back button */
 
 .back-wrap{
+
 margin-top:28px;
+
 }
 
 .back-link{
+
 display:inline-block;
+
 text-decoration:none;
+
 color:#fff;
+
 font-size:15px;
+
 opacity:.8;
+
 padding:12px 18px;
+
 border-radius:14px;
+
 border:1px solid rgba(255,255,255,.08);
+
 background:rgba(255,255,255,.03);
+
 transition:.25s ease;
+
 }
 
 .back-link:hover{
+
 opacity:1;
+
 transform:translateY(-2px);
+
 border-color:rgba(255,255,255,.16);
+
 background:rgba(255,255,255,.05);
+
 }
+
 
 /* responsive */
 
 @media(max-width:900px){
 
 .container{
+
 width:90%;
+
 }
 
 .grid{
+
 grid-template-columns:1fr;
+
 }
 
 .project-thumb{
+
 height:260px;
+
+}
+
+h1{
+
+font-size:34px;
+
 }
 
 }
@@ -216,26 +323,35 @@ height:260px;
 </head>
 
 
+
 <body>
+
 
 
 <div class="bg">
 
 <div class="light light1"></div>
+
 <div class="light light2"></div>
+
 <div class="light light3"></div>
 
 </div>
 
 
+
 <div class="vignette"></div>
 
+
+
 <div class="cursor-glow"></div>
+
 
 
 <div class="container">
 
 <h1>Selected Video Projects</h1>
+
 
 
 <div class="grid">
@@ -263,7 +379,7 @@ height:260px;
 
 
 
-<!-- TECHGER PLAYLIST -->
+<!-- TECHGER -->
 
 <a
 href="https://www.youtube.com/playlist?list=PLF1ZFusRHmEkUq1vrz4Sao_ZT9QomHK5f"
@@ -343,6 +459,34 @@ class="project-card"
 </a>
 
 
+
+<!-- TOM ZURGAAR S1 -->
+
+<a
+href="https://www.youtube.com/watch?v=jpaDevKysn0&list=PLF1ZFusRHmEly3MQyJ1jvDSZnRtKvbUUG&index=1"
+target="_blank"
+rel="noopener noreferrer"
+class="project-card"
+>
+
+<div class="project-thumb">
+
+<img src="techger-cover.jpg" alt="Tom zurgaar S1">
+
+</div>
+
+<div class="project-info">
+
+<h3>Том зургаар S1</h3>
+
+<p>YouTube Video</p>
+
+</div>
+
+</a>
+
+
+
 </div>
 
 
@@ -356,6 +500,7 @@ class="project-card"
 </a>
 
 </div>
+
 
 
 </div>
@@ -376,29 +521,7 @@ glow.style.transform=
 </script>
 
 
+
 </body>
+
 </html>
-<!-- TOM ZURGAAR S1 -->
-
-<a
-href="https://www.youtube.com/watch?v=jpaDevKysn0&list=PLF1ZFusRHmEly3MQyJ1jvDSZnRtKvbUUG&index=1"
-target="_blank"
-rel="noopener noreferrer"
-class="project-card"
->
-
-<div class="project-thumb">
-
-<img src="techger-cover.jpg" alt="Tom zurгаар S1">
-
-</div>
-
-<div class="project-info">
-
-<h3>Том зургаар S1</h3>
-
-<p>YouTube Video</p>
-
-</div>
-
-</a>
