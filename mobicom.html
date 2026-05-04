@@ -8,7 +8,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
-*{box-sizing:border-box;}
+*{
+box-sizing:border-box;
+}
 
 body{
 margin:0;
@@ -58,8 +60,12 @@ opacity:.25;
 }
 
 @keyframes float{
-0%{transform:translate(0,0) scale(1);}
-100%{transform:translate(60px,-40px) scale(1.2);}
+0%{
+transform:translate(0,0) scale(1);
+}
+100%{
+transform:translate(60px,-40px) scale(1.2);
+}
 }
 
 .vignette{
@@ -201,21 +207,37 @@ font-size:26px;
 cursor:pointer;
 display:grid;
 place-items:center;
+transition:.25s;
 }
 
 .close:hover{
 background:rgba(255,255,255,.16);
+transform:scale(1.05);
 }
 
 @media(max-width:1000px){
-.grid{grid-template-columns:repeat(2,1fr);}
+.grid{
+grid-template-columns:repeat(2,1fr);
+}
 }
 
 @media(max-width:650px){
-.top{flex-direction:column;align-items:flex-start;}
-h1{font-size:34px;}
-.grid{grid-template-columns:1fr;}
-.project-thumb{height:300px;}
+.top{
+flex-direction:column;
+align-items:flex-start;
+}
+
+h1{
+font-size:34px;
+}
+
+.grid{
+grid-template-columns:1fr;
+}
+
+.project-thumb{
+height:300px;
+}
 }
 </style>
 </head>
@@ -239,9 +261,9 @@ h1{font-size:34px;}
 
 <div class="grid">
 
-<div class="project-card" onclick="openLightbox('mobicom-1.jpg')">
+<div class="project-card" onclick="openLightbox('mb1.jpg.jpeg')">
 <div class="project-thumb">
-<img src="mobicom-1.jpg" alt="Mobicom 1">
+<img src="mb1.jpg.jpeg" alt="Mobicom 1">
 </div>
 <div class="project-info">
 <h3>Mobicom</h3>
@@ -249,9 +271,9 @@ h1{font-size:34px;}
 </div>
 </div>
 
-<div class="project-card" onclick="openLightbox('mobicom-2.jpg')">
+<div class="project-card" onclick="openLightbox('mb2.jpg.jpeg')">
 <div class="project-thumb">
-<img src="mobicom-2.jpg" alt="Mobicom 2">
+<img src="mb2.jpg.jpeg" alt="Mobicom 2">
 </div>
 <div class="project-info">
 <h3>Mobicom</h3>
@@ -259,13 +281,63 @@ h1{font-size:34px;}
 </div>
 </div>
 
-<div class="project-card" onclick="openLightbox('mobicom-3.jpg')">
+<div class="project-card" onclick="openLightbox('mb3.jpg.jpg')">
 <div class="project-thumb">
-<img src="mobicom-3.jpg" alt="Mobicom 3">
+<img src="mb3.jpg.jpg" alt="Mobicom 3">
 </div>
 <div class="project-info">
 <h3>Mobicom</h3>
-<p>Campaign Visual</p>
+<p>Social Campaign 03</p>
+</div>
+</div>
+
+<div class="project-card" onclick="openLightbox('mb4.jpg.jpg')">
+<div class="project-thumb">
+<img src="mb4.jpg.jpg" alt="Mobicom 4">
+</div>
+<div class="project-info">
+<h3>Mobicom</h3>
+<p>Social Campaign 04</p>
+</div>
+</div>
+
+<div class="project-card" onclick="openLightbox('mb5.jpg.jpg')">
+<div class="project-thumb">
+<img src="mb5.jpg.jpg" alt="Mobicom 5">
+</div>
+<div class="project-info">
+<h3>Mobicom</h3>
+<p>Social Campaign 05</p>
+</div>
+</div>
+
+<div class="project-card" onclick="openLightbox('mb6.jpg.jpg')">
+<div class="project-thumb">
+<img src="mb6.jpg.jpg" alt="Mobicom 6">
+</div>
+<div class="project-info">
+<h3>Mobicom</h3>
+<p>Social Campaign 06</p>
+</div>
+</div>
+
+<div class="project-card" onclick="openLightbox('mb7.jpg.jpg')">
+<div class="project-thumb">
+<img src="mb7.jpg.jpg" alt="Mobicom 7">
+</div>
+<div class="project-info">
+<h3>Mobicom</h3>
+<p>Social Campaign 07</p>
+</div>
+</div>
+
+<div class="project-card" onclick="openLightbox('mb8.jpg.jpg')">
+<div class="project-thumb">
+<img src="mb8.jpg.jpg" alt="Mobicom 8">
+</div>
+<div class="project-info">
+<h3>Mobicom</h3>
+<p>Social Campaign 08</p>
 </div>
 </div>
 
@@ -293,7 +365,9 @@ lightboxImg.src="";
 }
 
 document.addEventListener("keydown",function(e){
-if(e.key==="Escape"){closeLightbox();}
+if(e.key==="Escape"){
+closeLightbox();
+}
 });
 </script>
 
