@@ -56,19 +56,21 @@ z-index:-4;
 width:1200px;
 max-width:calc(100% - 40px);
 margin:auto;
-padding:60px 0 80px;
+padding:50px 0 70px;
 }
 
 .top{
 display:flex;
 justify-content:space-between;
 align-items:center;
-margin-bottom:30px;
+gap:20px;
+margin-bottom:28px;
 }
 
 h1{
-font-size:44px;
+font-size:42px;
 margin:0;
+letter-spacing:-.02em;
 }
 
 .back-link{
@@ -80,63 +82,117 @@ padding:12px 18px;
 border-radius:14px;
 border:1px solid rgba(255,255,255,.08);
 background:rgba(255,255,255,.03);
+transition:.25s ease;
+}
+
+.back-link:hover{
+opacity:1;
+transform:translateY(-2px);
+border-color:rgba(255,255,255,.16);
+background:rgba(255,255,255,.05);
 }
 
 .grid{
 display:grid;
 grid-template-columns:repeat(3,1fr);
-gap:28px;
+gap:24px;
 }
 
 .project-card{
 background:#0b1118;
-border-radius:22px;
+border-radius:20px;
 overflow:hidden;
 border:1px solid rgba(255,255,255,.05);
+transition:.25s;
 cursor:pointer;
 }
 
+.project-card:hover{
+transform:translateY(-6px);
+border-color:rgba(255,255,255,.15);
+box-shadow:0 20px 45px rgba(0,0,0,.35);
+}
+
 .project-thumb{
-height:360px;
+height:300px;
+overflow:hidden;
+background:#111;
 }
 
 .project-thumb img{
 width:100%;
 height:100%;
 object-fit:cover;
+display:block;
+transition:.35s;
+}
+
+.project-card:hover img{
+transform:scale(1.04);
 }
 
 .project-info{
-padding:20px;
+padding:18px;
 }
 
-/* lightbox */
+.project-info h3{
+margin:0;
+font-size:20px;
+}
+
+.project-info p{
+margin:6px 0 0;
+opacity:.6;
+font-size:13px;
+}
 
 .lightbox{
 position:fixed;
 inset:0;
-background:rgba(0,0,0,.9);
+background:rgba(0,0,0,.86);
+backdrop-filter:blur(18px);
 display:none;
 align-items:center;
 justify-content:center;
 z-index:999;
+padding:30px;
 }
 
-.lightbox.active{
-display:flex;
-}
+.lightbox.active{display:flex;}
 
 .lightbox img{
-max-width:90%;
-max-height:90%;
+max-width:92vw;
+max-height:88vh;
+object-fit:contain;
+border-radius:18px;
+box-shadow:0 30px 90px rgba(0,0,0,.65);
 }
 
 .close{
-position:absolute;
-top:20px;
-right:30px;
-font-size:30px;
+position:fixed;
+top:24px;
+right:28px;
+width:46px;
+height:46px;
+border-radius:50%;
+border:1px solid rgba(255,255,255,.15);
+background:rgba(255,255,255,.08);
+color:white;
+font-size:26px;
 cursor:pointer;
+display:grid;
+place-items:center;
+}
+
+@media(max-width:1000px){
+.grid{grid-template-columns:repeat(2,1fr);}
+}
+
+@media(max-width:650px){
+.top{flex-direction:column;align-items:flex-start;}
+h1{font-size:34px;}
+.grid{grid-template-columns:1fr;}
+.project-thumb{height:260px;}
 }
 </style>
 </head>
@@ -155,56 +211,66 @@ cursor:pointer;
 
 <div class="top">
 <h1>Chinggis Beer</h1>
-<a href="index.html" class="back-link">← Back</a>
+<a href="index.html" class="back-link">← Back to portfolio</a>
 </div>
 
 <div class="grid">
 
 <div class="project-card" onclick="openLightbox('CB work1.jpg.jpg')">
-<img src="CB work1.jpg.jpg">
+<div class="project-thumb"><img src="CB work1.jpg.jpg" alt="Chinggis 1"></div>
+<div class="project-info"><h3>Chinggis Beer</h3><p>Campaign Visual 01</p></div>
 </div>
 
 <div class="project-card" onclick="openLightbox('CB work2.jpg.png')">
-<img src="CB work2.jpg.png">
+<div class="project-thumb"><img src="CB work2.jpg.png" alt="Chinggis 2"></div>
+<div class="project-info"><h3>Chinggis Beer</h3><p>Campaign Visual 02</p></div>
 </div>
 
 <div class="project-card" onclick="openLightbox('CB work3.jpg.png')">
-<img src="CB work3.jpg.png">
+<div class="project-thumb"><img src="CB work3.jpg.png" alt="Chinggis 3"></div>
+<div class="project-info"><h3>Chinggis Beer</h3><p>Campaign Visual 03</p></div>
 </div>
 
 <div class="project-card" onclick="openLightbox('CB work4.jpg.jpg')">
-<img src="CB work4.jpg.jpg">
+<div class="project-thumb"><img src="CB work4.jpg.jpg" alt="Chinggis 4"></div>
+<div class="project-info"><h3>Chinggis Beer</h3><p>Campaign Visual 04</p></div>
 </div>
 
 <div class="project-card" onclick="openLightbox('CB work5.jpg.jpg')">
-<img src="CB work5.jpg.jpg">
+<div class="project-thumb"><img src="CB work5.jpg.jpg" alt="Chinggis 5"></div>
+<div class="project-info"><h3>Chinggis Beer</h3><p>Campaign Visual 05</p></div>
 </div>
 
 <div class="project-card" onclick="openLightbox('CB work6.jpg.jpg')">
-<img src="CB work6.jpg.jpg">
+<div class="project-thumb"><img src="CB work6.jpg.jpg" alt="Chinggis 6"></div>
+<div class="project-info"><h3>Chinggis Beer</h3><p>Campaign Visual 06</p></div>
 </div>
 
 </div>
-
 </div>
 
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-<div class="close">×</div>
-<img id="lightbox-img">
+<button class="close" onclick="closeLightbox()">×</button>
+<img id="lightbox-img" src="" alt="Preview">
 </div>
 
 <script>
 const lightbox=document.getElementById("lightbox");
-const img=document.getElementById("lightbox-img");
+const lightboxImg=document.getElementById("lightbox-img");
 
 function openLightbox(src){
-img.src=src;
+lightboxImg.src=src;
 lightbox.classList.add("active");
 }
 
 function closeLightbox(){
 lightbox.classList.remove("active");
+lightboxImg.src="";
 }
+
+document.addEventListener("keydown",function(e){
+if(e.key==="Escape"){closeLightbox();}
+});
 </script>
 
 </body>
