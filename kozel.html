@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kozel | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{box-sizing:border-box;}
+
+body{
+margin:0;
+font-family:Inter,sans-serif;
+background:#05070a;
+color:white;
+}
+
+/* layout */
+
+.container{
+width:1200px;
+max-width:90%;
+margin:auto;
+padding:60px 0;
+}
+
+h1{
+font-size:42px;
+margin-bottom:30px;
+}
+
+/* grid */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:28px;
+}
+
+/* image card */
+
+.card{
+background:#0b1118;
+border-radius:20px;
+overflow:hidden;
+border:1px solid rgba(255,255,255,.05);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+border-color:rgba(255,255,255,.15);
+box-shadow:0 20px 40px rgba(0,0,0,.4);
+}
+
+.card img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+}
+
+/* back */
+
+.back{
+margin-top:30px;
+display:inline-block;
+color:#fff;
+text-decoration:none;
+opacity:.7;
+}
+
+.back:hover{
+opacity:1;
+}
+
+/* responsive */
+
+@media(max-width:800px){
+.grid{
+grid-template-columns:1fr;
+}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Kozel</h1>
+
+<div class="grid">
+
+<div class="card">
+<img src="kozel-1.jpg">
+</div>
+
+<div class="card">
+<img src="kozel-2.jpg">
+</div>
+
+</div>
+
+<a href="index.html" class="back">← Back</a>
+
+</div>
+
+</body>
+</html>
