@@ -6,6 +6,8 @@
 
 <title>Portfolio</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
@@ -32,10 +34,10 @@ overflow:hidden;
 
 .light{
 position:absolute;
-width:700px;
-height:700px;
+width:560px;
+height:560px;
 border-radius:50%;
-filter:blur(160px);
+filter:blur(130px);
 opacity:.35;
 mix-blend-mode:screen;
 animation:float 18s ease-in-out infinite alternate;
@@ -119,11 +121,13 @@ gap:28px;
 /* card */
 
 .project-card{
+contain:layout paint;
 background:#0b1118;
 border-radius:22px;
 overflow:hidden;
 border:1px solid rgba(255,255,255,.05);
 transition:.25s;
+will-change:transform;
 text-decoration:none;
 color:white;
 display:block;
@@ -222,7 +226,7 @@ height:260px;
 <!-- ASAHI -->
 <a href="asahi.html" class="project-card">
 <div class="project-thumb">
-<img src="work1.jpg.png" alt="Asahi">
+<img src="work1.jpg.png" alt="Asahi" loading="lazy" decoding="async">
 </div>
 <div class="project-info">
 <h3>Asahi</h3>
@@ -233,7 +237,7 @@ height:260px;
 <!-- CHINGGIS BEER -->
 <a href="chinggis.html" class="project-card">
 <div class="project-thumb">
-<img src="CB work1.jpg.jpg" alt="Chinggis Beer">
+<img src="CB work1.jpg.jpg" alt="Chinggis Beer" loading="lazy" decoding="async">
 </div>
 <div class="project-info">
 <h3>Chinggis Beer</h3>
@@ -244,7 +248,7 @@ height:260px;
 <!-- MOBICOM -->
 <a href="mobicom.html" class="project-card">
 <div class="project-thumb">
-<img src="mb1.jpg.jpeg" alt="Mobicom">
+<img src="mb1.jpg.jpeg" alt="Mobicom" loading="lazy" decoding="async">
 </div>
 <div class="project-info">
 <h3>Mobicom</h3>
@@ -255,7 +259,7 @@ height:260px;
 <!-- KOZEL -->
 <a href="kozel.html" class="project-card">
 <div class="project-thumb">
-<img src="kozel-1.jpg.png" alt="Kozel">
+<img src="kozel-1.jpg.png" alt="Kozel" loading="lazy" decoding="async">
 </div>
 <div class="project-info">
 <h3>Kozel</h3>
@@ -266,7 +270,7 @@ height:260px;
 <!-- VIDEO -->
 <a href="video.html" class="project-card">
 <div class="project-thumb">
-<img src="video-cover.jpg" alt="Video">
+<img src="video-cover.jpg" alt="Video" loading="lazy" decoding="async">
 </div>
 <div class="project-info">
 <h3>Video</h3>
@@ -288,4 +292,3 @@ glow.style.transform=`translate(${e.clientX-180}px,${e.clientY-180}px)`;
 
 </body>
 </html>
-
