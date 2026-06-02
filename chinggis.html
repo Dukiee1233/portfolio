@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Chinggis Beer | Portfolio</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
@@ -27,10 +29,10 @@ overflow:hidden;
 
 .light{
 position:absolute;
-width:700px;
-height:700px;
+width:560px;
+height:560px;
 border-radius:50%;
-filter:blur(160px);
+filter:blur(130px);
 opacity:.35;
 mix-blend-mode:screen;
 animation:float 18s ease-in-out infinite alternate;
@@ -99,11 +101,13 @@ gap:24px;
 }
 
 .project-card{
+contain:layout paint;
 background:#0b1118;
 border-radius:20px;
 overflow:hidden;
 border:1px solid rgba(255,255,255,.05);
 transition:.25s;
+will-change:transform;
 cursor:pointer;
 }
 
@@ -217,57 +221,57 @@ h1{font-size:34px;}
 <div class="grid">
 
 <div class="project-card" onclick="openLightbox('CB work1.jpg.jpg')">
-<div class="project-thumb"><img src="CB work1.jpg.jpg" alt="Chinggis 1"></div>
+<div class="project-thumb"><img src="CB work1.jpg.jpg" alt="Chinggis 1" loading="lazy" decoding="async"></div>
 <div class="project-info"><h3>Chinggis Beer</h3><p>Campaign Visual 01</p></div>
 </div>
 
 <div class="project-card" onclick="openLightbox('CB work2.jpg.png')">
-<div class="project-thumb"><img src="CB work2.jpg.png" alt="Chinggis 2"></div>
+<div class="project-thumb"><img src="CB work2.jpg.png" alt="Chinggis 2" loading="lazy" decoding="async"></div>
 <div class="project-info"><h3>Chinggis Beer</h3><p>Campaign Visual 02</p></div>
 </div>
 
 <div class="project-card" onclick="openLightbox('CB work3.jpg.png')">
-<div class="project-thumb"><img src="CB work3.jpg.png" alt="Chinggis 3"></div>
+<div class="project-thumb"><img src="CB work3.jpg.png" alt="Chinggis 3" loading="lazy" decoding="async"></div>
 <div class="project-info"><h3>Chinggis Beer</h3><p>Campaign Visual 03</p></div>
 </div>
 
 <div class="project-card" onclick="openLightbox('CB work4.jpg.jpg')">
-<div class="project-thumb"><img src="CB work4.jpg.jpg" alt="Chinggis 4"></div>
+<div class="project-thumb"><img src="CB work4.jpg.jpg" alt="Chinggis 4" loading="lazy" decoding="async"></div>
 <div class="project-info"><h3>Chinggis Beer</h3><p>Campaign Visual 04</p></div>
 </div>
 
 <div class="project-card" onclick="openLightbox('CB work5.jpg.jpg')">
-<div class="project-thumb"><img src="CB work5.jpg.jpg" alt="Chinggis 5"></div>
+<div class="project-thumb"><img src="CB work5.jpg.jpg" alt="Chinggis 5" loading="lazy" decoding="async"></div>
 <div class="project-info"><h3>Chinggis Beer</h3><p>Campaign Visual 05</p></div>
 </div>
 
 <div class="project-card" onclick="openLightbox('CB work6.jpg.jpg')">
-<div class="project-thumb"><img src="CB work6.jpg.jpg" alt="Chinggis 6"></div>
+<div class="project-thumb"><img src="CB work6.jpg.jpg" alt="Chinggis 6" loading="lazy" decoding="async"></div>
 <div class="project-info"><h3>Chinggis Beer</h3><p>Campaign Visual 06</p></div>
 </div>
 
 <div class="project-card" onclick="openLightbox('CB broncos bar runner-1.png')">
-<div class="project-thumb"><img src="CB broncos bar runner-1.png" alt="CB Broncos Bar Runner 1"></div>
+<div class="project-thumb"><img src="CB broncos bar runner-1.png" alt="CB Broncos Bar Runner 1" loading="lazy" decoding="async"></div>
 <div class="project-info"><h3>Chinggis Beer</h3><p>Broncos Bar Runner 01</p></div>
 </div>
 
 <div class="project-card" onclick="openLightbox('CB broncos bar runner-2.png')">
-<div class="project-thumb"><img src="CB broncos bar runner-2.png" alt="CB Broncos Bar Runner 2"></div>
+<div class="project-thumb"><img src="CB broncos bar runner-2.png" alt="CB Broncos Bar Runner 2" loading="lazy" decoding="async"></div>
 <div class="project-info"><h3>Chinggis Beer</h3><p>Broncos Bar Runner 02</p></div>
 </div>
 
 <div class="project-card" onclick="openLightbox('CB broncos tug-1.png')">
-<div class="project-thumb"><img src="CB broncos tug-1.png" alt="CB Broncos Tug 1"></div>
+<div class="project-thumb"><img src="CB broncos tug-1.png" alt="CB Broncos Tug 1" loading="lazy" decoding="async"></div>
 <div class="project-info"><h3>Chinggis Beer</h3><p>Broncos Tug 01</p></div>
 </div>
 
 <div class="project-card" onclick="openLightbox('CB broncos tug-2.png')">
-<div class="project-thumb"><img src="CB broncos tug-2.png" alt="CB Broncos Tug 2"></div>
+<div class="project-thumb"><img src="CB broncos tug-2.png" alt="CB Broncos Tug 2" loading="lazy" decoding="async"></div>
 <div class="project-info"><h3>Chinggis Beer</h3><p>Broncos Tug 02</p></div>
 </div>
 
 <div class="project-card" onclick="openLightbox('CB photo frame.png')">
-<div class="project-thumb"><img src="CB photo frame.png" alt="CB Photo Frame"></div>
+<div class="project-thumb"><img src="CB photo frame.png" alt="CB Photo Frame" loading="lazy" decoding="async"></div>
 <div class="project-info"><h3>Chinggis Beer</h3><p>Photo Frame</p></div>
 </div>
 
@@ -275,8 +279,8 @@ h1{font-size:34px;}
 </div>
 
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-<button class="close" onclick="closeLightbox()">×</button>
-<img id="lightbox-img" src="" alt="Preview">
+<button class="close" onclick="event.stopPropagation(); closeLightbox();">×</button>
+<img id="lightbox-img" src="" alt="Preview" onclick="event.stopPropagation();">
 </div>
 
 <script>
