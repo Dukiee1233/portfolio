@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kozel | Portfolio</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
@@ -27,10 +29,10 @@ overflow:hidden;
 
 .light{
 position:absolute;
-width:700px;
-height:700px;
+width:560px;
+height:560px;
 border-radius:50%;
-filter:blur(160px);
+filter:blur(130px);
 opacity:.35;
 mix-blend-mode:screen;
 animation:float 18s ease-in-out infinite alternate;
@@ -99,6 +101,8 @@ gap:24px;
 }
 
 .project-card{
+contain:layout paint;
+will-change:transform;
 background:#0b1118;
 border-radius:20px;
 overflow:hidden;
@@ -240,7 +244,7 @@ height:260px;
 
 <div class="project-card" onclick="openLightbox('kozel-1.jpg.png')">
 <div class="project-thumb">
-<img src="kozel-1.jpg.png" alt="Kozel BoardGame">
+<img src="kozel-1.jpg.png" alt="Kozel BoardGame" loading="lazy" decoding="async">
 </div>
 <div class="project-info">
 <h3>Kozel BoardGame</h3>
@@ -250,7 +254,7 @@ height:260px;
 
 <div class="project-card" onclick="openLightbox('kozel-2.jpg.png')">
 <div class="project-thumb">
-<img src="kozel-2.jpg.png" alt="Kozel Card Game">
+<img src="kozel-2.jpg.png" alt="Kozel Card Game" loading="lazy" decoding="async">
 </div>
 <div class="project-info">
 <h3>Kozel Card Game</h3>
@@ -263,8 +267,8 @@ height:260px;
 </div>
 
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-<button class="close" onclick="closeLightbox()">×</button>
-<img id="lightbox-img" src="" alt="Preview">
+<button class="close" onclick="event.stopPropagation(); closeLightbox();">×</button>
+<img id="lightbox-img" src="" alt="Preview" onclick="event.stopPropagation();">
 </div>
 
 <script>
