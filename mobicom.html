@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mobicom | Portfolio</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
@@ -27,10 +29,10 @@ overflow:hidden;
 
 .light{
 position:absolute;
-width:700px;
-height:700px;
+width:560px;
+height:560px;
 border-radius:50%;
-filter:blur(160px);
+filter:blur(130px);
 opacity:.35;
 mix-blend-mode:screen;
 animation:float 18s ease-in-out infinite alternate;
@@ -99,6 +101,8 @@ gap:24px;
 }
 
 .project-card{
+contain:layout paint;
+will-change:transform;
 background:#0b1118;
 border-radius:20px;
 overflow:hidden;
@@ -158,7 +162,9 @@ z-index:999;
 padding:30px;
 }
 
-.lightbox.active{display:flex;}
+.lightbox.active{
+display:flex;
+}
 
 .lightbox img{
 max-width:92vw;
@@ -182,6 +188,12 @@ font-size:26px;
 cursor:pointer;
 display:grid;
 place-items:center;
+transition:.25s;
+}
+
+.close:hover{
+background:rgba(255,255,255,.16);
+transform:scale(1.05);
 }
 
 @media(max-width:1000px){
@@ -217,51 +229,91 @@ h1{font-size:34px;}
 <div class="grid">
 
 <div class="project-card" onclick="openLightbox('mb1.jpg.jpeg')">
-<div class="project-thumb"><img src="mb1.jpg.jpeg" alt="Mobicom 1"></div>
-<div class="project-info"><h3>Mobicom</h3><p>Social Campaign 01</p></div>
+<div class="project-thumb">
+<img src="mb1.jpg.jpeg" alt="Mobicom 1" loading="lazy" decoding="async">
+</div>
+<div class="project-info">
+<h3>Mobicom</h3>
+<p>Social Campaign 01</p>
+</div>
 </div>
 
 <div class="project-card" onclick="openLightbox('mb2.jpg.jpeg')">
-<div class="project-thumb"><img src="mb2.jpg.jpeg" alt="Mobicom 2"></div>
-<div class="project-info"><h3>Mobicom</h3><p>Social Campaign 02</p></div>
+<div class="project-thumb">
+<img src="mb2.jpg.jpeg" alt="Mobicom 2" loading="lazy" decoding="async">
+</div>
+<div class="project-info">
+<h3>Mobicom</h3>
+<p>Social Campaign 02</p>
+</div>
 </div>
 
 <div class="project-card" onclick="openLightbox('mb3.jpg.jpg')">
-<div class="project-thumb"><img src="mb3.jpg.jpg" alt="Mobicom 3"></div>
-<div class="project-info"><h3>Mobicom</h3><p>Social Campaign 03</p></div>
+<div class="project-thumb">
+<img src="mb3.jpg.jpg" alt="Mobicom 3" loading="lazy" decoding="async">
+</div>
+<div class="project-info">
+<h3>Mobicom</h3>
+<p>Social Campaign 03</p>
+</div>
 </div>
 
 <div class="project-card" onclick="openLightbox('mb4.jpg.jpg')">
-<div class="project-thumb"><img src="mb4.jpg.jpg" alt="Mobicom 4"></div>
-<div class="project-info"><h3>Mobicom</h3><p>Social Campaign 04</p></div>
+<div class="project-thumb">
+<img src="mb4.jpg.jpg" alt="Mobicom 4" loading="lazy" decoding="async">
+</div>
+<div class="project-info">
+<h3>Mobicom</h3>
+<p>Social Campaign 04</p>
+</div>
 </div>
 
 <div class="project-card" onclick="openLightbox('mb5.jpg.jpg')">
-<div class="project-thumb"><img src="mb5.jpg.jpg" alt="Mobicom 5"></div>
-<div class="project-info"><h3>Mobicom</h3><p>Social Campaign 05</p></div>
+<div class="project-thumb">
+<img src="mb5.jpg.jpg" alt="Mobicom 5" loading="lazy" decoding="async">
+</div>
+<div class="project-info">
+<h3>Mobicom</h3>
+<p>Social Campaign 05</p>
+</div>
 </div>
 
 <div class="project-card" onclick="openLightbox('mb6.jpg.jpg')">
-<div class="project-thumb"><img src="mb6.jpg.jpg" alt="Mobicom 6"></div>
-<div class="project-info"><h3>Mobicom</h3><p>Social Campaign 06</p></div>
+<div class="project-thumb">
+<img src="mb6.jpg.jpg" alt="Mobicom 6" loading="lazy" decoding="async">
+</div>
+<div class="project-info">
+<h3>Mobicom</h3>
+<p>Social Campaign 06</p>
+</div>
 </div>
 
 <div class="project-card" onclick="openLightbox('mb7.jpg.jpg')">
-<div class="project-thumb"><img src="mb7.jpg.jpg" alt="Mobicom 7"></div>
-<div class="project-info"><h3>Mobicom</h3><p>Social Campaign 07</p></div>
+<div class="project-thumb">
+<img src="mb7.jpg.jpg" alt="Mobicom 7" loading="lazy" decoding="async">
+</div>
+<div class="project-info">
+<h3>Mobicom</h3>
+<p>Social Campaign 07</p>
+</div>
 </div>
 
 <div class="project-card" onclick="openLightbox('mb8.jpg.jpg')">
-<div class="project-thumb"><img src="mb8.jpg.jpg" alt="Mobicom 8"></div>
-<div class="project-info"><h3>Mobicom</h3><p>Social Campaign 08</p></div>
+<div class="project-thumb">
+<img src="mb8.jpg.jpg" alt="Mobicom 8" loading="lazy" decoding="async">
+</div>
+<div class="project-info">
+<h3>Mobicom</h3>
+<p>Social Campaign 08</p>
+</div>
 </div>
 
 </div>
 </div>
 
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-<button class="close" onclick="closeLightbox()">×</button>
-<img id="lightbox-img" src="" alt="Preview">
+<button class="close" onclick="event.stopPropagation(); closeLightbox();">×</button>
+<img id="lightbox-img" src="" alt="Preview" onclick="event.stopPropagation();">
 </div>
 
 <script>
@@ -279,7 +331,9 @@ lightboxImg.src="";
 }
 
 document.addEventListener("keydown",function(e){
-if(e.key==="Escape"){closeLightbox();}
+if(e.key==="Escape"){
+closeLightbox();
+}
 });
 </script>
 
