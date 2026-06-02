@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Asahi | Portfolio</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
@@ -27,10 +29,10 @@ overflow:hidden;
 
 .light{
 position:absolute;
-width:700px;
-height:700px;
+width:560px;
+height:560px;
 border-radius:50%;
-filter:blur(160px);
+filter:blur(130px);
 opacity:.35;
 mix-blend-mode:screen;
 animation:float 18s ease-in-out infinite alternate;
@@ -99,11 +101,13 @@ gap:24px;
 }
 
 .project-card{
+contain:layout paint;
 background:#0b1118;
 border-radius:20px;
 overflow:hidden;
 border:1px solid rgba(255,255,255,.05);
 transition:.25s;
+will-change:transform;
 cursor:pointer;
 }
 
@@ -217,57 +221,57 @@ h1{font-size:34px;}
 <div class="grid">
 
 <div class="project-card" onclick="openLightbox('work1.jpg.png')">
-<div class="project-thumb"><img src="work1.jpg.png" alt="Asahi 1"></div>
+<div class="project-thumb"><img src="work1.jpg.png" alt="Asahi 1" loading="lazy" decoding="async"></div>
 <div class="project-info"><h3>Asahi</h3><p>Aisle Fin</p></div>
 </div>
 
 <div class="project-card" onclick="openLightbox('work2.jpg.png')">
-<div class="project-thumb"><img src="work2.jpg.png" alt="Asahi 2"></div>
+<div class="project-thumb"><img src="work2.jpg.png" alt="Asahi 2" loading="lazy" decoding="async"></div>
 <div class="project-info"><h3>Asahi</h3><p>Sampling Stand</p></div>
 </div>
 
 <div class="project-card" onclick="openLightbox('work3.jpg.png')">
-<div class="project-thumb"><img src="work3.jpg.png" alt="Asahi 3"></div>
+<div class="project-thumb"><img src="work3.jpg.png" alt="Asahi 3" loading="lazy" decoding="async"></div>
 <div class="project-info"><h3>Asahi</h3><p>Wobbler</p></div>
 </div>
 
 <div class="project-card" onclick="openLightbox('work4.jpg.png')">
-<div class="project-thumb"><img src="work4.jpg.png" alt="Asahi 4"></div>
+<div class="project-thumb"><img src="work4.jpg.png" alt="Asahi 4" loading="lazy" decoding="async"></div>
 <div class="project-info"><h3>Asahi</h3><p>Poster</p></div>
 </div>
 
 <div class="project-card" onclick="openLightbox('work5.jpg.png')">
-<div class="project-thumb"><img src="work5.jpg.png" alt="Asahi 5"></div>
+<div class="project-thumb"><img src="work5.jpg.png" alt="Asahi 5" loading="lazy" decoding="async"></div>
 <div class="project-info"><h3>Asahi</h3><p>Shelf Visual</p></div>
 </div>
 
 <div class="project-card" onclick="openLightbox('work6.jpg.png')">
-<div class="project-thumb"><img src="work6.jpg.png" alt="Asahi 6"></div>
+<div class="project-thumb"><img src="work6.jpg.png" alt="Asahi 6" loading="lazy" decoding="async"></div>
 <div class="project-info"><h3>Asahi</h3><p>Campaign Visual</p></div>
 </div>
 
 <div class="project-card" onclick="openLightbox('work7.jpg.png')">
-<div class="project-thumb"><img src="work7.jpg.png" alt="Asahi 7"></div>
+<div class="project-thumb"><img src="work7.jpg.png" alt="Asahi 7" loading="lazy" decoding="async"></div>
 <div class="project-info"><h3>Asahi</h3><p>Campaign Visual</p></div>
 </div>
 
 <div class="project-card" onclick="openLightbox('work8.jpg.png')">
-<div class="project-thumb"><img src="work8.jpg.png" alt="Asahi 8"></div>
+<div class="project-thumb"><img src="work8.jpg.png" alt="Asahi 8" loading="lazy" decoding="async"></div>
 <div class="project-info"><h3>Asahi</h3><p>Campaign Visual</p></div>
 </div>
 
 <div class="project-card" onclick="openLightbox('work9.jpg.png')">
-<div class="project-thumb"><img src="work9.jpg.png" alt="Asahi 9"></div>
+<div class="project-thumb"><img src="work9.jpg.png" alt="Asahi 9" loading="lazy" decoding="async"></div>
 <div class="project-info"><h3>Asahi</h3><p>Campaign Visual</p></div>
 </div>
 
 <div class="project-card" onclick="openLightbox('Asahi fridge.png')">
-<div class="project-thumb"><img src="Asahi fridge.png" alt="Asahi Fridge"></div>
+<div class="project-thumb"><img src="Asahi fridge.png" alt="Asahi Fridge" loading="lazy" decoding="async"></div>
 <div class="project-info"><h3>Asahi</h3><p>Asahi Fridge</p></div>
 </div>
 
 <div class="project-card" onclick="openLightbox('Photo frame.png')">
-<div class="project-thumb"><img src="Photo frame.png" alt="Photo Frame"></div>
+<div class="project-thumb"><img src="Photo frame.png" alt="Photo Frame" loading="lazy" decoding="async"></div>
 <div class="project-info"><h3>Asahi</h3><p>Photo Frame</p></div>
 </div>
 
@@ -275,8 +279,8 @@ h1{font-size:34px;}
 </div>
 
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-<button class="close" onclick="closeLightbox()">×</button>
-<img id="lightbox-img" src="" alt="Preview">
+<button class="close" onclick="event.stopPropagation(); closeLightbox();">×</button>
+<img id="lightbox-img" src="" alt="Preview" onclick="event.stopPropagation();">
 </div>
 
 <script>
