@@ -11,8 +11,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
+
 *{
 box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
 }
 
 body{
@@ -23,7 +28,10 @@ color:white;
 overflow-x:hidden;
 }
 
-/* background */
+
+/* =========================
+   BACKGROUND
+========================= */
 
 .bg{
 position:fixed;
@@ -65,6 +73,7 @@ opacity:.25;
 }
 
 @keyframes float{
+
 0%{
 transform:translate(0,0) scale(1);
 }
@@ -72,36 +81,53 @@ transform:translate(0,0) scale(1);
 100%{
 transform:translate(60px,-40px) scale(1.2);
 }
+
 }
 
 .vignette{
 position:fixed;
 inset:0;
-background:radial-gradient(circle at center, transparent 40%, rgba(0,0,0,.72) 100%);
+background:
+radial-gradient(
+circle at center,
+transparent 40%,
+rgba(0,0,0,.72) 100%
+);
 z-index:-4;
 }
 
-/* cursor glow */
+
+/* =========================
+   CURSOR GLOW
+========================= */
 
 .cursor-glow{
 position:fixed;
 width:360px;
 height:360px;
 border-radius:50%;
-background:radial-gradient(circle, rgba(100,140,255,.18), rgba(100,140,255,0) 70%);
+background:
+radial-gradient(
+circle,
+rgba(100,140,255,.18),
+rgba(100,140,255,0) 70%
+);
 pointer-events:none;
 z-index:-2;
 mix-blend-mode:screen;
 transition:transform .07s linear;
 }
 
-/* layout */
+
+/* =========================
+   MAIN LAYOUT
+========================= */
 
 .container{
 width:1280px;
 max-width:calc(100% - 40px);
 margin:auto;
-padding:60px 0 80px;
+padding:60px 0 65px;
 }
 
 h1{
@@ -110,15 +136,21 @@ margin:0 0 30px;
 letter-spacing:-.02em;
 }
 
-/* grid */
+
+/* =========================
+   PROJECT GRID
+========================= */
 
 .grid{
 display:grid;
-grid-template-columns:repeat(3,1fr);
+grid-template-columns:repeat(3,minmax(0,1fr));
 gap:28px;
 }
 
-/* card */
+
+/* =========================
+   PROJECT CARD
+========================= */
 
 .project-card{
 contain:layout paint;
@@ -126,11 +158,15 @@ background:#0b1118;
 border-radius:22px;
 overflow:hidden;
 border:1px solid rgba(255,255,255,.05);
-transition:.25s;
+transition:
+transform .25s ease,
+border-color .25s ease,
+box-shadow .25s ease;
 will-change:transform;
 text-decoration:none;
 color:white;
 display:block;
+min-width:0;
 }
 
 .project-card:hover{
@@ -139,7 +175,10 @@ border-color:rgba(255,255,255,.15);
 box-shadow:0 20px 45px rgba(0,0,0,.35);
 }
 
-/* thumbnail */
+
+/* =========================
+   THUMBNAIL
+========================= */
 
 .project-thumb{
 height:320px;
@@ -152,14 +191,17 @@ width:100%;
 height:100%;
 object-fit:cover;
 display:block;
-transition:.35s;
+transition:transform .35s ease;
 }
 
-.project-card:hover img{
+.project-card:hover .project-thumb img{
 transform:scale(1.05);
 }
 
-/* text */
+
+/* =========================
+   PROJECT TEXT
+========================= */
 
 .project-info{
 padding:22px;
@@ -169,6 +211,7 @@ padding:22px;
 margin:0;
 font-size:24px;
 line-height:1.2;
+letter-spacing:-.02em;
 }
 
 .project-info p{
@@ -177,18 +220,171 @@ opacity:.62;
 font-size:15px;
 }
 
-/* responsive */
+
+/* =========================
+   CONTACT FOOTER
+========================= */
+
+.footer{
+width:1280px;
+max-width:calc(100% - 40px);
+margin:0 auto;
+padding:0 0 70px;
+}
+
+.footer-inner{
+position:relative;
+overflow:hidden;
+padding:36px;
+background:
+linear-gradient(
+180deg,
+rgba(17,20,27,.92) 0%,
+rgba(9,11,15,.96) 100%
+);
+border:1px solid rgba(255,255,255,.07);
+border-radius:30px;
+box-shadow:0 25px 80px rgba(0,0,0,.28);
+}
+
+.footer-inner::before{
+content:"";
+position:absolute;
+width:420px;
+height:420px;
+border-radius:50%;
+right:-180px;
+top:-220px;
+background:
+radial-gradient(
+circle,
+rgba(124,58,237,.20),
+transparent 70%
+);
+pointer-events:none;
+}
+
+.footer-head{
+position:relative;
+z-index:1;
+margin-bottom:26px;
+}
+
+.footer-label{
+margin:0 0 8px;
+font-size:12px;
+font-weight:600;
+letter-spacing:.16em;
+text-transform:uppercase;
+color:rgba(255,255,255,.42);
+}
+
+.footer-head h2{
+margin:0;
+font-size:34px;
+font-weight:800;
+letter-spacing:-.035em;
+}
+
+.footer-head p{
+margin:10px 0 0;
+max-width:540px;
+font-size:15px;
+line-height:1.6;
+color:rgba(255,255,255,.55);
+}
+
+
+/* =========================
+   CONTACT GRID
+========================= */
+
+.contact-grid{
+position:relative;
+z-index:1;
+display:grid;
+grid-template-columns:repeat(2,minmax(0,1fr));
+gap:16px;
+}
+
+.contact-card{
+display:block;
+padding:20px;
+border-radius:20px;
+background:rgba(255,255,255,.03);
+border:1px solid rgba(255,255,255,.06);
+text-decoration:none;
+color:white;
+transition:
+transform .25s ease,
+border-color .25s ease,
+background .25s ease;
+}
+
+.contact-card:hover{
+transform:translateY(-4px);
+border-color:rgba(255,255,255,.14);
+background:rgba(255,255,255,.055);
+}
+
+.contact-title{
+display:block;
+margin-bottom:9px;
+font-size:12px;
+font-weight:600;
+letter-spacing:.08em;
+text-transform:uppercase;
+color:rgba(255,255,255,.42);
+}
+
+.contact-value{
+display:block;
+font-size:16px;
+font-weight:600;
+line-height:1.5;
+word-break:break-word;
+}
+
+.contact-arrow{
+display:block;
+margin-top:14px;
+font-size:14px;
+opacity:.45;
+transition:.25s;
+}
+
+.contact-card:hover .contact-arrow{
+opacity:.9;
+transform:translateX(3px);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
 
 @media(max-width:1100px){
+
 .grid{
-grid-template-columns:repeat(2,1fr);
+grid-template-columns:repeat(2,minmax(0,1fr));
 }
+
+.contact-grid{
+grid-template-columns:1fr;
+}
+
 }
 
 @media(max-width:700px){
+
 .container{
 max-width:calc(100% - 24px);
-padding:40px 0 60px;
+padding:40px 0 50px;
+}
+
+.footer{
+max-width:calc(100% - 24px);
+padding-bottom:45px;
 }
 
 h1{
@@ -197,16 +393,32 @@ font-size:34px;
 
 .grid{
 grid-template-columns:1fr;
+gap:20px;
 }
 
 .project-thumb{
 height:260px;
 }
+
+.footer-inner{
+padding:26px;
+border-radius:24px;
 }
+
+.footer-head h2{
+font-size:28px;
+}
+
+}
+
 </style>
 </head>
 
+
 <body>
+
+
+<!-- BACKGROUND -->
 
 <div class="bg">
 <div class="light light1"></div>
@@ -215,7 +427,13 @@ height:260px;
 </div>
 
 <div class="vignette"></div>
+
 <div class="cursor-glow"></div>
+
+
+<!-- =========================
+     PROJECTS
+========================= -->
 
 <div class="container">
 
@@ -223,72 +441,206 @@ height:260px;
 
 <div class="grid">
 
+
 <!-- ASAHI -->
+
 <a href="asahi.html" class="project-card">
+
 <div class="project-thumb">
-<img src="work1.jpg.png" alt="Asahi" loading="lazy" decoding="async">
+<img
+src="work1.jpg.png"
+alt="Asahi"
+loading="lazy"
+decoding="async">
 </div>
+
 <div class="project-info">
 <h3>Asahi</h3>
 <p>POSM Campaign Series</p>
 </div>
+
 </a>
 
+
 <!-- CHINGGIS BEER -->
+
 <a href="chinggis.html" class="project-card">
+
 <div class="project-thumb">
-<img src="CB work1.jpg.jpg" alt="Chinggis Beer" loading="lazy" decoding="async">
+<img
+src="CB work1.jpg.jpg"
+alt="Chinggis Beer"
+loading="lazy"
+decoding="async">
 </div>
+
 <div class="project-info">
 <h3>Chinggis Beer</h3>
 <p>Campaign Design Series</p>
 </div>
+
 </a>
 
+
 <!-- MOBICOM -->
+
 <a href="mobicom.html" class="project-card">
+
 <div class="project-thumb">
-<img src="mb1.jpg.jpeg" alt="Mobicom" loading="lazy" decoding="async">
+<img
+src="mb1.jpg.jpeg"
+alt="Mobicom"
+loading="lazy"
+decoding="async">
 </div>
+
 <div class="project-info">
 <h3>Mobicom</h3>
 <p>Social Campaign Series</p>
 </div>
+
 </a>
 
+
 <!-- KOZEL -->
+
 <a href="kozel.html" class="project-card">
+
 <div class="project-thumb">
-<img src="kozel-1.jpg.png" alt="Kozel" loading="lazy" decoding="async">
+<img
+src="kozel-1.jpg.png"
+alt="Kozel"
+loading="lazy"
+decoding="async">
 </div>
+
 <div class="project-info">
 <h3>Kozel</h3>
 <p>Beer Campaign Series</p>
 </div>
+
 </a>
 
+
 <!-- VIDEO -->
+
 <a href="video.html" class="project-card">
+
 <div class="project-thumb">
-<img src="video-cover.jpg" alt="Video" loading="lazy" decoding="async">
+<img
+src="video-cover.jpg"
+alt="Video"
+loading="lazy"
+decoding="async">
 </div>
+
 <div class="project-info">
 <h3>Video</h3>
 <p>Reel / Motion</p>
 </div>
+
 </a>
 
+
 </div>
 
 </div>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<footer class="footer">
+
+<div class="footer-inner">
+
+
+<div class="footer-head">
+
+<p class="footer-label">
+Contact
+</p>
+
+<h2>
+Let's work together.
+</h2>
+
+<p>
+For design projects, collaborations and freelance work, feel free to get in touch.
+</p>
+
+</div>
+
+
+<div class="contact-grid">
+
+
+<!-- EMAIL -->
+
+<a
+href="mailto:dukdulguun888@gmail.com"
+class="contact-card"
+>
+
+<span class="contact-title">
+Email
+</span>
+
+<span class="contact-value">
+dukdulguun888@gmail.com
+</span>
+
+<span class="contact-arrow">
+Send email →
+</span>
+
+</a>
+
+
+<!-- PHONE -->
+
+<a
+href="tel:+97695959727"
+class="contact-card"
+>
+
+<span class="contact-title">
+Phone
+</span>
+
+<span class="contact-value">
++976 9595 9727
+</span>
+
+<span class="contact-arrow">
+Call →
+</span>
+
+</a>
+
+
+</div>
+
+</div>
+
+</footer>
+
 
 <script>
-const glow=document.querySelector(".cursor-glow");
+
+const glow =
+document.querySelector(".cursor-glow");
 
 document.addEventListener("mousemove",(e)=>{
-glow.style.transform=`translate(${e.clientX-180}px,${e.clientY-180}px)`;
+
+glow.style.transform =
+`translate(${e.clientX-180}px,${e.clientY-180}px)`;
+
 });
+
 </script>
+
 
 </body>
 </html>
