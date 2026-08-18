@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Kozel | Portfolio</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,6 +16,10 @@
 box-sizing:border-box;
 }
 
+html{
+scroll-behavior:smooth;
+}
+
 body{
 margin:0;
 font-family:Inter,sans-serif;
@@ -23,7 +28,10 @@ color:white;
 overflow-x:hidden;
 }
 
-/* BACKGROUND */
+
+/* =========================
+   BACKGROUND
+========================= */
 
 .bg{
 position:fixed;
@@ -65,12 +73,15 @@ opacity:.25;
 }
 
 @keyframes float{
+
 0%{
 transform:translate(0,0) scale(1);
 }
+
 100%{
 transform:translate(60px,-40px) scale(1.2);
 }
+
 }
 
 .vignette{
@@ -85,7 +96,10 @@ rgba(0,0,0,.72) 100%
 z-index:-4;
 }
 
-/* CONTAINER */
+
+/* =========================
+   CONTAINER
+========================= */
 
 .container{
 width:1200px;
@@ -94,7 +108,10 @@ margin:auto;
 padding:50px 0 70px;
 }
 
-/* HEADER */
+
+/* =========================
+   HEADER
+========================= */
 
 .top{
 display:flex;
@@ -129,7 +146,10 @@ border-color:rgba(255,255,255,.16);
 background:rgba(255,255,255,.05);
 }
 
-/* GRID */
+
+/* =========================
+   GRID
+========================= */
 
 .grid{
 display:grid;
@@ -137,7 +157,10 @@ grid-template-columns:repeat(3,minmax(0,1fr));
 gap:24px;
 }
 
-/* CARD */
+
+/* =========================
+   CARD
+========================= */
 
 .project-card{
 background:#0b1118;
@@ -149,6 +172,7 @@ transform .25s ease,
 border-color .25s ease,
 box-shadow .25s ease;
 cursor:pointer;
+min-width:0;
 }
 
 .project-card:hover{
@@ -157,9 +181,13 @@ border-color:rgba(255,255,255,.15);
 box-shadow:0 20px 45px rgba(0,0,0,.35);
 }
 
-/* THUMBNAIL */
+
+/* =========================
+   THUMBNAIL
+========================= */
 
 .project-thumb{
+width:100%;
 height:260px;
 overflow:hidden;
 background:#111;
@@ -168,6 +196,7 @@ background:#111;
 .project-thumb img{
 width:100%;
 height:100%;
+max-width:none;
 object-fit:cover;
 display:block;
 transition:transform .35s ease;
@@ -177,7 +206,10 @@ transition:transform .35s ease;
 transform:scale(1.04);
 }
 
-/* INFO */
+
+/* =========================
+   CARD TEXT
+========================= */
 
 .project-info{
 padding:18px;
@@ -196,17 +228,21 @@ opacity:.6;
 font-size:13px;
 }
 
-/* LIGHTBOX */
+
+/* =========================
+   LIGHTBOX
+========================= */
 
 .lightbox{
 position:fixed;
 inset:0;
 background:rgba(0,0,0,.88);
 backdrop-filter:blur(18px);
+-webkit-backdrop-filter:blur(18px);
 display:none;
 align-items:center;
 justify-content:center;
-z-index:999;
+z-index:9999;
 padding:30px;
 }
 
@@ -215,6 +251,7 @@ display:flex;
 }
 
 .lightbox img{
+display:block;
 max-width:92vw;
 max-height:88vh;
 width:auto;
@@ -235,10 +272,12 @@ border:1px solid rgba(255,255,255,.15);
 background:rgba(255,255,255,.08);
 color:white;
 font-size:26px;
+line-height:1;
 cursor:pointer;
 display:grid;
 place-items:center;
 transition:.25s;
+z-index:10000;
 }
 
 .close:hover{
@@ -246,7 +285,10 @@ background:rgba(255,255,255,.16);
 transform:scale(1.05);
 }
 
-/* RESPONSIVE */
+
+/* =========================
+   RESPONSIVE
+========================= */
 
 @media(max-width:1000px){
 
@@ -284,19 +326,32 @@ height:240px;
 }
 
 </style>
+
 </head>
+
 
 <body>
 
+
+<!-- BACKGROUND -->
+
 <div class="bg">
+
 <div class="light light1"></div>
+
 <div class="light light2"></div>
+
 <div class="light light3"></div>
+
 </div>
 
 <div class="vignette"></div>
 
+
+<!-- CONTENT -->
+
 <div class="container">
+
 
 <div class="top">
 
@@ -308,338 +363,529 @@ height:240px;
 
 </div>
 
+
 <div class="grid">
 
 
-<!-- KOZEL BOARD GAME -->
+<!-- =========================
+     01 BOARD GAME
+========================= -->
 
-<div class="project-card"
-onclick="openLightbox('kozel-1.jpg.png')">
+<div
+class="project-card"
+onclick="openLightbox('kozel-1.jpg.png')"
+>
 
 <div class="project-thumb">
+
 <img
 src="kozel-1.jpg.png"
 alt="Kozel BoardGame"
 loading="lazy"
-decoding="async">
+decoding="async"
+>
+
 </div>
 
 <div class="project-info">
+
 <h3>Kozel BoardGame</h3>
+
 <p>Campaign Visual 01</p>
-</div>
 
 </div>
 
+</div>
 
-<!-- KOZEL CARD GAME -->
 
-<div class="project-card"
-onclick="openLightbox('kozel-2.jpg.png')">
+<!-- =========================
+     02 CARD GAME
+========================= -->
+
+<div
+class="project-card"
+onclick="openLightbox('kozel-2.jpg.png')"
+>
 
 <div class="project-thumb">
+
 <img
 src="kozel-2.jpg.png"
 alt="Kozel Card Game"
 loading="lazy"
-decoding="async">
+decoding="async"
+>
+
 </div>
 
 <div class="project-info">
+
 <h3>Kozel Card Game</h3>
+
 <p>Campaign Visual 02</p>
-</div>
 
 </div>
 
+</div>
 
-<!-- SHELF 1 -->
 
-<div class="project-card"
-onclick="openLightbox('shelf-1.jpg')">
+<!-- =========================
+     03 SHELF 1
+========================= -->
+
+<div
+class="project-card"
+onclick="openLightbox('shelf-1.jpg')"
+>
 
 <div class="project-thumb">
+
 <img
 src="shelf-1.jpg"
 alt="Kozel Shelf 1"
 loading="lazy"
-decoding="async">
+decoding="async"
+>
+
 </div>
 
 <div class="project-info">
+
 <h3>Kozel Shelf</h3>
+
 <p>Shelf Display 01</p>
-</div>
 
 </div>
 
+</div>
 
-<!-- SHELF 2 -->
 
-<div class="project-card"
-onclick="openLightbox('shelf-2.jpg')">
+<!-- =========================
+     04 SHELF 2
+========================= -->
+
+<div
+class="project-card"
+onclick="openLightbox('shelf-2.jpg')"
+>
 
 <div class="project-thumb">
+
 <img
 src="shelf-2.jpg"
 alt="Kozel Shelf 2"
 loading="lazy"
-decoding="async">
+decoding="async"
+>
+
 </div>
 
 <div class="project-info">
+
 <h3>Kozel Shelf</h3>
+
 <p>Shelf Display 02</p>
-</div>
 
 </div>
 
+</div>
 
-<!-- TABLE TENT -->
 
-<div class="project-card"
-onclick="openLightbox('table tent.jpg')">
+<!-- =========================
+     05 TABLE TENT
+========================= -->
+
+<div
+class="project-card"
+onclick="openLightbox('table tent.jpg')"
+>
 
 <div class="project-thumb">
+
 <img
 src="table tent.jpg"
 alt="Kozel Table Tent"
 loading="lazy"
-decoding="async">
+decoding="async"
+>
+
 </div>
 
 <div class="project-info">
+
 <h3>Kozel</h3>
+
 <p>Table Tent</p>
-</div>
 
 </div>
 
+</div>
 
-<!-- GONDOLA -->
 
-<div class="project-card"
-onclick="openLightbox('KZ Gondola.jpg')">
+<!-- =========================
+     06 KZ GONDOLA
+========================= -->
+
+<div
+class="project-card"
+onclick="openLightbox('KZ Gondola.jpg')"
+>
 
 <div class="project-thumb">
+
 <img
 src="KZ Gondola.jpg"
 alt="Kozel Gondola"
 loading="lazy"
-decoding="async">
+decoding="async"
+>
+
 </div>
 
 <div class="project-info">
+
 <h3>Kozel Gondola</h3>
+
 <p>Retail Display</p>
-</div>
 
 </div>
 
+</div>
 
-<!-- DARK WOBBLER -->
 
-<div class="project-card"
-onclick="openLightbox('KZ Dark wobbler.jpg')">
+<!-- =========================
+     07 DARK WOBBLER
+========================= -->
+
+<div
+class="project-card"
+onclick="openLightbox('KZ Dark wobbler.jpg')"
+>
 
 <div class="project-thumb">
+
 <img
 src="KZ Dark wobbler.jpg"
 alt="Kozel Dark Wobbler"
 loading="lazy"
-decoding="async">
+decoding="async"
+>
+
 </div>
 
 <div class="project-info">
+
 <h3>Kozel Dark</h3>
+
 <p>Wobbler</p>
-</div>
 
 </div>
 
+</div>
 
-<!-- LAGER WOBBLER -->
 
-<div class="project-card"
-onclick="openLightbox('KZ Lager wobbler.jpg')">
+<!-- =========================
+     08 LAGER WOBBLER
+========================= -->
+
+<div
+class="project-card"
+onclick="openLightbox('KZ Lager wobbler.jpg')"
+>
 
 <div class="project-thumb">
+
 <img
 src="KZ Lager wobbler.jpg"
 alt="Kozel Lager Wobbler"
 loading="lazy"
-decoding="async">
+decoding="async"
+>
+
 </div>
 
 <div class="project-info">
+
 <h3>Kozel Lager</h3>
+
 <p>Wobbler</p>
-</div>
 
 </div>
 
+</div>
 
-<!-- CINNAMON WOBBLER -->
 
-<div class="project-card"
-onclick="openLightbox('KZ cinnamon crust wobbler.jpg')">
+<!-- =========================
+     09 CINNAMON WOBBLER
+========================= -->
+
+<div
+class="project-card"
+onclick="openLightbox('KZ cinnamon crust wobbler.jpg')"
+>
 
 <div class="project-thumb">
+
 <img
 src="KZ cinnamon crust wobbler.jpg"
 alt="Kozel Cinnamon Crust Wobbler"
 loading="lazy"
-decoding="async">
+decoding="async"
+>
+
 </div>
 
 <div class="project-info">
+
 <h3>Kozel Cinnamon</h3>
+
 <p>Crust Wobbler</p>
-</div>
 
 </div>
 
+</div>
 
-<!-- MIX WOBBLER -->
 
-<div class="project-card"
-onclick="openLightbox('KZ mix wobbler.jpg')">
+<!-- =========================
+     10 MIX WOBBLER
+========================= -->
+
+<div
+class="project-card"
+onclick="openLightbox('KZ mix wobbler.jpg')"
+>
 
 <div class="project-thumb">
+
 <img
 src="KZ mix wobbler.jpg"
 alt="Kozel Mix Wobbler"
 loading="lazy"
-decoding="async">
+decoding="async"
+>
+
 </div>
 
 <div class="project-info">
+
 <h3>Kozel Mix</h3>
+
 <p>Wobbler</p>
-</div>
 
 </div>
 
+</div>
 
-<!-- A6 MENU 1 -->
 
-<div class="project-card"
-onclick="openLightbox('A6 Menu-1.png')">
+<!-- =========================
+     11 A6 MENU 1
+========================= -->
+
+<div
+class="project-card"
+onclick="openLightbox('A6 Menu-1.png')"
+>
 
 <div class="project-thumb">
+
 <img
 src="A6 Menu-1.png"
-alt="Kozel A6 Menu 1"
+alt="Kozel A6 Menu Dark and Lager"
 loading="lazy"
-decoding="async">
+decoding="async"
+>
+
 </div>
 
 <div class="project-info">
+
 <h3>Kozel A6 Menu</h3>
+
 <p>Dark & Lager Menu</p>
-</div>
 
 </div>
 
+</div>
 
-<!-- A6 MENU 2 -->
 
-<div class="project-card"
-onclick="openLightbox('A6 Menu-2.png')">
+<!-- =========================
+     12 A6 MENU 2
+========================= -->
+
+<div
+class="project-card"
+onclick="openLightbox('A6 Menu-2.png')"
+>
 
 <div class="project-thumb">
+
 <img
 src="A6 Menu-2.png"
-alt="Kozel A6 Menu 2"
+alt="Kozel A6 Menu Cinnamon Crust and Mix"
 loading="lazy"
-decoding="async">
+decoding="async"
+>
+
 </div>
 
 <div class="project-info">
+
 <h3>Kozel A6 Menu</h3>
+
 <p>Cinnamon Crust & Mix</p>
-</div>
 
 </div>
 
+</div>
 
-<!-- 4.5 x 24.5 -->
 
-<div class="project-card"
-onclick="openLightbox('4.5x24.5.png')">
+<!-- =========================
+     13 4.5 x 24.5
+========================= -->
+
+<div
+class="project-card"
+onclick="openLightbox('4.5x24.5.png')"
+>
 
 <div class="project-thumb">
+
 <img
 src="4.5x24.5.png"
-alt="Kozel 4.5x24.5"
+alt="Kozel POSM 4.5 x 24.5"
 loading="lazy"
-decoding="async">
+decoding="async"
+>
+
 </div>
 
 <div class="project-info">
+
 <h3>Kozel</h3>
+
 <p>4.5 × 24.5 POSM</p>
-</div>
 
 </div>
 
+</div>
 
-<!-- CINNAMON HOLDER -->
 
-<div class="project-card"
-onclick="openLightbox('Cinnamon holder 10x26.png')">
+<!-- =========================
+     14 CINNAMON HOLDER
+========================= -->
+
+<div
+class="project-card"
+onclick="openLightbox('Cinnamon holder 10x26.png')"
+>
 
 <div class="project-thumb">
+
 <img
 src="Cinnamon holder 10x26.png"
 alt="Kozel Cinnamon Holder"
 loading="lazy"
-decoding="async">
+decoding="async"
+>
+
 </div>
 
 <div class="project-info">
+
 <h3>Kozel Cinnamon</h3>
+
 <p>Holder 10 × 26</p>
-</div>
 
 </div>
 
+</div>
 
-<!-- GONDOLA SIDE PANEL -->
 
-<div class="project-card"
-onclick="openLightbox('CU gondola side panel 155x40.jpg')">
+<!-- =========================
+     15 GONDOLA SIDE PANEL
+========================= -->
+
+<div
+class="project-card"
+onclick="openLightbox('CU gondola side panel 155x40.jpg')"
+>
 
 <div class="project-thumb">
+
 <img
 src="CU gondola side panel 155x40.jpg"
 alt="Kozel Gondola Side Panel"
 loading="lazy"
-decoding="async">
+decoding="async"
+>
+
 </div>
 
 <div class="project-info">
+
 <h3>Kozel Gondola</h3>
+
 <p>Side Panel 155 × 40</p>
-</div>
-
-</div>
-
 
 </div>
 
 </div>
 
 
-<!-- LIGHTBOX -->
+<!-- =========================
+     16 NEW GONDOLA DISPLAY
+========================= -->
 
-<div class="lightbox"
+<div
+class="project-card"
+onclick="openLightbox('Gondola.png')"
+>
+
+<div class="project-thumb">
+
+<img
+src="Gondola.png"
+alt="Kozel Gondola Display"
+loading="lazy"
+decoding="async"
+>
+
+</div>
+
+<div class="project-info">
+
+<h3>Kozel Gondola</h3>
+
+<p>Gondola Display</p>
+
+</div>
+
+</div>
+
+
+</div>
+<!-- END GRID -->
+
+
+</div>
+<!-- END CONTAINER -->
+
+
+<!-- =========================
+     LIGHTBOX
+========================= -->
+
+<div
+class="lightbox"
 id="lightbox"
-onclick="closeLightbox()">
+onclick="closeLightbox()"
+>
 
 <button
 class="close"
-onclick="event.stopPropagation(); closeLightbox();">
+type="button"
+onclick="event.stopPropagation(); closeLightbox();"
+>
 ×
 </button>
 
@@ -647,7 +893,8 @@ onclick="event.stopPropagation(); closeLightbox();">
 id="lightbox-img"
 src=""
 alt="Preview"
-onclick="event.stopPropagation();">
+onclick="event.stopPropagation();"
+>
 
 </div>
 
@@ -683,15 +930,19 @@ document.body.style.overflow = "";
 }
 
 
-document.addEventListener("keydown",function(e){
+document.addEventListener(
+"keydown",
+function(e){
 
 if(e.key === "Escape"){
 closeLightbox();
 }
 
-});
+}
+);
 
 </script>
+
 
 </body>
 </html>
