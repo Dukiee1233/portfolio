@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Asahi | Portfolio</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,297 +11,788 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
-*{box-sizing:border-box;}
 
-body{
-margin:0;
-font-family:Inter,sans-serif;
-background:#05070a;
-color:white;
-overflow-x:hidden;
+*{
+  box-sizing:border-box;
 }
 
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:#05070a;
+  color:white;
+  overflow-x:hidden;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
 .bg{
-position:fixed;
-inset:0;
-z-index:-5;
-overflow:hidden;
+  position:fixed;
+  inset:0;
+  z-index:-5;
+  overflow:hidden;
 }
 
 .light{
-position:absolute;
-width:560px;
-height:560px;
-border-radius:50%;
-filter:blur(130px);
-opacity:.35;
-mix-blend-mode:screen;
-animation:float 18s ease-in-out infinite alternate;
+  position:absolute;
+  width:560px;
+  height:560px;
+  border-radius:50%;
+  filter:blur(130px);
+  opacity:.35;
+  mix-blend-mode:screen;
+  animation:float 18s ease-in-out infinite alternate;
 }
 
-.light1{background:#4f7cff;top:-120px;left:-80px;}
-.light2{background:#ff3c82;bottom:-160px;right:-120px;animation-duration:22s;}
-.light3{background:#7c3aed;top:40%;left:55%;animation-duration:26s;opacity:.25;}
+.light1{
+  background:#4f7cff;
+  top:-120px;
+  left:-80px;
+}
+
+.light2{
+  background:#ff3c82;
+  bottom:-160px;
+  right:-120px;
+  animation-duration:22s;
+}
+
+.light3{
+  background:#7c3aed;
+  top:40%;
+  left:55%;
+  animation-duration:26s;
+  opacity:.25;
+}
 
 @keyframes float{
-0%{transform:translate(0,0) scale(1);}
-100%{transform:translate(60px,-40px) scale(1.2);}
+  0%{
+    transform:translate(0,0) scale(1);
+  }
+
+  100%{
+    transform:translate(60px,-40px) scale(1.2);
+  }
 }
 
 .vignette{
-position:fixed;
-inset:0;
-background:radial-gradient(circle at center, transparent 40%, rgba(0,0,0,.72) 100%);
-z-index:-4;
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(
+      circle at center,
+      transparent 40%,
+      rgba(0,0,0,.72) 100%
+    );
+  z-index:-4;
 }
+
+/* =========================
+   CONTAINER
+========================= */
 
 .container{
-width:1200px;
-max-width:calc(100% - 40px);
-margin:auto;
-padding:50px 0 70px;
+  width:1200px;
+  max-width:calc(100% - 40px);
+  margin:auto;
+  padding:50px 0 80px;
 }
 
+/* =========================
+   HEADER
+========================= */
+
 .top{
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:20px;
-margin-bottom:28px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  margin-bottom:30px;
 }
 
 h1{
-font-size:42px;
-margin:0;
-letter-spacing:-.02em;
+  font-size:42px;
+  margin:0;
+  letter-spacing:-.03em;
 }
 
 .back-link{
-text-decoration:none;
-color:#fff;
-font-size:15px;
-opacity:.8;
-padding:12px 18px;
-border-radius:14px;
-border:1px solid rgba(255,255,255,.08);
-background:rgba(255,255,255,.03);
-transition:.25s ease;
+  text-decoration:none;
+  color:#fff;
+  font-size:15px;
+  opacity:.8;
+
+  padding:12px 18px;
+
+  border-radius:14px;
+
+  border:1px solid rgba(255,255,255,.08);
+
+  background:rgba(255,255,255,.03);
+
+  transition:.25s ease;
 }
 
 .back-link:hover{
-opacity:1;
-transform:translateY(-2px);
-border-color:rgba(255,255,255,.16);
-background:rgba(255,255,255,.05);
+  opacity:1;
+  transform:translateY(-2px);
+
+  border-color:rgba(255,255,255,.16);
+
+  background:rgba(255,255,255,.05);
 }
+
+/* =========================
+   GRID
+========================= */
 
 .grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:24px;
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,minmax(0,1fr));
+
+  gap:24px;
 }
 
+/* =========================
+   PROJECT CARD
+========================= */
+
 .project-card{
-contain:layout paint;
-background:#0b1118;
-border-radius:20px;
-overflow:hidden;
-border:1px solid rgba(255,255,255,.05);
-transition:.25s;
-will-change:transform;
-cursor:pointer;
+  background:#0b1118;
+
+  border-radius:20px;
+
+  overflow:hidden;
+
+  border:1px solid rgba(255,255,255,.05);
+
+  transition:
+    transform .25s ease,
+    border-color .25s ease,
+    box-shadow .25s ease;
+
+  cursor:pointer;
+
+  min-width:0;
 }
 
 .project-card:hover{
-transform:translateY(-6px);
-border-color:rgba(255,255,255,.15);
-box-shadow:0 20px 45px rgba(0,0,0,.35);
+  transform:translateY(-6px);
+
+  border-color:
+    rgba(255,255,255,.15);
+
+  box-shadow:
+    0 20px 45px
+    rgba(0,0,0,.35);
 }
 
+/* =========================
+   IMAGE AREA
+========================= */
+
 .project-thumb{
-height:300px;
-overflow:hidden;
-background:#111;
+  width:100%;
+
+  height:300px;
+
+  overflow:hidden;
+
+  background:#111;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
 }
 
 .project-thumb img{
-width:100%;
-height:100%;
-object-fit:cover;
-display:block;
-transition:.35s;
+  width:100%;
+
+  height:100%;
+
+  object-fit:cover;
+
+  object-position:center;
+
+  display:block;
+
+  transition:
+    transform .35s ease;
 }
 
-.project-card:hover img{
-transform:scale(1.04);
+.project-card:hover
+.project-thumb img{
+  transform:scale(1.04);
 }
+
+/* =========================
+   CARD TEXT
+========================= */
 
 .project-info{
-padding:18px;
+  padding:18px;
 }
 
 .project-info h3{
-margin:0;
-font-size:20px;
+  margin:0;
+
+  font-size:20px;
+
+  font-weight:700;
+
+  line-height:1.25;
 }
 
 .project-info p{
-margin:6px 0 0;
-opacity:.6;
-font-size:13px;
+  margin:6px 0 0;
+
+  opacity:.6;
+
+  font-size:13px;
+
+  line-height:1.5;
 }
+
+/* =========================
+   LIGHTBOX
+========================= */
 
 .lightbox{
-position:fixed;
-inset:0;
-background:rgba(0,0,0,.86);
-backdrop-filter:blur(18px);
-display:none;
-align-items:center;
-justify-content:center;
-z-index:999;
-padding:30px;
+  position:fixed;
+
+  inset:0;
+
+  background:
+    rgba(0,0,0,.88);
+
+  backdrop-filter:
+    blur(18px);
+
+  display:none;
+
+  align-items:center;
+
+  justify-content:center;
+
+  z-index:999;
+
+  padding:30px;
 }
 
-.lightbox.active{display:flex;}
+.lightbox.active{
+  display:flex;
+}
 
 .lightbox img{
-max-width:92vw;
-max-height:88vh;
-object-fit:contain;
-border-radius:18px;
-box-shadow:0 30px 90px rgba(0,0,0,.65);
+  max-width:92vw;
+
+  max-height:88vh;
+
+  width:auto;
+
+  height:auto;
+
+  object-fit:contain;
+
+  border-radius:18px;
+
+  box-shadow:
+    0 30px 90px
+    rgba(0,0,0,.65);
 }
+
+/* CLOSE */
 
 .close{
-position:fixed;
-top:24px;
-right:28px;
-width:46px;
-height:46px;
-border-radius:50%;
-border:1px solid rgba(255,255,255,.15);
-background:rgba(255,255,255,.08);
-color:white;
-font-size:26px;
-cursor:pointer;
-display:grid;
-place-items:center;
+  position:fixed;
+
+  top:24px;
+
+  right:28px;
+
+  width:46px;
+
+  height:46px;
+
+  border-radius:50%;
+
+  border:
+    1px solid
+    rgba(255,255,255,.15);
+
+  background:
+    rgba(255,255,255,.08);
+
+  color:white;
+
+  font-size:26px;
+
+  cursor:pointer;
+
+  display:grid;
+
+  place-items:center;
+
+  transition:.25s;
 }
 
+.close:hover{
+  background:
+    rgba(255,255,255,.16);
+
+  transform:scale(1.05);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
 @media(max-width:1000px){
-.grid{grid-template-columns:repeat(2,1fr);}
+
+  .grid{
+    grid-template-columns:
+      repeat(2,minmax(0,1fr));
+  }
+
 }
 
 @media(max-width:650px){
-.top{flex-direction:column;align-items:flex-start;}
-h1{font-size:34px;}
-.grid{grid-template-columns:1fr;}
-.project-thumb{height:260px;}
+
+  .container{
+    max-width:
+      calc(100% - 24px);
+
+    padding:
+      35px 0 60px;
+  }
+
+  .top{
+    flex-direction:column;
+
+    align-items:flex-start;
+  }
+
+  h1{
+    font-size:34px;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+
+    gap:18px;
+  }
+
+  .project-thumb{
+    height:260px;
+  }
+
+  .lightbox{
+    padding:18px;
+  }
+
+  .close{
+    top:16px;
+
+    right:16px;
+  }
+
 }
+
 </style>
 </head>
 
+
 <body>
 
+
+<!-- BACKGROUND -->
+
 <div class="bg">
-<div class="light light1"></div>
-<div class="light light2"></div>
-<div class="light light3"></div>
+
+  <div class="light light1"></div>
+
+  <div class="light light2"></div>
+
+  <div class="light light3"></div>
+
 </div>
 
 <div class="vignette"></div>
 
+
+<!-- CONTENT -->
+
 <div class="container">
 
+
 <div class="top">
-<h1>Asahi</h1>
-<a href="index.html" class="back-link">← Back to portfolio</a>
+
+  <h1>Asahi</h1>
+
+  <a
+    href="index.html"
+    class="back-link"
+  >
+    ← Back to portfolio
+  </a>
+
 </div>
+
 
 <div class="grid">
 
-<div class="project-card" onclick="openLightbox('work1.jpg.png')">
-<div class="project-thumb"><img src="work1.jpg.png" alt="Asahi 1" loading="lazy" decoding="async"></div>
-<div class="project-info"><h3>Asahi</h3><p>Aisle Fin</p></div>
-</div>
 
-<div class="project-card" onclick="openLightbox('work2.jpg.png')">
-<div class="project-thumb"><img src="work2.jpg.png" alt="Asahi 2" loading="lazy" decoding="async"></div>
-<div class="project-info"><h3>Asahi</h3><p>Sampling Stand</p></div>
-</div>
+<!-- =========================
+     EXISTING ASAHI WORK
+========================= -->
 
-<div class="project-card" onclick="openLightbox('work3.jpg.png')">
-<div class="project-thumb"><img src="work3.jpg.png" alt="Asahi 3" loading="lazy" decoding="async"></div>
-<div class="project-info"><h3>Asahi</h3><p>Wobbler</p></div>
-</div>
 
-<div class="project-card" onclick="openLightbox('work4.jpg.png')">
-<div class="project-thumb"><img src="work4.jpg.png" alt="Asahi 4" loading="lazy" decoding="async"></div>
-<div class="project-info"><h3>Asahi</h3><p>Poster</p></div>
-</div>
+<div
+  class="project-card"
+  onclick="openLightbox('work1.jpg.png')"
+>
 
-<div class="project-card" onclick="openLightbox('work5.jpg.png')">
-<div class="project-thumb"><img src="work5.jpg.png" alt="Asahi 5" loading="lazy" decoding="async"></div>
-<div class="project-info"><h3>Asahi</h3><p>Shelf Visual</p></div>
-</div>
+  <div class="project-thumb">
 
-<div class="project-card" onclick="openLightbox('work6.jpg.png')">
-<div class="project-thumb"><img src="work6.jpg.png" alt="Asahi 6" loading="lazy" decoding="async"></div>
-<div class="project-info"><h3>Asahi</h3><p>Campaign Visual</p></div>
-</div>
+    <img
+      src="work1.jpg.png"
+      alt="Asahi POSM"
+      loading="lazy"
+      decoding="async"
+    >
 
-<div class="project-card" onclick="openLightbox('work7.jpg.png')">
-<div class="project-thumb"><img src="work7.jpg.png" alt="Asahi 7" loading="lazy" decoding="async"></div>
-<div class="project-info"><h3>Asahi</h3><p>Campaign Visual</p></div>
-</div>
+  </div>
 
-<div class="project-card" onclick="openLightbox('work8.jpg.png')">
-<div class="project-thumb"><img src="work8.jpg.png" alt="Asahi 8" loading="lazy" decoding="async"></div>
-<div class="project-info"><h3>Asahi</h3><p>Campaign Visual</p></div>
-</div>
+  <div class="project-info">
 
-<div class="project-card" onclick="openLightbox('work9.jpg.png')">
-<div class="project-thumb"><img src="work9.jpg.png" alt="Asahi 9" loading="lazy" decoding="async"></div>
-<div class="project-info"><h3>Asahi</h3><p>Campaign Visual</p></div>
-</div>
+    <h3>Asahi</h3>
 
-<div class="project-card" onclick="openLightbox('Asahi fridge.png')">
-<div class="project-thumb"><img src="Asahi fridge.png" alt="Asahi Fridge" loading="lazy" decoding="async"></div>
-<div class="project-info"><h3>Asahi</h3><p>Asahi Fridge</p></div>
-</div>
+    <p>POSM Campaign</p>
 
-<div class="project-card" onclick="openLightbox('Photo frame.png')">
-<div class="project-thumb"><img src="Photo frame.png" alt="Photo Frame" loading="lazy" decoding="async"></div>
-<div class="project-info"><h3>Asahi</h3><p>Photo Frame</p></div>
-</div>
+  </div>
 
 </div>
+
+
+<!-- =========================
+     ASAHI FRIDGE
+========================= -->
+
+
+<div
+  class="project-card"
+  onclick="openLightbox('asahi fridge.png')"
+>
+
+  <div class="project-thumb">
+
+    <img
+      src="asahi fridge.png"
+      alt="Asahi Fridge"
+      loading="lazy"
+      decoding="async"
+    >
+
+  </div>
+
+  <div class="project-info">
+
+    <h3>Asahi</h3>
+
+    <p>Fridge</p>
+
+  </div>
+
 </div>
 
-<div class="lightbox" id="lightbox" onclick="closeLightbox()">
-<button class="close" onclick="event.stopPropagation(); closeLightbox();">×</button>
-<img id="lightbox-img" src="" alt="Preview" onclick="event.stopPropagation();">
+
+<!-- =========================
+     PHOTO FRAME
+========================= -->
+
+
+<div
+  class="project-card"
+  onclick="openLightbox('Photo frame.png')"
+>
+
+  <div class="project-thumb">
+
+    <img
+      src="Photo frame.png"
+      alt="Asahi Photo Frame"
+      loading="lazy"
+      decoding="async"
+    >
+
+  </div>
+
+  <div class="project-info">
+
+    <h3>Asahi</h3>
+
+    <p>Photo Frame</p>
+
+  </div>
+
 </div>
+
+
+<!-- =========================
+     NJ GONDOLA
+========================= -->
+
+
+<div
+  class="project-card"
+  onclick="openLightbox('NJ Gondola.png')"
+>
+
+  <div class="project-thumb">
+
+    <img
+      src="NJ Gondola.png"
+      alt="Asahi Gondola"
+      loading="lazy"
+      decoding="async"
+    >
+
+  </div>
+
+  <div class="project-info">
+
+    <h3>Asahi</h3>
+
+    <p>Gondola Display</p>
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     NJ PRICE TAG
+========================= -->
+
+
+<div
+  class="project-card"
+  onclick="openLightbox('NJ Price tag.png')"
+>
+
+  <div class="project-thumb">
+
+    <img
+      src="NJ Price tag.png"
+      alt="Asahi Price Tag"
+      loading="lazy"
+      decoding="async"
+    >
+
+  </div>
+
+  <div class="project-info">
+
+    <h3>Asahi</h3>
+
+    <p>Price Tag</p>
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     SPECIAL DISPLAY
+========================= -->
+
+
+<div
+  class="project-card"
+  onclick="openLightbox('NJ tusgai tohijilt.jpg')"
+>
+
+  <div class="project-thumb">
+
+    <img
+      src="NJ tusgai tohijilt.jpg"
+      alt="Asahi Special Display"
+      loading="lazy"
+      decoding="async"
+    >
+
+  </div>
+
+  <div class="project-info">
+
+    <h3>Asahi</h3>
+
+    <p>Special Display</p>
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     WOBBLER 01
+========================= -->
+
+
+<div
+  class="project-card"
+  onclick="openLightbox('NJ wobbler 9x9-2.png')"
+>
+
+  <div class="project-thumb">
+
+    <img
+      src="NJ wobbler 9x9-2.png"
+      alt="Asahi Wobbler 01"
+      loading="lazy"
+      decoding="async"
+    >
+
+  </div>
+
+  <div class="project-info">
+
+    <h3>Asahi</h3>
+
+    <p>Wobbler 01</p>
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     WOBBLER 02
+========================= -->
+
+
+<div
+  class="project-card"
+  onclick="openLightbox('NJ wobbler 9x9.png')"
+>
+
+  <div class="project-thumb">
+
+    <img
+      src="NJ wobbler 9x9.png"
+      alt="Asahi Wobbler 02"
+      loading="lazy"
+      decoding="async"
+    >
+
+  </div>
+
+  <div class="project-info">
+
+    <h3>Asahi</h3>
+
+    <p>Wobbler 02</p>
+
+  </div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     LIGHTBOX
+========================= -->
+
+
+<div
+  class="lightbox"
+  id="lightbox"
+  onclick="closeLightbox()"
+>
+
+  <button
+    class="close"
+    onclick="
+      event.stopPropagation();
+      closeLightbox();
+    "
+  >
+    ×
+  </button>
+
+
+  <img
+    id="lightbox-img"
+    src=""
+    alt="Preview"
+    onclick="
+      event.stopPropagation();
+    "
+  >
+
+</div>
+
 
 <script>
-const lightbox=document.getElementById("lightbox");
-const lightboxImg=document.getElementById("lightbox-img");
+
+const lightbox =
+document.getElementById("lightbox");
+
+const lightboxImg =
+document.getElementById("lightbox-img");
+
 
 function openLightbox(src){
-lightboxImg.src=src;
-lightbox.classList.add("active");
+
+  lightboxImg.src = src;
+
+  lightbox.classList.add("active");
+
+  document.body.style.overflow =
+  "hidden";
+
 }
+
 
 function closeLightbox(){
-lightbox.classList.remove("active");
-lightboxImg.src="";
+
+  lightbox.classList.remove("active");
+
+  lightboxImg.src = "";
+
+  document.body.style.overflow = "";
+
 }
 
-document.addEventListener("keydown",function(e){
-if(e.key==="Escape"){closeLightbox();}
+
+document.addEventListener(
+"keydown",
+function(e){
+
+  if(e.key === "Escape"){
+
+    closeLightbox();
+
+  }
+
 });
+
 </script>
+
 
 </body>
 </html>
