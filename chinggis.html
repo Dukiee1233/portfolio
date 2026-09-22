@@ -3,303 +3,618 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chinggis Beer | Portfolio</title>
+
+<title>Chinggis Beer — Portfolio</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
-*{box-sizing:border-box;}
 
-body{
-margin:0;
-font-family:Inter,sans-serif;
-background:#05070a;
-color:white;
-overflow-x:hidden;
+*{
+  box-sizing:border-box;
 }
 
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:#05070a;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+img{
+  display:block;
+  max-width:100%;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
 .bg{
-position:fixed;
-inset:0;
-z-index:-5;
-overflow:hidden;
+  position:fixed;
+  inset:0;
+  z-index:-5;
+  overflow:hidden;
 }
 
 .light{
-position:absolute;
-width:560px;
-height:560px;
-border-radius:50%;
-filter:blur(130px);
-opacity:.35;
-mix-blend-mode:screen;
-animation:float 18s ease-in-out infinite alternate;
+  position:absolute;
+  width:560px;
+  height:560px;
+  border-radius:50%;
+  filter:blur(130px);
+  opacity:.35;
+  mix-blend-mode:screen;
+  animation:float 18s ease-in-out infinite alternate;
 }
 
-.light1{background:#4f7cff;top:-120px;left:-80px;}
-.light2{background:#ff3c82;bottom:-160px;right:-120px;animation-duration:22s;}
-.light3{background:#7c3aed;top:40%;left:55%;animation-duration:26s;opacity:.25;}
+.light1{
+  background:#4f7cff;
+  top:-120px;
+  left:-80px;
+}
+
+.light2{
+  background:#ff3c82;
+  bottom:-160px;
+  right:-120px;
+  animation-duration:22s;
+}
+
+.light3{
+  background:#7c3aed;
+  top:40%;
+  left:55%;
+  animation-duration:26s;
+  opacity:.25;
+}
 
 @keyframes float{
-0%{transform:translate(0,0) scale(1);}
-100%{transform:translate(60px,-40px) scale(1.2);}
+  0%{
+    transform:translate(0,0) scale(1);
+  }
+
+  100%{
+    transform:translate(60px,-40px) scale(1.2);
+  }
 }
 
 .vignette{
-position:fixed;
-inset:0;
-background:radial-gradient(circle at center, transparent 40%, rgba(0,0,0,.72) 100%);
-z-index:-4;
+  position:fixed;
+  inset:0;
+  background:radial-gradient(
+    circle at center,
+    transparent 40%,
+    rgba(0,0,0,.72) 100%
+  );
+  z-index:-4;
 }
+
+/* =========================
+   CURSOR GLOW
+========================= */
+
+.cursor-glow{
+  position:fixed;
+  width:360px;
+  height:360px;
+  border-radius:50%;
+  background:radial-gradient(
+    circle,
+    rgba(100,140,255,.18),
+    rgba(100,140,255,0) 70%
+  );
+  pointer-events:none;
+  z-index:-2;
+  mix-blend-mode:screen;
+  transition:transform .07s linear;
+}
+
+/* =========================
+   MAIN CONTAINER
+========================= */
 
 .container{
-width:1200px;
-max-width:calc(100% - 40px);
-margin:auto;
-padding:50px 0 70px;
+  width:1280px;
+  max-width:calc(100% - 40px);
+  margin:auto;
+  padding:60px 0 80px;
 }
 
-.top{
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:20px;
-margin-bottom:28px;
+/* =========================
+   HEADER
+========================= */
+
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:30px;
+  margin-bottom:30px;
 }
 
-h1{
-font-size:42px;
-margin:0;
-letter-spacing:-.02em;
+.header h1{
+  margin:0;
+  font-size:44px;
+  font-weight:800;
+  letter-spacing:-.03em;
 }
 
 .back-link{
-text-decoration:none;
-color:#fff;
-font-size:15px;
-opacity:.8;
-padding:12px 18px;
-border-radius:14px;
-border:1px solid rgba(255,255,255,.08);
-background:rgba(255,255,255,.03);
-transition:.25s ease;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:12px 18px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:14px;
+  text-decoration:none;
+  color:#fff;
+  font-size:14px;
+  background:rgba(255,255,255,.03);
+  transition:.25s;
 }
 
 .back-link:hover{
-opacity:1;
-transform:translateY(-2px);
-border-color:rgba(255,255,255,.16);
-background:rgba(255,255,255,.05);
+  background:rgba(255,255,255,.08);
+  border-color:rgba(255,255,255,.2);
+  transform:translateY(-2px);
 }
+
+/* =========================
+   GRID
+========================= */
 
 .grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:24px;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:22px;
 }
 
+/* =========================
+   PROJECT CARD
+========================= */
+
 .project-card{
-contain:layout paint;
-background:#0b1118;
-border-radius:20px;
-overflow:hidden;
-border:1px solid rgba(255,255,255,.05);
-transition:.25s;
-will-change:transform;
-cursor:pointer;
+  background:#0b1118;
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:22px;
+  overflow:hidden;
+  cursor:pointer;
+  transition:
+    transform .28s ease,
+    border-color .28s ease,
+    box-shadow .28s ease;
 }
 
 .project-card:hover{
-transform:translateY(-6px);
-border-color:rgba(255,255,255,.15);
-box-shadow:0 20px 45px rgba(0,0,0,.35);
+  transform:translateY(-6px);
+  border-color:rgba(255,255,255,.15);
+  box-shadow:0 20px 45px rgba(0,0,0,.35);
 }
 
+/* =========================
+   PROJECT IMAGE
+========================= */
+
 .project-thumb{
-height:300px;
-overflow:hidden;
-background:#111;
+  height:320px;
+  overflow:hidden;
+  background:#111;
 }
 
 .project-thumb img{
-width:100%;
-height:100%;
-object-fit:cover;
-display:block;
-transition:.35s;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform .35s ease;
 }
 
-.project-card:hover img{
-transform:scale(1.04);
+.project-card:hover .project-thumb img{
+  transform:scale(1.04);
 }
+
+/* =========================
+   PROJECT TEXT
+========================= */
 
 .project-info{
-padding:18px;
+  padding:18px 20px 20px;
 }
 
 .project-info h3{
-margin:0;
-font-size:20px;
+  margin:0;
+  font-size:20px;
+  font-weight:700;
+  letter-spacing:-.02em;
 }
 
 .project-info p{
-margin:6px 0 0;
-opacity:.6;
-font-size:13px;
+  margin:7px 0 0;
+  font-size:14px;
+  color:rgba(255,255,255,.58);
 }
 
-.lightbox{
-position:fixed;
-inset:0;
-background:rgba(0,0,0,.86);
-backdrop-filter:blur(18px);
-display:none;
-align-items:center;
-justify-content:center;
-z-index:999;
-padding:30px;
+/* =========================
+   LIGHTBOX
+========================= */
+
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  background:rgba(0,0,0,.90);
+  justify-content:center;
+  align-items:center;
+  padding:40px;
+  cursor:zoom-out;
+  backdrop-filter:blur(10px);
 }
 
-.lightbox.active{display:flex;}
-
-.lightbox img{
-max-width:92vw;
-max-height:88vh;
-object-fit:contain;
-border-radius:18px;
-box-shadow:0 30px 90px rgba(0,0,0,.65);
+.modal.active{
+  display:flex;
 }
+
+.modal img{
+  display:block;
+  width:auto;
+  height:auto;
+  max-width:92vw;
+  max-height:90vh;
+  object-fit:contain;
+  border-radius:14px;
+  box-shadow:0 30px 100px rgba(0,0,0,.65);
+}
+
+/* =========================
+   CLOSE BUTTON
+========================= */
 
 .close{
-position:fixed;
-top:24px;
-right:28px;
-width:46px;
-height:46px;
-border-radius:50%;
-border:1px solid rgba(255,255,255,.15);
-background:rgba(255,255,255,.08);
-color:white;
-font-size:26px;
-cursor:pointer;
-display:grid;
-place-items:center;
+  position:fixed;
+  top:24px;
+  right:30px;
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:28px;
+  font-weight:300;
+  color:#fff;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.12);
+  cursor:pointer;
+  z-index:10000;
+  transition:.25s;
 }
 
-@media(max-width:1000px){
-.grid{grid-template-columns:repeat(2,1fr);}
+.close:hover{
+  background:rgba(255,255,255,.16);
+  transform:scale(1.05);
 }
 
-@media(max-width:650px){
-.top{flex-direction:column;align-items:flex-start;}
-h1{font-size:34px;}
-.grid{grid-template-columns:1fr;}
-.project-thumb{height:260px;}
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1100px){
+
+  .grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
 }
+
+@media(max-width:700px){
+
+  .container{
+    max-width:calc(100% - 24px);
+    padding:40px 0 60px;
+  }
+
+  .header{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .header h1{
+    font-size:34px;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .project-thumb{
+    height:270px;
+  }
+
+  .modal{
+    padding:20px;
+  }
+
+}
+
 </style>
 </head>
 
 <body>
 
+<!-- BACKGROUND -->
+
 <div class="bg">
-<div class="light light1"></div>
-<div class="light light2"></div>
-<div class="light light3"></div>
+  <div class="light light1"></div>
+  <div class="light light2"></div>
+  <div class="light light3"></div>
 </div>
 
 <div class="vignette"></div>
+<div class="cursor-glow"></div>
+
+
+<!-- MAIN -->
 
 <div class="container">
 
-<div class="top">
-<h1>Chinggis Beer</h1>
-<a href="index.html" class="back-link">← Back to portfolio</a>
+
+<!-- HEADER -->
+
+<div class="header">
+
+  <h1>Chinggis Beer</h1>
+
+  <a href="index.html" class="back-link">
+    ← Back to portfolio
+  </a>
+
 </div>
+
+
+<!-- PROJECT GRID -->
 
 <div class="grid">
 
-<div class="project-card" onclick="openLightbox('CB work1.jpg.jpg')">
-<div class="project-thumb"><img src="CB work1.jpg.jpg" alt="Chinggis 1" loading="lazy" decoding="async"></div>
-<div class="project-info"><h3>Chinggis Beer</h3><p>Campaign Visual 01</p></div>
-</div>
 
-<div class="project-card" onclick="openLightbox('CB work2.jpg.png')">
-<div class="project-thumb"><img src="CB work2.jpg.png" alt="Chinggis 2" loading="lazy" decoding="async"></div>
-<div class="project-info"><h3>Chinggis Beer</h3><p>Campaign Visual 02</p></div>
-</div>
+<!-- 01 -->
 
-<div class="project-card" onclick="openLightbox('CB work3.jpg.png')">
-<div class="project-thumb"><img src="CB work3.jpg.png" alt="Chinggis 3" loading="lazy" decoding="async"></div>
-<div class="project-info"><h3>Chinggis Beer</h3><p>Campaign Visual 03</p></div>
-</div>
+<div class="project-card"
+     onclick="openLightbox('CB broncos bar runner-1.jpg')">
 
-<div class="project-card" onclick="openLightbox('CB work4.jpg.jpg')">
-<div class="project-thumb"><img src="CB work4.jpg.jpg" alt="Chinggis 4" loading="lazy" decoding="async"></div>
-<div class="project-info"><h3>Chinggis Beer</h3><p>Campaign Visual 04</p></div>
-</div>
+  <div class="project-thumb">
+    <img
+      src="CB broncos bar runner-1.jpg"
+      alt="Chinggis Beer Bar Runner 01"
+      loading="lazy"
+      decoding="async">
+  </div>
 
-<div class="project-card" onclick="openLightbox('CB work5.jpg.jpg')">
-<div class="project-thumb"><img src="CB work5.jpg.jpg" alt="Chinggis 5" loading="lazy" decoding="async"></div>
-<div class="project-info"><h3>Chinggis Beer</h3><p>Campaign Visual 05</p></div>
-</div>
-
-<div class="project-card" onclick="openLightbox('CB work6.jpg.jpg')">
-<div class="project-thumb"><img src="CB work6.jpg.jpg" alt="Chinggis 6" loading="lazy" decoding="async"></div>
-<div class="project-info"><h3>Chinggis Beer</h3><p>Campaign Visual 06</p></div>
-</div>
-
-<div class="project-card" onclick="openLightbox('CB broncos bar runner-1.png')">
-<div class="project-thumb"><img src="CB broncos bar runner-1.png" alt="CB Broncos Bar Runner 1" loading="lazy" decoding="async"></div>
-<div class="project-info"><h3>Chinggis Beer</h3><p>Broncos Bar Runner 01</p></div>
-</div>
-
-<div class="project-card" onclick="openLightbox('CB broncos bar runner-2.png')">
-<div class="project-thumb"><img src="CB broncos bar runner-2.png" alt="CB Broncos Bar Runner 2" loading="lazy" decoding="async"></div>
-<div class="project-info"><h3>Chinggis Beer</h3><p>Broncos Bar Runner 02</p></div>
-</div>
-
-<div class="project-card" onclick="openLightbox('CB broncos tug-1.png')">
-<div class="project-thumb"><img src="CB broncos tug-1.png" alt="CB Broncos Tug 1" loading="lazy" decoding="async"></div>
-<div class="project-info"><h3>Chinggis Beer</h3><p>Broncos Tug 01</p></div>
-</div>
-
-<div class="project-card" onclick="openLightbox('CB broncos tug-2.png')">
-<div class="project-thumb"><img src="CB broncos tug-2.png" alt="CB Broncos Tug 2" loading="lazy" decoding="async"></div>
-<div class="project-info"><h3>Chinggis Beer</h3><p>Broncos Tug 02</p></div>
-</div>
-
-<div class="project-card" onclick="openLightbox('CB photo frame.png')">
-<div class="project-thumb"><img src="CB photo frame.png" alt="CB Photo Frame" loading="lazy" decoding="async"></div>
-<div class="project-info"><h3>Chinggis Beer</h3><p>Photo Frame</p></div>
-</div>
+  <div class="project-info">
+    <h3>Chinggis Beer</h3>
+    <p>Bar Runner 01</p>
+  </div>
 
 </div>
+
+
+<!-- 02 -->
+
+<div class="project-card"
+     onclick="openLightbox('CB broncos bar runner-2.jpg')">
+
+  <div class="project-thumb">
+    <img
+      src="CB broncos bar runner-2.jpg"
+      alt="Chinggis Beer Bar Runner 02"
+      loading="lazy"
+      decoding="async">
+  </div>
+
+  <div class="project-info">
+    <h3>Chinggis Beer</h3>
+    <p>Bar Runner 02</p>
+  </div>
+
 </div>
 
-<div class="lightbox" id="lightbox" onclick="closeLightbox()">
-<button class="close" onclick="event.stopPropagation(); closeLightbox();">×</button>
-<img id="lightbox-img" src="" alt="Preview" onclick="event.stopPropagation();">
+
+<!-- 03 -->
+
+<div class="project-card"
+     onclick="openLightbox('CB broncos tug-1.jpg')">
+
+  <div class="project-thumb">
+    <img
+      src="CB broncos tug-1.jpg"
+      alt="Chinggis Beer Flag 01"
+      loading="lazy"
+      decoding="async">
+  </div>
+
+  <div class="project-info">
+    <h3>Chinggis Beer</h3>
+    <p>Flag Design 01</p>
+  </div>
+
 </div>
+
+
+<!-- 04 -->
+
+<div class="project-card"
+     onclick="openLightbox('CB broncos tug-2.jpg')">
+
+  <div class="project-thumb">
+    <img
+      src="CB broncos tug-2.jpg"
+      alt="Chinggis Beer Flag 02"
+      loading="lazy"
+      decoding="async">
+  </div>
+
+  <div class="project-info">
+    <h3>Chinggis Beer</h3>
+    <p>Flag Design 02</p>
+  </div>
+
+</div>
+
+
+<!-- 05 -->
+
+<div class="project-card"
+     onclick="openLightbox('CB photo frame.jpg')">
+
+  <div class="project-thumb">
+    <img
+      src="CB photo frame.jpg"
+      alt="Chinggis Beer Photo Frame"
+      loading="lazy"
+      decoding="async">
+  </div>
+
+  <div class="project-info">
+    <h3>Chinggis Beer</h3>
+    <p>Photo Frame</p>
+  </div>
+
+</div>
+
+
+<!-- 06 NEW OKTOBERFEST BOOTH -->
+
+<div class="project-card"
+     onclick="openLightbox('Emart CB Oktoberfest mock.jpg')">
+
+  <div class="project-thumb">
+    <img
+      src="Emart CB Oktoberfest mock.jpg"
+      alt="Chinggis Beer Oktoberfest Booth"
+      loading="lazy"
+      decoding="async">
+  </div>
+
+  <div class="project-info">
+    <h3>Chinggis Beer</h3>
+    <p>Oktoberfest Booth</p>
+  </div>
+
+</div>
+
+
+</div>
+<!-- END GRID -->
+
+
+</div>
+<!-- END CONTAINER -->
+
+
+<!-- LIGHTBOX -->
+
+<div
+  id="lightbox"
+  class="modal"
+  onclick="closeLightbox(event)">
+
+  <div
+    class="close"
+    onclick="closeLightbox(event)">
+    ×
+  </div>
+
+  <img
+    id="lightbox-img"
+    src=""
+    alt="Preview">
+
+</div>
+
 
 <script>
-const lightbox=document.getElementById("lightbox");
-const lightboxImg=document.getElementById("lightbox-img");
+
+/* CURSOR GLOW */
+
+const glow = document.querySelector(".cursor-glow");
+
+document.addEventListener("mousemove", (e) => {
+
+  glow.style.transform =
+    `translate(${e.clientX - 180}px, ${e.clientY - 180}px)`;
+
+});
+
+
+/* OPEN LIGHTBOX */
 
 function openLightbox(src){
-lightboxImg.src=src;
-lightbox.classList.add("active");
+
+  const modal =
+    document.getElementById("lightbox");
+
+  const image =
+    document.getElementById("lightbox-img");
+
+  image.src = src;
+
+  modal.classList.add("active");
+
+  document.body.style.overflow = "hidden";
+
 }
 
-function closeLightbox(){
-lightbox.classList.remove("active");
-lightboxImg.src="";
+
+/* CLOSE LIGHTBOX */
+
+function closeLightbox(event){
+
+  const modal =
+    document.getElementById("lightbox");
+
+  if(
+    event.target === modal ||
+    event.target.classList.contains("close")
+  ){
+
+    modal.classList.remove("active");
+
+    document.getElementById("lightbox-img").src = "";
+
+    document.body.style.overflow = "";
+
+  }
+
 }
 
-document.addEventListener("keydown",function(e){
-if(e.key==="Escape"){closeLightbox();}
+
+/* ESC KEY CLOSE */
+
+document.addEventListener("keydown", (event) => {
+
+  if(event.key === "Escape"){
+
+    const modal =
+      document.getElementById("lightbox");
+
+    modal.classList.remove("active");
+
+    document.getElementById("lightbox-img").src = "";
+
+    document.body.style.overflow = "";
+
+  }
+
 });
+
 </script>
 
 </body>
