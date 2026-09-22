@@ -149,13 +149,21 @@ body{
   min-height:46px;
   padding:0 20px;
   border-radius:16px;
+
   border:1px solid rgba(255,255,255,.14);
+
   background:rgba(255,255,255,.025);
+
   color:#fff;
   text-decoration:none;
+
   font-size:14px;
   font-weight:600;
-  transition:.25s ease;
+
+  transition:
+    transform .25s ease,
+    background .25s ease,
+    border-color .25s ease;
 }
 
 .back-link:hover{
@@ -249,11 +257,15 @@ body{
   position:fixed;
   inset:0;
   z-index:9999;
+
   align-items:center;
   justify-content:center;
+
   padding:40px;
+
   background:rgba(0,0,0,.90);
   backdrop-filter:blur(10px);
+
   cursor:zoom-out;
 }
 
@@ -263,30 +275,47 @@ body{
 
 .modal img{
   display:block;
+
   max-width:92vw;
   max-height:90vh;
+
   width:auto;
   height:auto;
+
   object-fit:contain;
+
   border-radius:16px;
+
   box-shadow:0 30px 100px rgba(0,0,0,.55);
+
   background:#111;
+
   cursor:default;
 }
 
 .close-button{
   position:fixed;
+
   top:24px;
   right:30px;
+
   width:48px;
   height:48px;
+
   border:none;
   border-radius:50%;
+
   background:rgba(255,255,255,.10);
+
   color:#fff;
+
   font-size:26px;
+
   cursor:pointer;
-  transition:.25s ease;
+
+  transition:
+    background .25s ease,
+    transform .25s ease;
 }
 
 .close-button:hover{
@@ -346,10 +375,12 @@ body{
 </style>
 </head>
 
-
 <body>
 
-<!-- BACKGROUND -->
+
+<!-- =========================
+     BACKGROUND
+========================= -->
 
 <div class="bg">
   <div class="light light1"></div>
@@ -361,9 +392,14 @@ body{
 <div class="cursor-glow"></div>
 
 
-<!-- MAIN CONTENT -->
+<!-- =========================
+     MAIN CONTENT
+========================= -->
 
 <div class="container">
+
+
+<!-- HEADER -->
 
 <div class="page-header">
 
@@ -375,6 +411,10 @@ body{
 
 </div>
 
+
+<!-- =========================
+     GRID
+========================= -->
 
 <div class="grid">
 
@@ -494,30 +534,7 @@ onclick="openLightbox('CB photo frame.png')">
 </div>
 
 
-<!-- 06 OKTOBERFEST BOOTH -->
-
-<div class="project-card"
-onclick="openLightbox('Emart CB Oktoberfest mock.jpg')">
-
-  <div class="project-thumb">
-
-    <img
-      src="Emart CB Oktoberfest mock.jpg"
-      alt="Chinggis Beer Oktoberfest Booth"
-      loading="lazy"
-      decoding="async">
-
-  </div>
-
-  <div class="project-info">
-    <h3>Chinggis Beer</h3>
-    <p>Oktoberfest Booth</p>
-  </div>
-
-</div>
-
-
-<!-- 07 WORK 1 -->
+<!-- 06 WORK 1 -->
 
 <div class="project-card"
 onclick="openLightbox('CB work1.jpg.jpg')">
@@ -540,7 +557,7 @@ onclick="openLightbox('CB work1.jpg.jpg')">
 </div>
 
 
-<!-- 08 WORK 2 -->
+<!-- 07 WORK 2 -->
 
 <div class="project-card"
 onclick="openLightbox('CB work2.jpg.png')">
@@ -563,7 +580,7 @@ onclick="openLightbox('CB work2.jpg.png')">
 </div>
 
 
-<!-- 09 WORK 3 -->
+<!-- 08 WORK 3 -->
 
 <div class="project-card"
 onclick="openLightbox('CB work3.jpg.png')">
@@ -586,7 +603,7 @@ onclick="openLightbox('CB work3.jpg.png')">
 </div>
 
 
-<!-- 10 WORK 4 -->
+<!-- 09 WORK 4 -->
 
 <div class="project-card"
 onclick="openLightbox('CB work4.jpg.jpg')">
@@ -609,7 +626,7 @@ onclick="openLightbox('CB work4.jpg.jpg')">
 </div>
 
 
-<!-- 11 WORK 5 -->
+<!-- 10 WORK 5 -->
 
 <div class="project-card"
 onclick="openLightbox('CB work5.jpg.jpg')">
@@ -632,7 +649,7 @@ onclick="openLightbox('CB work5.jpg.jpg')">
 </div>
 
 
-<!-- 12 WORK 6 -->
+<!-- 11 WORK 6 -->
 
 <div class="project-card"
 onclick="openLightbox('CB work6.jpg.jpg')">
@@ -655,6 +672,29 @@ onclick="openLightbox('CB work6.jpg.jpg')">
 </div>
 
 
+<!-- 12 OKTOBERFEST BOOTH -->
+
+<div class="project-card"
+onclick="openLightbox('Emart CB  Oktoberfest mock.jpg')">
+
+  <div class="project-thumb">
+
+    <img
+      src="Emart CB  Oktoberfest mock.jpg"
+      alt="Chinggis Beer Oktoberfest Booth"
+      loading="lazy"
+      decoding="async">
+
+  </div>
+
+  <div class="project-info">
+    <h3>Chinggis Beer</h3>
+    <p>Oktoberfest Booth</p>
+  </div>
+
+</div>
+
+
 </div>
 <!-- GRID END -->
 
@@ -663,7 +703,9 @@ onclick="openLightbox('CB work6.jpg.jpg')">
 <!-- CONTAINER END -->
 
 
-<!-- LIGHTBOX -->
+<!-- =========================
+     LIGHTBOX
+========================= -->
 
 <div
   id="lightbox"
@@ -685,6 +727,10 @@ onclick="openLightbox('CB work6.jpg.jpg')">
 
 </div>
 
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
 
 <script>
 
@@ -753,6 +799,7 @@ document.addEventListener("keydown",(event)=>{
 });
 
 </script>
+
 
 </body>
 </html>
