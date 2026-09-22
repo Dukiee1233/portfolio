@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Chinggis Beer — Portfolio</title>
+<title>Chinggis Beer | Portfolio</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,11 +26,6 @@ body{
   background:#05070a;
   color:#fff;
   overflow-x:hidden;
-}
-
-img{
-  display:block;
-  max-width:100%;
 }
 
 /* =========================
@@ -89,7 +84,8 @@ img{
 .vignette{
   position:fixed;
   inset:0;
-  background:radial-gradient(
+  background:
+  radial-gradient(
     circle at center,
     transparent 40%,
     rgba(0,0,0,.72) 100%
@@ -106,7 +102,8 @@ img{
   width:360px;
   height:360px;
   border-radius:50%;
-  background:radial-gradient(
+  background:
+  radial-gradient(
     circle,
     rgba(100,140,255,.18),
     rgba(100,140,255,0) 70%
@@ -118,29 +115,29 @@ img{
 }
 
 /* =========================
-   MAIN CONTAINER
+   CONTAINER
 ========================= */
 
 .container{
   width:1280px;
   max-width:calc(100% - 40px);
   margin:auto;
-  padding:60px 0 80px;
+  padding:40px 0 80px;
 }
 
 /* =========================
    HEADER
 ========================= */
 
-.header{
+.page-header{
   display:flex;
-  justify-content:space-between;
   align-items:center;
+  justify-content:space-between;
   gap:30px;
-  margin-bottom:30px;
+  margin-bottom:32px;
 }
 
-.header h1{
+.page-header h1{
   margin:0;
   font-size:44px;
   font-weight:800;
@@ -150,21 +147,31 @@ img{
 .back-link{
   display:inline-flex;
   align-items:center;
-  gap:8px;
-  padding:12px 18px;
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:14px;
-  text-decoration:none;
+  justify-content:center;
+  min-height:46px;
+  padding:0 20px;
+  border-radius:16px;
+
+  border:1px solid rgba(255,255,255,.14);
+
+  background:rgba(255,255,255,.025);
+
   color:#fff;
+  text-decoration:none;
+
   font-size:14px;
-  background:rgba(255,255,255,.03);
-  transition:.25s;
+  font-weight:600;
+
+  transition:
+    transform .25s ease,
+    background .25s ease,
+    border-color .25s ease;
 }
 
 .back-link:hover{
-  background:rgba(255,255,255,.08);
-  border-color:rgba(255,255,255,.2);
   transform:translateY(-2px);
+  background:rgba(255,255,255,.06);
+  border-color:rgba(255,255,255,.25);
 }
 
 /* =========================
@@ -174,11 +181,11 @@ img{
 .grid{
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:22px;
+  gap:24px;
 }
 
 /* =========================
-   PROJECT CARD
+   CARD
 ========================= */
 
 .project-card{
@@ -186,7 +193,9 @@ img{
   border:1px solid rgba(255,255,255,.06);
   border-radius:22px;
   overflow:hidden;
+
   cursor:pointer;
+
   transition:
     transform .28s ease,
     border-color .28s ease,
@@ -195,12 +204,15 @@ img{
 
 .project-card:hover{
   transform:translateY(-6px);
+
   border-color:rgba(255,255,255,.15);
-  box-shadow:0 20px 45px rgba(0,0,0,.35);
+
+  box-shadow:
+  0 20px 50px rgba(0,0,0,.35);
 }
 
 /* =========================
-   PROJECT IMAGE
+   IMAGE
 ========================= */
 
 .project-thumb{
@@ -210,10 +222,13 @@ img{
 }
 
 .project-thumb img{
+  display:block;
+
   width:100%;
   height:100%;
+
   object-fit:cover;
-  display:block;
+
   transition:transform .35s ease;
 }
 
@@ -222,23 +237,27 @@ img{
 }
 
 /* =========================
-   PROJECT TEXT
+   CARD TEXT
 ========================= */
 
 .project-info{
-  padding:18px 20px 20px;
+  padding:20px;
 }
 
 .project-info h3{
   margin:0;
+
   font-size:20px;
   font-weight:700;
+
   letter-spacing:-.02em;
 }
 
 .project-info p{
-  margin:7px 0 0;
+  margin:8px 0 0;
+
   font-size:14px;
+
   color:rgba(255,255,255,.58);
 }
 
@@ -248,15 +267,22 @@ img{
 
 .modal{
   display:none;
+
   position:fixed;
   inset:0;
+
   z-index:9999;
-  background:rgba(0,0,0,.90);
-  justify-content:center;
+
   align-items:center;
+  justify-content:center;
+
   padding:40px;
-  cursor:zoom-out;
+
+  background:rgba(0,0,0,.90);
+
   backdrop-filter:blur(10px);
+
+  cursor:zoom-out;
 }
 
 .modal.active{
@@ -265,42 +291,53 @@ img{
 
 .modal img{
   display:block;
-  width:auto;
-  height:auto;
+
   max-width:92vw;
   max-height:90vh;
+
+  width:auto;
+  height:auto;
+
   object-fit:contain;
-  border-radius:14px;
-  box-shadow:0 30px 100px rgba(0,0,0,.65);
+
+  border-radius:16px;
+
+  box-shadow:
+  0 30px 100px rgba(0,0,0,.55);
+
+  background:#111;
+
+  cursor:default;
 }
 
-/* =========================
-   CLOSE BUTTON
-========================= */
-
-.close{
+.close-button{
   position:fixed;
+
   top:24px;
   right:30px;
-  width:46px;
-  height:46px;
+
+  width:48px;
+  height:48px;
+
+  border:none;
   border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:28px;
-  font-weight:300;
-  color:#fff;
-  background:rgba(255,255,255,.08);
-  border:1px solid rgba(255,255,255,.12);
+
+  background:rgba(255,255,255,.10);
+
+  color:white;
+
+  font-size:26px;
+
   cursor:pointer;
-  z-index:10000;
-  transition:.25s;
+
+  transition:
+    background .25s ease,
+    transform .25s ease;
 }
 
-.close:hover{
-  background:rgba(255,255,255,.16);
-  transform:scale(1.05);
+.close-button:hover{
+  background:rgba(255,255,255,.18);
+  transform:scale(1.06);
 }
 
 /* =========================
@@ -319,28 +356,35 @@ img{
 
   .container{
     max-width:calc(100% - 24px);
-    padding:40px 0 60px;
+    padding:30px 0 60px;
   }
 
-  .header{
+  .page-header{
     align-items:flex-start;
     flex-direction:column;
+    margin-bottom:24px;
   }
 
-  .header h1{
+  .page-header h1{
     font-size:34px;
   }
 
   .grid{
     grid-template-columns:1fr;
+    gap:18px;
   }
 
   .project-thumb{
-    height:270px;
+    height:260px;
   }
 
   .modal{
-    padding:20px;
+    padding:16px;
+  }
+
+  .close-button{
+    top:16px;
+    right:16px;
   }
 
 }
@@ -350,7 +394,10 @@ img{
 
 <body>
 
-<!-- BACKGROUND -->
+
+<!-- =========================
+     BACKGROUND
+========================= -->
 
 <div class="bg">
   <div class="light light1"></div>
@@ -359,17 +406,20 @@ img{
 </div>
 
 <div class="vignette"></div>
+
 <div class="cursor-glow"></div>
 
 
-<!-- MAIN -->
+<!-- =========================
+     CONTENT
+========================= -->
 
 <div class="container">
 
 
 <!-- HEADER -->
 
-<div class="header">
+<div class="page-header">
 
   <h1>Chinggis Beer</h1>
 
@@ -380,176 +430,224 @@ img{
 </div>
 
 
-<!-- PROJECT GRID -->
+<!-- =========================
+     PROJECT GRID
+========================= -->
 
 <div class="grid">
 
 
-<!-- 01 -->
+<!-- BAR RUNNER 01 -->
 
 <div class="project-card"
-     onclick="openLightbox('CB broncos bar runner-1.jpg')">
+onclick="openLightbox('CB broncos bar runner-1.jpg')">
 
   <div class="project-thumb">
+
     <img
-      src="CB broncos bar runner-1.jpg"
-      alt="Chinggis Beer Bar Runner 01"
-      loading="lazy"
-      decoding="async">
+    src="CB broncos bar runner-1.jpg"
+    alt="Chinggis Beer Bar Runner 01"
+    loading="lazy"
+    decoding="async">
+
   </div>
 
   <div class="project-info">
+
     <h3>Chinggis Beer</h3>
+
     <p>Bar Runner 01</p>
+
   </div>
 
 </div>
 
 
-<!-- 02 -->
+<!-- BAR RUNNER 02 -->
 
 <div class="project-card"
-     onclick="openLightbox('CB broncos bar runner-2.jpg')">
+onclick="openLightbox('CB broncos bar runner-2.jpg')">
 
   <div class="project-thumb">
+
     <img
-      src="CB broncos bar runner-2.jpg"
-      alt="Chinggis Beer Bar Runner 02"
-      loading="lazy"
-      decoding="async">
+    src="CB broncos bar runner-2.jpg"
+    alt="Chinggis Beer Bar Runner 02"
+    loading="lazy"
+    decoding="async">
+
   </div>
 
   <div class="project-info">
+
     <h3>Chinggis Beer</h3>
+
     <p>Bar Runner 02</p>
+
   </div>
 
 </div>
 
 
-<!-- 03 -->
+<!-- FLAG 01 -->
 
 <div class="project-card"
-     onclick="openLightbox('CB broncos tug-1.jpg')">
+onclick="openLightbox('CB broncos tug-1.jpg')">
 
   <div class="project-thumb">
+
     <img
-      src="CB broncos tug-1.jpg"
-      alt="Chinggis Beer Flag 01"
-      loading="lazy"
-      decoding="async">
+    src="CB broncos tug-1.jpg"
+    alt="Chinggis Beer Flag 01"
+    loading="lazy"
+    decoding="async">
+
   </div>
 
   <div class="project-info">
+
     <h3>Chinggis Beer</h3>
+
     <p>Flag Design 01</p>
+
   </div>
 
 </div>
 
 
-<!-- 04 -->
+<!-- FLAG 02 -->
 
 <div class="project-card"
-     onclick="openLightbox('CB broncos tug-2.jpg')">
+onclick="openLightbox('CB broncos tug-2.jpg')">
 
   <div class="project-thumb">
+
     <img
-      src="CB broncos tug-2.jpg"
-      alt="Chinggis Beer Flag 02"
-      loading="lazy"
-      decoding="async">
+    src="CB broncos tug-2.jpg"
+    alt="Chinggis Beer Flag 02"
+    loading="lazy"
+    decoding="async">
+
   </div>
 
   <div class="project-info">
+
     <h3>Chinggis Beer</h3>
+
     <p>Flag Design 02</p>
+
   </div>
 
 </div>
 
 
-<!-- 05 -->
+<!-- PHOTO FRAME -->
 
 <div class="project-card"
-     onclick="openLightbox('CB photo frame.jpg')">
+onclick="openLightbox('CB photo frame.jpg')">
 
   <div class="project-thumb">
+
     <img
-      src="CB photo frame.jpg"
-      alt="Chinggis Beer Photo Frame"
-      loading="lazy"
-      decoding="async">
+    src="CB photo frame.jpg"
+    alt="Chinggis Beer Photo Frame"
+    loading="lazy"
+    decoding="async">
+
   </div>
 
   <div class="project-info">
+
     <h3>Chinggis Beer</h3>
+
     <p>Photo Frame</p>
+
   </div>
 
 </div>
 
 
-<!-- 06 NEW OKTOBERFEST BOOTH -->
+<!-- NEW OKTOBERFEST BOOTH -->
 
 <div class="project-card"
-     onclick="openLightbox('Emart CB Oktoberfest mock.jpg')">
+onclick="openLightbox('Emart CB Oktoberfest mock.jpg')">
 
   <div class="project-thumb">
+
     <img
-      src="Emart CB Oktoberfest mock.jpg"
-      alt="Chinggis Beer Oktoberfest Booth"
-      loading="lazy"
-      decoding="async">
+    src="Emart CB Oktoberfest mock.jpg"
+    alt="Chinggis Beer Oktoberfest Booth"
+    loading="lazy"
+    decoding="async">
+
   </div>
 
   <div class="project-info">
+
     <h3>Chinggis Beer</h3>
+
     <p>Oktoberfest Booth</p>
+
   </div>
 
 </div>
 
 
 </div>
-<!-- END GRID -->
+<!-- GRID END -->
 
 
 </div>
-<!-- END CONTAINER -->
+<!-- CONTAINER END -->
 
 
-<!-- LIGHTBOX -->
+<!-- =========================
+     LIGHTBOX
+========================= -->
 
 <div
-  id="lightbox"
-  class="modal"
-  onclick="closeLightbox(event)">
+id="lightbox"
+class="modal"
+onclick="closeLightbox(event)"
+>
 
-  <div
-    class="close"
-    onclick="closeLightbox(event)">
-    ×
-  </div>
+<button
+class="close-button"
+onclick="closeLightbox(event)"
+aria-label="Close">
+×
+</button>
 
-  <img
-    id="lightbox-img"
-    src=""
-    alt="Preview">
+<img
+id="lightboxImage"
+src=""
+alt="Project preview"
+onclick="event.stopPropagation()"
+>
 
 </div>
 
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
 
 <script>
 
 /* CURSOR GLOW */
 
-const glow = document.querySelector(".cursor-glow");
+const glow =
+document.querySelector(".cursor-glow");
 
-document.addEventListener("mousemove", (e) => {
+document.addEventListener(
+"mousemove",
+(e)=>{
 
   glow.style.transform =
-    `translate(${e.clientX - 180}px, ${e.clientY - 180}px)`;
+  `translate(
+    ${e.clientX - 180}px,
+    ${e.clientY - 180}px
+  )`;
 
 });
 
@@ -559,10 +657,10 @@ document.addEventListener("mousemove", (e) => {
 function openLightbox(src){
 
   const modal =
-    document.getElementById("lightbox");
+  document.getElementById("lightbox");
 
   const image =
-    document.getElementById("lightbox-img");
+  document.getElementById("lightboxImage");
 
   image.src = src;
 
@@ -577,45 +675,39 @@ function openLightbox(src){
 
 function closeLightbox(event){
 
-  const modal =
-    document.getElementById("lightbox");
-
-  if(
-    event.target === modal ||
-    event.target.classList.contains("close")
-  ){
-
-    modal.classList.remove("active");
-
-    document.getElementById("lightbox-img").src = "";
-
-    document.body.style.overflow = "";
-
+  if(event){
+    event.stopPropagation();
   }
+
+  const modal =
+  document.getElementById("lightbox");
+
+  const image =
+  document.getElementById("lightboxImage");
+
+  modal.classList.remove("active");
+
+  image.src = "";
+
+  document.body.style.overflow = "";
 
 }
 
 
-/* ESC KEY CLOSE */
+/* ESC CLOSE */
 
-document.addEventListener("keydown", (event) => {
+document.addEventListener(
+"keydown",
+(event)=>{
 
   if(event.key === "Escape"){
-
-    const modal =
-      document.getElementById("lightbox");
-
-    modal.classList.remove("active");
-
-    document.getElementById("lightbox-img").src = "";
-
-    document.body.style.overflow = "";
-
+    closeLightbox();
   }
 
 });
 
 </script>
+
 
 </body>
 </html>
