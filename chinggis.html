@@ -84,8 +84,7 @@ body{
 .vignette{
   position:fixed;
   inset:0;
-  background:
-  radial-gradient(
+  background:radial-gradient(
     circle at center,
     transparent 40%,
     rgba(0,0,0,.72) 100%
@@ -102,8 +101,7 @@ body{
   width:360px;
   height:360px;
   border-radius:50%;
-  background:
-  radial-gradient(
+  background:radial-gradient(
     circle,
     rgba(100,140,255,.18),
     rgba(100,140,255,0) 70%
@@ -151,21 +149,13 @@ body{
   min-height:46px;
   padding:0 20px;
   border-radius:16px;
-
   border:1px solid rgba(255,255,255,.14);
-
   background:rgba(255,255,255,.025);
-
   color:#fff;
   text-decoration:none;
-
   font-size:14px;
   font-weight:600;
-
-  transition:
-    transform .25s ease,
-    background .25s ease,
-    border-color .25s ease;
+  transition:.25s ease;
 }
 
 .back-link:hover{
@@ -185,7 +175,7 @@ body{
 }
 
 /* =========================
-   CARD
+   PROJECT CARD
 ========================= */
 
 .project-card{
@@ -193,7 +183,6 @@ body{
   border:1px solid rgba(255,255,255,.06);
   border-radius:22px;
   overflow:hidden;
-
   cursor:pointer;
 
   transition:
@@ -204,15 +193,12 @@ body{
 
 .project-card:hover{
   transform:translateY(-6px);
-
   border-color:rgba(255,255,255,.15);
-
-  box-shadow:
-  0 20px 50px rgba(0,0,0,.35);
+  box-shadow:0 20px 50px rgba(0,0,0,.35);
 }
 
 /* =========================
-   IMAGE
+   THUMBNAIL
 ========================= */
 
 .project-thumb{
@@ -223,12 +209,9 @@ body{
 
 .project-thumb img{
   display:block;
-
   width:100%;
   height:100%;
-
   object-fit:cover;
-
   transition:transform .35s ease;
 }
 
@@ -237,7 +220,7 @@ body{
 }
 
 /* =========================
-   CARD TEXT
+   PROJECT INFO
 ========================= */
 
 .project-info{
@@ -246,18 +229,14 @@ body{
 
 .project-info h3{
   margin:0;
-
   font-size:20px;
   font-weight:700;
-
   letter-spacing:-.02em;
 }
 
 .project-info p{
   margin:8px 0 0;
-
   font-size:14px;
-
   color:rgba(255,255,255,.58);
 }
 
@@ -267,21 +246,14 @@ body{
 
 .modal{
   display:none;
-
   position:fixed;
   inset:0;
-
   z-index:9999;
-
   align-items:center;
   justify-content:center;
-
   padding:40px;
-
   background:rgba(0,0,0,.90);
-
   backdrop-filter:blur(10px);
-
   cursor:zoom-out;
 }
 
@@ -291,48 +263,30 @@ body{
 
 .modal img{
   display:block;
-
   max-width:92vw;
   max-height:90vh;
-
   width:auto;
   height:auto;
-
   object-fit:contain;
-
   border-radius:16px;
-
-  box-shadow:
-  0 30px 100px rgba(0,0,0,.55);
-
+  box-shadow:0 30px 100px rgba(0,0,0,.55);
   background:#111;
-
   cursor:default;
 }
 
 .close-button{
   position:fixed;
-
   top:24px;
   right:30px;
-
   width:48px;
   height:48px;
-
   border:none;
   border-radius:50%;
-
   background:rgba(255,255,255,.10);
-
-  color:white;
-
+  color:#fff;
   font-size:26px;
-
   cursor:pointer;
-
-  transition:
-    background .25s ease,
-    transform .25s ease;
+  transition:.25s ease;
 }
 
 .close-button:hover{
@@ -392,12 +346,10 @@ body{
 </style>
 </head>
 
+
 <body>
 
-
-<!-- =========================
-     BACKGROUND
-========================= -->
+<!-- BACKGROUND -->
 
 <div class="bg">
   <div class="light light1"></div>
@@ -406,18 +358,12 @@ body{
 </div>
 
 <div class="vignette"></div>
-
 <div class="cursor-glow"></div>
 
 
-<!-- =========================
-     CONTENT
-========================= -->
+<!-- MAIN CONTENT -->
 
 <div class="container">
-
-
-<!-- HEADER -->
 
 <div class="page-header">
 
@@ -430,144 +376,125 @@ body{
 </div>
 
 
-<!-- =========================
-     PROJECT GRID
-========================= -->
-
 <div class="grid">
 
 
-<!-- BAR RUNNER 01 -->
+<!-- 01 BAR RUNNER -->
 
 <div class="project-card"
-onclick="openLightbox('CB broncos bar runner-1.jpg')">
+onclick="openLightbox('CB broncos bar runner-1.png')">
 
   <div class="project-thumb">
 
     <img
-    src="CB broncos bar runner-1.jpg"
-    alt="Chinggis Beer Bar Runner 01"
-    loading="lazy"
-    decoding="async">
+      src="CB broncos bar runner-1.png"
+      alt="Chinggis Beer Bar Runner 01"
+      loading="lazy"
+      decoding="async">
 
   </div>
 
   <div class="project-info">
-
     <h3>Chinggis Beer</h3>
-
     <p>Bar Runner 01</p>
-
   </div>
 
 </div>
 
 
-<!-- BAR RUNNER 02 -->
+<!-- 02 BAR RUNNER -->
 
 <div class="project-card"
-onclick="openLightbox('CB broncos bar runner-2.jpg')">
+onclick="openLightbox('CB broncos bar runner-2.png')">
 
   <div class="project-thumb">
 
     <img
-    src="CB broncos bar runner-2.jpg"
-    alt="Chinggis Beer Bar Runner 02"
-    loading="lazy"
-    decoding="async">
+      src="CB broncos bar runner-2.png"
+      alt="Chinggis Beer Bar Runner 02"
+      loading="lazy"
+      decoding="async">
 
   </div>
 
   <div class="project-info">
-
     <h3>Chinggis Beer</h3>
-
     <p>Bar Runner 02</p>
-
   </div>
 
 </div>
 
 
-<!-- FLAG 01 -->
+<!-- 03 FLAG -->
 
 <div class="project-card"
-onclick="openLightbox('CB broncos tug-1.jpg')">
+onclick="openLightbox('CB broncos tug-1.png')">
 
   <div class="project-thumb">
 
     <img
-    src="CB broncos tug-1.jpg"
-    alt="Chinggis Beer Flag 01"
-    loading="lazy"
-    decoding="async">
+      src="CB broncos tug-1.png"
+      alt="Chinggis Beer Flag 01"
+      loading="lazy"
+      decoding="async">
 
   </div>
 
   <div class="project-info">
-
     <h3>Chinggis Beer</h3>
-
     <p>Flag Design 01</p>
-
   </div>
 
 </div>
 
 
-<!-- FLAG 02 -->
+<!-- 04 FLAG -->
 
 <div class="project-card"
-onclick="openLightbox('CB broncos tug-2.jpg')">
+onclick="openLightbox('CB broncos tug-2.png')">
 
   <div class="project-thumb">
 
     <img
-    src="CB broncos tug-2.jpg"
-    alt="Chinggis Beer Flag 02"
-    loading="lazy"
-    decoding="async">
+      src="CB broncos tug-2.png"
+      alt="Chinggis Beer Flag 02"
+      loading="lazy"
+      decoding="async">
 
   </div>
 
   <div class="project-info">
-
     <h3>Chinggis Beer</h3>
-
     <p>Flag Design 02</p>
-
   </div>
 
 </div>
 
 
-<!-- PHOTO FRAME -->
+<!-- 05 PHOTO FRAME -->
 
 <div class="project-card"
-onclick="openLightbox('CB photo frame.jpg')">
+onclick="openLightbox('CB photo frame.png')">
 
   <div class="project-thumb">
 
     <img
-    src="CB photo frame.jpg"
-    alt="Chinggis Beer Photo Frame"
-    loading="lazy"
-    decoding="async">
+      src="CB photo frame.png"
+      alt="Chinggis Beer Photo Frame"
+      loading="lazy"
+      decoding="async">
 
   </div>
 
   <div class="project-info">
-
     <h3>Chinggis Beer</h3>
-
     <p>Photo Frame</p>
-
   </div>
 
 </div>
 
 
-<!-- NEW OKTOBERFEST BOOTH -->
+<!-- 06 OKTOBERFEST BOOTH -->
 
 <div class="project-card"
 onclick="openLightbox('Emart CB Oktoberfest mock.jpg')">
@@ -575,19 +502,154 @@ onclick="openLightbox('Emart CB Oktoberfest mock.jpg')">
   <div class="project-thumb">
 
     <img
-    src="Emart CB Oktoberfest mock.jpg"
-    alt="Chinggis Beer Oktoberfest Booth"
-    loading="lazy"
-    decoding="async">
+      src="Emart CB Oktoberfest mock.jpg"
+      alt="Chinggis Beer Oktoberfest Booth"
+      loading="lazy"
+      decoding="async">
 
   </div>
 
   <div class="project-info">
-
     <h3>Chinggis Beer</h3>
-
     <p>Oktoberfest Booth</p>
+  </div>
 
+</div>
+
+
+<!-- 07 WORK 1 -->
+
+<div class="project-card"
+onclick="openLightbox('CB work1.jpg.jpg')">
+
+  <div class="project-thumb">
+
+    <img
+      src="CB work1.jpg.jpg"
+      alt="Chinggis Beer Campaign 01"
+      loading="lazy"
+      decoding="async">
+
+  </div>
+
+  <div class="project-info">
+    <h3>Chinggis Beer</h3>
+    <p>Campaign Visual 01</p>
+  </div>
+
+</div>
+
+
+<!-- 08 WORK 2 -->
+
+<div class="project-card"
+onclick="openLightbox('CB work2.jpg.png')">
+
+  <div class="project-thumb">
+
+    <img
+      src="CB work2.jpg.png"
+      alt="Chinggis Beer Campaign 02"
+      loading="lazy"
+      decoding="async">
+
+  </div>
+
+  <div class="project-info">
+    <h3>Chinggis Beer</h3>
+    <p>Campaign Visual 02</p>
+  </div>
+
+</div>
+
+
+<!-- 09 WORK 3 -->
+
+<div class="project-card"
+onclick="openLightbox('CB work3.jpg.png')">
+
+  <div class="project-thumb">
+
+    <img
+      src="CB work3.jpg.png"
+      alt="Chinggis Beer Campaign 03"
+      loading="lazy"
+      decoding="async">
+
+  </div>
+
+  <div class="project-info">
+    <h3>Chinggis Beer</h3>
+    <p>Campaign Visual 03</p>
+  </div>
+
+</div>
+
+
+<!-- 10 WORK 4 -->
+
+<div class="project-card"
+onclick="openLightbox('CB work4.jpg.jpg')">
+
+  <div class="project-thumb">
+
+    <img
+      src="CB work4.jpg.jpg"
+      alt="Chinggis Beer Campaign 04"
+      loading="lazy"
+      decoding="async">
+
+  </div>
+
+  <div class="project-info">
+    <h3>Chinggis Beer</h3>
+    <p>Campaign Visual 04</p>
+  </div>
+
+</div>
+
+
+<!-- 11 WORK 5 -->
+
+<div class="project-card"
+onclick="openLightbox('CB work5.jpg.jpg')">
+
+  <div class="project-thumb">
+
+    <img
+      src="CB work5.jpg.jpg"
+      alt="Chinggis Beer Campaign 05"
+      loading="lazy"
+      decoding="async">
+
+  </div>
+
+  <div class="project-info">
+    <h3>Chinggis Beer</h3>
+    <p>Campaign Visual 05</p>
+  </div>
+
+</div>
+
+
+<!-- 12 WORK 6 -->
+
+<div class="project-card"
+onclick="openLightbox('CB work6.jpg.jpg')">
+
+  <div class="project-thumb">
+
+    <img
+      src="CB work6.jpg.jpg"
+      alt="Chinggis Beer Campaign 06"
+      loading="lazy"
+      decoding="async">
+
+  </div>
+
+  <div class="project-info">
+    <h3>Chinggis Beer</h3>
+    <p>Campaign Visual 06</p>
   </div>
 
 </div>
@@ -601,53 +663,39 @@ onclick="openLightbox('Emart CB Oktoberfest mock.jpg')">
 <!-- CONTAINER END -->
 
 
-<!-- =========================
-     LIGHTBOX
-========================= -->
+<!-- LIGHTBOX -->
 
 <div
-id="lightbox"
-class="modal"
-onclick="closeLightbox(event)"
->
+  id="lightbox"
+  class="modal"
+  onclick="closeLightbox(event)">
 
-<button
-class="close-button"
-onclick="closeLightbox(event)"
-aria-label="Close">
-×
-</button>
+  <button
+    class="close-button"
+    onclick="closeLightbox(event)"
+    aria-label="Close">
+    ×
+  </button>
 
-<img
-id="lightboxImage"
-src=""
-alt="Project preview"
-onclick="event.stopPropagation()"
->
+  <img
+    id="lightboxImage"
+    src=""
+    alt="Project preview"
+    onclick="event.stopPropagation()">
 
 </div>
 
-
-<!-- =========================
-     JAVASCRIPT
-========================= -->
 
 <script>
 
 /* CURSOR GLOW */
 
-const glow =
-document.querySelector(".cursor-glow");
+const glow = document.querySelector(".cursor-glow");
 
-document.addEventListener(
-"mousemove",
-(e)=>{
+document.addEventListener("mousemove",(e)=>{
 
   glow.style.transform =
-  `translate(
-    ${e.clientX - 180}px,
-    ${e.clientY - 180}px
-  )`;
+  `translate(${e.clientX-180}px,${e.clientY-180}px)`;
 
 });
 
@@ -696,9 +744,7 @@ function closeLightbox(event){
 
 /* ESC CLOSE */
 
-document.addEventListener(
-"keydown",
-(event)=>{
+document.addEventListener("keydown",(event)=>{
 
   if(event.key === "Escape"){
     closeLightbox();
@@ -707,7 +753,6 @@ document.addEventListener(
 });
 
 </script>
-
 
 </body>
 </html>
